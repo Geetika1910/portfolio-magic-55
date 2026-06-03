@@ -155,59 +155,110 @@ export default function Beyond() {
 
       {/* What's Cooking */}
       <div className="max-w-[1280px] mx-auto px-6 md:px-12 mt-20">
-        <div
-          className="relative overflow-hidden grid grid-cols-1 md:grid-cols-2 gap-10"
-          style={{ background: "var(--bg-strip)", borderRadius: 24, padding: 48 }}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.15 }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         >
           <div
-            className="absolute pointer-events-none"
-            style={{
-              width: 600, height: 600, left: "-200px", top: "-200px",
-              background: "radial-gradient(circle, var(--accent-glow), transparent 70%)",
-            }}
-          />
-          <div className="relative">
-            <p className="text-[11px] uppercase mb-3" style={{ letterSpacing: "0.15em", color: "var(--accent)" }}>
-              ✦ Personal Project
-            </p>
-            <h3 style={{ fontSize: 36, color: "var(--text-on-dark)", lineHeight: 1.15 }}>
-              What's Cooking?
-            </h3>
-            <p className="mt-4 text-[15px]" style={{ color: "rgba(244,242,238,0.75)", lineHeight: 1.7 }}>
-              A side project I tinker with on weekends — a small, friendly recipe app for people who actually cook at home.
-            </p>
-            <ul className="mt-5 space-y-2.5">
-              {FEATURES.map((f) => (
-                <li key={f} className="flex items-center gap-3 text-[14px]" style={{ color: "rgba(244,242,238,0.85)" }}>
-                  <span className="w-1.5 h-1.5 rounded-full shrink-0" style={{ background: "var(--accent)" }} />
-                  {f}
-                </li>
-              ))}
-            </ul>
-            {/* TODO: Replace href with your What's Cooking URL */}
-            <a
-              href="#"
-              target="_blank"
-              rel="noreferrer"
-              className="inline-block mt-7 px-6 py-3 rounded-full text-[14px] text-white transition-all hover:-translate-y-0.5"
-              style={{ background: "var(--accent)" }}
-            >
-              Try it live →
-            </a>
-          </div>
+            className="relative overflow-hidden grid grid-cols-1 md:grid-cols-2 gap-10"
+            style={{ background: "var(--bg-strip)", borderRadius: 24, padding: 48 }}
+          >
+            {/* Ambient floating glow */}
+            <motion.div
+              className="absolute pointer-events-none"
+              style={{
+                width: 500,
+                height: 500,
+                background: "radial-gradient(circle, var(--accent-glow), transparent 70%)",
+              }}
+              animate={{
+                x: [-200, -180, -200],
+                y: [-200, -180, -200],
+                scale: [1, 1.08, 1],
+              }}
+              transition={{
+                duration: 8,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            />
 
-          <div className="relative">
-            <div style={{ borderRadius: 12, background: "#2a2a2a", overflow: "hidden", boxShadow: "var(--shadow-float)" }}>
-              <div className="flex items-center gap-1.5 px-4 py-2.5" style={{ background: "#1a1a1a" }}>
-                <span className="w-2.5 h-2.5 rounded-full" style={{ background: "#ff5f57" }} />
-                <span className="w-2.5 h-2.5 rounded-full" style={{ background: "#febc2e" }} />
-                <span className="w-2.5 h-2.5 rounded-full" style={{ background: "#28c840" }} />
-              </div>
-              {/* TODO: Replace with <img src="screenshot.png" /> */}
-              <div style={{ height: 280, background: "linear-gradient(135deg, #6b8e6b, #3a5c3a)" }} />
+            {/* Subtle sparkle dots */}
+            <div className="absolute inset-0 pointer-events-none overflow-hidden">
+              {[...Array(5)].map((_, i) => (
+                <motion.div
+                  key={i}
+                  className="absolute rounded-full"
+                  style={{
+                    width: 3 + i,
+                    height: 3 + i,
+                    left: `${18 + i * 14}%`,
+                    top: `${22 + i * 11}%`,
+                    background: "var(--accent-light)",
+                  }}
+                  animate={{
+                    opacity: [0.15, 0.45, 0.15],
+                    scale: [1, 1.4, 1],
+                  }}
+                  transition={{
+                    duration: 3 + i * 0.8,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                    delay: i * 0.6,
+                  }}
+                />
+              ))}
             </div>
+
+            <div className="relative z-10">
+              <p className="text-[11px] uppercase mb-3" style={{ letterSpacing: "0.15em", color: "var(--accent)" }}>
+                ✦ Personal Project
+              </p>
+              <h3 style={{ fontSize: 36, color: "var(--text-on-dark)", lineHeight: 1.15 }}>
+                What's Cooking?
+              </h3>
+              <p className="mt-4 text-[15px]" style={{ color: "rgba(244,242,238,0.75)", lineHeight: 1.7 }}>
+                A side project I tinker with on weekends — a small, friendly recipe app for people who actually cook at home.
+              </p>
+              <ul className="mt-5 space-y-2.5">
+                {FEATURES.map((f) => (
+                  <li key={f} className="flex items-center gap-3 text-[14px]" style={{ color: "rgba(244,242,238,0.85)" }}>
+                    <span className="w-1.5 h-1.5 rounded-full shrink-0" style={{ background: "var(--accent)" }} />
+                    {f}
+                  </li>
+                ))}
+              </ul>
+              {/* TODO: Replace href with your What's Cooking URL */}
+              <a
+                href="#"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-block mt-7 px-6 py-3 rounded-full text-[14px] text-white transition-all hover:-translate-y-0.5"
+                style={{ background: "var(--accent)" }}
+              >
+                Try it live →
+              </a>
+            </div>
+
+            <motion.div
+              className="relative z-10"
+              animate={{ y: [0, -6, 0] }}
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+            >
+              <div style={{ borderRadius: 12, background: "#2a2a2a", overflow: "hidden", boxShadow: "var(--shadow-float)" }}>
+                <div className="flex items-center gap-1.5 px-4 py-2.5" style={{ background: "#1a1a1a" }}>
+                  <span className="w-2.5 h-2.5 rounded-full" style={{ background: "#ff5f57" }} />
+                  <span className="w-2.5 h-2.5 rounded-full" style={{ background: "#febc2e" }} />
+                  <span className="w-2.5 h-2.5 rounded-full" style={{ background: "#28c840" }} />
+                </div>
+                {/* TODO: Replace with <img src="screenshot.png" /> */}
+                <div style={{ height: 280, background: "linear-gradient(135deg, #6b8e6b, #3a5c3a)" }} />
+              </div>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
