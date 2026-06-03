@@ -1,5 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+const ROTATING_WORDS = ["ideated.", "shipped."];
 import { ArrowRight } from "lucide-react";
 import { workSlotRefs } from "./FlyingCards";
 
@@ -95,7 +97,15 @@ function PlaceholderSlot({ index }: { index: number }) {
 
 export default function Work() {
   const [expanded, setExpanded] = useState(false);
+  const [rotatingIndex, setRotatingIndex] = useState(0);
   const extra = PROJECTS.slice(4);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setRotatingIndex((i) => (i + 1) % ROTATING_WORDS.length);
+    }, 2200);
+    return () => clearInterval(id);
+  }, []);
 
   return (
     <section id="work" className="py-24 md:py-32" style={{ background: "var(--bg-primary)" }}>
