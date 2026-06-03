@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { heroAnchorRef } from "./FlyingCards";
+import StatusPill from "./StatusPill";
 
 const container = {
   hidden: {},
@@ -23,13 +24,9 @@ export default function Hero() {
           animate="show"
           className="w-full md:w-3/5"
         >
-          <motion.p
-            variants={lineVariant}
-            className="text-[11px] uppercase mb-6"
-            style={{ letterSpacing: "0.15em", color: "var(--accent)" }}
-          >
-            Product Manager · Builder · Storyteller
-          </motion.p>
+          <motion.div variants={lineVariant} className="mb-6">
+            <StatusPill />
+          </motion.div>
 
           <h1
             className="font-normal"
@@ -40,23 +37,32 @@ export default function Hero() {
               color: "var(--text-primary)",
             }}
           >
-            <motion.span variants={lineVariant} className="block">
-              I turn messy
+            <motion.span
+              variants={lineVariant}
+              className="block"
+              style={{ color: "var(--text-muted)" }}
+            >
+              Hi <span style={{ color: "var(--accent)" }}>✦</span> I'm Geetika.
             </motion.span>
-            <motion.span variants={lineVariant} className="block">
-              problems <em>into</em>
+            <motion.span variants={lineVariant} className="block" style={{ fontWeight: 600 }}>
+              Associate
             </motion.span>
-            <motion.span variants={lineVariant} className="block">
-              <em style={{ color: "var(--accent)" }}>clean</em> products.
+            <motion.span variants={lineVariant} className="block" style={{ fontWeight: 600 }}>
+              <em style={{ color: "var(--accent)" }}>Product</em> Manager
             </motion.span>
           </h1>
 
           <motion.p
             variants={lineVariant}
             className="mt-7 max-w-xl text-[18px]"
-            style={{ color: "var(--text-muted)", lineHeight: 1.55 }}
+            style={{ color: "var(--text-body)", lineHeight: 1.55 }}
           >
-            Product Manager who treats every PRD like a love letter to the user.
+            <strong style={{ color: "var(--text-primary)" }}>
+              Welcome to my little corner of the internet.
+            </strong>
+            <br />
+            I'm an associate product manager who finds the signal in the noise..
+            then makes it pretty.
           </motion.p>
 
           <motion.div variants={lineVariant} className="mt-9 flex flex-wrap gap-4">
