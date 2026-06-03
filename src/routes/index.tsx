@@ -7,6 +7,7 @@ import About from "@/components/About";
 import Beyond from "@/components/Beyond";
 import Footer from "@/components/Footer";
 import FlyingCards from "@/components/FlyingCards";
+import CustomCursor from "@/components/CustomCursor";
 
 export const Route = createFileRoute("/")({
   head: () => ({
