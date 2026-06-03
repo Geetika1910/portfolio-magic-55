@@ -17,12 +17,12 @@ export default function Hero() {
 
   return (
     <section className="relative pt-[72px]" style={{ background: "var(--bg-primary)" }}>
-      <div className="max-w-[1400px] mx-auto px-6 md:px-20 min-h-screen flex flex-col md:flex-row items-center gap-12 md:gap-16 py-16">
+      <div className="max-w-[1400px] mx-auto px-6 md:px-20 min-h-screen flex flex-col md:flex-row items-center gap-12 md:gap-24 py-16">
         <motion.div
           variants={container}
           initial="hidden"
           animate="show"
-          className="w-full md:w-3/5"
+          className="w-full md:w-1/2"
         >
           <motion.div variants={lineVariant} className="mb-6">
             <StatusPill />
