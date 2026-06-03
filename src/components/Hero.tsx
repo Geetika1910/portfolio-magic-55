@@ -32,7 +32,7 @@ export default function Hero() {
             className="font-normal"
             style={{
               fontFamily: "Playfair Display, serif",
-              fontSize: "clamp(32px, 4.6vw, 60px)",
+              fontSize: "clamp(28px, 3.6vw, 50px)",
               lineHeight: 1.08,
               color: "var(--text-primary)",
             }}
