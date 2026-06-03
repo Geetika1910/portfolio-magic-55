@@ -8,43 +8,33 @@ const APPROACH = [
   { icon: "🔄", title: "Iterate before you optimise", body: "Launch the boring version first. Learn. Then make it sharp. Premature polish is the most expensive kind." },
 ];
 
+const TOTAL = APPROACH.length;
+
 function StackCard({
   i,
-  total,
   progress,
 }: {
   i: number;
-  total: number;
   progress: MotionValue<number>;
 }) {
-  // Each card occupies a slice of the scroll range.
-  // Card i fully revealed once progress passes i / total.
-  const slice = 1 / total;
-  const enterStart = (i - 1) * slice;
-  const enterEnd = i * slice;
+  // Each card reveals over its own slice of scroll progress.
+  const slice = 1 / TOTAL;
+  // For i=0, range starts before 0 so the first card is already visible at scroll start.
+  const start = (i - 1) * slice;
+  const end = i * slice;
 
-  // Slide in from below (except first card which starts visible).
-  const y = useTransform(
-    progress,
-    [enterStart, enterEnd],
-    i === 0 ? [0, 0] : [80, 0]
-  );
-  const opacity = useTransform(
-    progress,
-    [enterStart, enterEnd - 0.001],
-    i === 0 ? [1, 1] : [0, 1]
-  );
-  // Resting cards get a slight scale-down + downward offset to show the stack.
-  const restOffset = (total - 1 - i) * 14;
-  const restScale = 1 - (total - 1 - i) * 0.03;
+  // Resting position offsets so stacked cards peek beneath the top card.
+  const restOffset = (TOTAL - 1 - i) * 14;
+  const restScale = 1 - (TOTAL - 1 - i) * 0.03;
 
-  const finalY = useTransform(y, (v) => v + restOffset);
+  const y = useTransform(progress, [start, end], [80 + restOffset, restOffset]);
+  const opacity = useTransform(progress, [start, end], [0, 1]);
 
   const a = APPROACH[i];
   return (
     <motion.div
       style={{
-        y: finalY,
+        y,
         opacity,
         scale: restScale,
         background: "var(--bg-strip)",
@@ -57,7 +47,6 @@ function StackCard({
         zIndex: 10 + i,
         boxShadow: "var(--shadow-float)",
       }}
-      whileHover={{ scale: restScale + 0.01 }}
     >
       <div className="text-2xl mb-2">{a.icon}</div>
       <h4 style={{ fontSize: 18, color: "var(--text-on-dark)" }}>{a.title}</h4>
@@ -78,14 +67,13 @@ export default function ApproachStack() {
   return (
     <div
       ref={wrapperRef}
-      // Tall wrapper so user has scroll distance to reveal each card.
-      style={{ height: `${APPROACH.length * 70}vh` }}
+      style={{ height: `${TOTAL * 70}vh` }}
       className="relative"
     >
       <div className="sticky top-24 h-[420px]">
         <div className="relative w-full h-full">
           {APPROACH.map((_, i) => (
-            <StackCard key={i} i={i} total={APPROACH.length} progress={scrollYProgress} />
+            <StackCard key={i} i={i} progress={scrollYProgress} />
           ))}
         </div>
       </div>
