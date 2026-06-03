@@ -136,7 +136,7 @@ export default function Beyond() {
             // TODO: Replace with <img src=".." />
             <div
               key={i}
-              ref={(el) => (cardRefs.current[i] = el)}
+              ref={(el) => { cardRefs.current[i] = el; }}
               className="shrink-0"
               style={{
                 width: 280,
