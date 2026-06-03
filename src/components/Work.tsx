@@ -122,7 +122,7 @@ export default function Work() {
           </p>
           <h2 style={{ fontSize: "clamp(36px, 5vw, 56px)", lineHeight: 1.1 }} className="flex flex-wrap items-baseline gap-x-3">
             <span>Things I've</span>
-            <span className="relative inline-block overflow-hidden align-baseline" style={{ height: "1.3em", minWidth: "5.5ch" }}>
+            <span className="relative inline-block overflow-hidden align-baseline" style={{ height: "1.3em", minWidth: "7ch" }}>
               <AnimatePresence mode="wait">
                 <motion.span
                   key={rotatingIndex}
