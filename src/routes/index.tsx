@@ -40,6 +40,7 @@ function Index() {
       <Beyond />
       <Footer />
       <FlyingCards />
+      <CustomCursor />
     </main>
   );
 }
