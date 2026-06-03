@@ -125,7 +125,7 @@ export default function FlyingCards() {
               willChange: "transform",
             }}
           >
-            <div style={{ height: lerp(120, 180, p), background: c.grad }} />
+            <div style={{ height: lerp(140, 200, p), background: c.grad }} />
             <div className="p-4">
               <p className="text-[14px] font-medium" style={{ color: "var(--text-primary)" }}>
                 {c.title}
