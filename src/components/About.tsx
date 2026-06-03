@@ -277,29 +277,29 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6 }}
-                className="p-8 md:p-10"
+                className="p-6 md:p-7"
                 style={{
                   background: "var(--bg-card)",
-                  borderRadius: 24,
+                  borderRadius: 20,
                   border: "1px solid var(--border)",
                   boxShadow: "var(--shadow-card)",
                 }}
               >
                 <div
-                  className="w-20 h-20 rounded-full flex items-center justify-center mb-8"
+                  className="w-12 h-12 rounded-full flex items-center justify-center mb-4"
                   style={{
                     background: "linear-gradient(135deg, #EEF3ED, #d4ddd4)",
                     color: "var(--accent)",
                   }}
                 >
-                  <User size={36} strokeWidth={1.4} />
+                  <User size={22} strokeWidth={1.5} />
                 </div>
 
                 <h4
                   style={{
                     fontFamily: "Playfair Display, serif",
-                    fontSize: "clamp(26px, 3vw, 34px)",
-                    lineHeight: 1.15,
+                    fontSize: "clamp(18px, 1.8vw, 22px)",
+                    lineHeight: 1.2,
                     color: "var(--text-muted)",
                     fontWeight: 400,
                   }}
@@ -309,8 +309,8 @@ export default function About() {
                 <h4
                   style={{
                     fontFamily: "Playfair Display, serif",
-                    fontSize: "clamp(26px, 3vw, 34px)",
-                    lineHeight: 1.15,
+                    fontSize: "clamp(18px, 1.8vw, 22px)",
+                    lineHeight: 1.2,
                     color: "var(--text-primary)",
                     fontWeight: 600,
                   }}
@@ -318,26 +318,27 @@ export default function About() {
                   Find me on LinkedIn
                 </h4>
 
-                <p className="mt-5 text-[15px]" style={{ color: "var(--text-body)", lineHeight: 1.6 }}>
-                  Always up for a conversation about design, AI, or what you're working on.
+                <p className="mt-3 text-[13px]" style={{ color: "var(--text-body)", lineHeight: 1.55 }}>
+                  Always up for a chat about design, AI, or what you're building.
                 </p>
 
                 <a
                   href="https://linkedin.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 mt-8 px-5 py-3 rounded-full text-[14px] text-white transition-all duration-300 hover:-translate-y-0.5"
+                  className="inline-flex items-center gap-2 mt-5 px-4 py-2.5 rounded-full text-[13px] text-white transition-all duration-300 hover:-translate-y-0.5"
                   style={{ background: "#0a0a0a" }}
                 >
                   <span
-                    className="w-6 h-6 rounded flex items-center justify-center"
+                    className="w-5 h-5 rounded flex items-center justify-center"
                     style={{ background: "#fff", color: "#0a0a0a" }}
                   >
-                    <Linkedin size={14} strokeWidth={2.5} />
+                    <Linkedin size={12} strokeWidth={2.5} />
                   </span>
                   Connect on LinkedIn
                 </a>
               </motion.div>
+
             </div>
           </div>
         </div>
