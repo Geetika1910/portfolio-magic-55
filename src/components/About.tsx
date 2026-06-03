@@ -191,9 +191,9 @@ export default function About() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            {/* Tools */}
-            <div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+            {/* Tools — sticky so it stays in view while the approach stack reveals */}
+            <div className="md:sticky md:top-24">
               <p className="text-[11px] uppercase mb-5" style={{ letterSpacing: "0.15em", color: "var(--accent)" }}>
                 Tools I Use
               </p>
@@ -227,32 +227,8 @@ export default function About() {
               </div>
             </div>
 
-            {/* Approach cards */}
-            <div className="space-y-4">
-              {APPROACH.map((a, i) => (
-                <motion.div
-                  key={a.title}
-                  initial={{ opacity: 0, x: 40 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true, amount: 0.3 }}
-                  transition={{ duration: 0.5, delay: i * 0.1 }}
-                  whileHover={{ x: 6 }}
-                  style={{
-                    background: "var(--bg-strip)",
-                    color: "var(--text-on-dark)",
-                    borderLeft: "3px solid var(--accent)",
-                    borderRadius: 16,
-                    padding: 28,
-                  }}
-                >
-                  <div className="text-2xl mb-2">{a.icon}</div>
-                  <h4 style={{ fontSize: 18, color: "var(--text-on-dark)" }}>{a.title}</h4>
-                  <p className="mt-2 text-[14px]" style={{ color: "rgba(244,242,238,0.7)", lineHeight: 1.6 }}>
-                    {a.body}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
+            {/* Approach cards — stacked deck that reveals on scroll */}
+            <ApproachStack />
           </div>
         </div>
       </div>
