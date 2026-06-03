@@ -17,6 +17,10 @@ const TOOLS = [
   { name: "Mixpanel", url: "https://cdn.simpleicons.org/mixpanel" },
   { name: "Google Analytics", url: "https://cdn.simpleicons.org/googleanalytics" },
   { name: "Claude", url: "https://cdn.simpleicons.org/claude" },
+  { name: "ChatGPT", url: "https://cdn.simpleicons.org/openai" },
+  { name: "Perplexity", url: "https://cdn.simpleicons.org/perplexity" },
+  { name: "Lovable", url: "https://cdn.simpleicons.org/lovable" },
+  { name: "Emergent", url: "https://cdn.simpleicons.org/emergent" },
   { name: "Notion", url: "https://cdn.simpleicons.org/notion" },
   { name: "n8n", url: "https://cdn.simpleicons.org/n8n" },
 ];
