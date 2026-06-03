@@ -1,102 +1,70 @@
 import { motion } from "framer-motion";
-import { useRef, type MouseEvent } from "react";
 
 const APPROACH = [
-  { icon: "🔍", title: "Start with the problem", body: "Before any solution, I get obsessive about the problem — talking to users, watching sessions, reading tickets until the pain is clear." },
-  { icon: "📐", title: "Ruthless prioritisation", body: "Not everything ships. I'd rather do three things well than ten things badly. RICE, MoSCoW, gut — whichever helps the team agree." },
-  { icon: "🤝", title: "Ship with the team, not at them", body: "Engineers and designers aren't order-takers. The best ideas come from the people closest to the craft." },
-  { icon: "🔄", title: "Iterate before you optimise", body: "Launch the boring version first. Learn. Then make it sharp. Premature polish is the most expensive kind." },
+  {
+    title: "Start with the problem",
+    body: "Before any solution, I get obsessive about the problem — talking to users, watching sessions, reading tickets until the pain is clear.",
+  },
+  {
+    title: "Ruthless prioritisation",
+    body: "Not everything ships. I'd rather do three things well than ten things badly. RICE, MoSCoW, gut — whichever helps the team agree.",
+  },
+  {
+    title: "Ship with the team, not at them",
+    body: "Engineers and designers aren't order-takers. The best ideas come from the people closest to the craft.",
+  },
+  {
+    title: "Iterate before you optimise",
+    body: "Launch the boring version first. Learn. Then make it sharp. Premature polish is the most expensive kind.",
+  },
 ];
-
-function SpotlightCard({
-  i,
-  icon,
-  title,
-  body,
-}: {
-  i: number;
-  icon: string;
-  title: string;
-  body: string;
-}) {
-  const ref = useRef<HTMLDivElement>(null);
-
-  const handleMove = (e: MouseEvent<HTMLDivElement>) => {
-    const el = ref.current;
-    if (!el) return;
-    const rect = el.getBoundingClientRect();
-    el.style.setProperty("--mx", `${e.clientX - rect.left}px`);
-    el.style.setProperty("--my", `${e.clientY - rect.top}px`);
-  };
-
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
-      whileInView={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-      viewport={{ once: true, margin: "-80px" }}
-      transition={{
-        duration: 0.7,
-        delay: i * 0.1,
-        ease: [0.22, 1, 0.36, 1],
-      }}
-      whileHover={{ y: -6 }}
-      className="group relative overflow-hidden"
-      ref={ref}
-      onMouseMove={handleMove}
-      style={{
-        background: "#D5DBD0",
-        color: "var(--text-primary)",
-        borderRadius: 16,
-        padding: 1,
-        boxShadow: "var(--shadow-card)",
-      }}
-    >
-      {/* Spotlight glow that follows cursor */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-        style={{
-          background:
-            "radial-gradient(280px circle at var(--mx) var(--my), color-mix(in oklab, var(--accent) 28%, transparent), transparent 60%)",
-        }}
-      />
-      {/* Inner card */}
-      <div
-        className="relative h-full"
-        style={{
-          background: "#D5DBD0",
-          borderRadius: 15,
-          padding: 22,
-          borderLeft: "3px solid var(--accent)",
-          border: "1px solid var(--border)",
-        }}
-      >
-        <div className="flex items-center gap-2 mb-2">
-          <span className="text-xl">{icon}</span>
-          <span
-            className="text-[11px] tracking-[0.18em] uppercase"
-            style={{ color: "var(--text-muted)" }}
-          >
-            0{i + 1}
-          </span>
-        </div>
-          <h4 style={{ fontSize: 16, color: "var(--text-primary)" }}>{title}</h4>
-        <p
-          className="mt-2 text-[13.5px]"
-          style={{ color: "var(--text-body)", lineHeight: 1.6 }}
-        >
-          {body}
-        </p>
-      </div>
-    </motion.div>
-  );
-}
 
 export default function ApproachStack() {
   return (
-    <div className="grid grid-cols-1 gap-4 max-w-2xl mx-auto">
+    <div className="max-w-2xl mx-auto">
       {APPROACH.map((a, i) => (
-        <SpotlightCard key={i} i={i} {...a} />
+        <motion.div
+          key={i}
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.6, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
+          className="group grid grid-cols-[auto_1fr] gap-6 md:gap-8 py-7 md:py-8"
+          style={{
+            borderTop: i === 0 ? "1px solid var(--border)" : undefined,
+            borderBottom: "1px solid var(--border)",
+          }}
+        >
+          <div
+            className="italic leading-none transition-colors duration-300"
+            style={{
+              fontFamily: "var(--font-serif, Georgia, serif)",
+              fontSize: "clamp(34px, 4vw, 48px)",
+              color: "var(--text-muted)",
+              fontWeight: 400,
+            }}
+          >
+            {String(i + 1).padStart(2, "0")}
+          </div>
+          <div className="pt-1">
+            <h4
+              style={{
+                fontSize: "clamp(18px, 1.6vw, 20px)",
+                color: "var(--text-primary)",
+                fontWeight: 500,
+                letterSpacing: "-0.01em",
+              }}
+            >
+              {a.title}
+            </h4>
+            <p
+              className="mt-2 text-[14px] md:text-[14.5px]"
+              style={{ color: "var(--text-body)", lineHeight: 1.65, maxWidth: "52ch" }}
+            >
+              {a.body}
+            </p>
+          </div>
+        </motion.div>
       ))}
     </div>
   );
