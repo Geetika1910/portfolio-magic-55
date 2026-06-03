@@ -130,7 +130,7 @@ export default function Work() {
                   animate={{ y: "0%", opacity: 1 }}
                   exit={{ y: "-100%", opacity: 0 }}
                   transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                  className="absolute inset-0 italic"
+                  className="absolute inset-0 italic whitespace-nowrap"
                   style={{ color: "var(--accent)", fontFamily: "var(--font-serif, Georgia, serif)" }}
                 >
                   {ROTATING_WORDS[rotatingIndex]}
