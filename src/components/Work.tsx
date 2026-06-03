@@ -1,5 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+const ROTATING_WORDS = ["ideated.", "shipped."];
 import { ArrowRight } from "lucide-react";
 import { workSlotRefs } from "./FlyingCards";
 
@@ -95,7 +97,15 @@ function PlaceholderSlot({ index }: { index: number }) {
 
 export default function Work() {
   const [expanded, setExpanded] = useState(false);
+  const [rotatingIndex, setRotatingIndex] = useState(0);
   const extra = PROJECTS.slice(4);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setRotatingIndex((i) => (i + 1) % ROTATING_WORDS.length);
+    }, 2200);
+    return () => clearInterval(id);
+  }, []);
 
   return (
     <section id="work" className="py-24 md:py-32" style={{ background: "var(--bg-primary)" }}>
@@ -110,8 +120,24 @@ export default function Work() {
           <p className="text-[11px] uppercase mb-4" style={{ letterSpacing: "0.15em", color: "var(--accent)" }}>
             Professional Work
           </p>
-          <h2 style={{ fontSize: "clamp(36px, 5vw, 56px)", lineHeight: 1.1 }}>
-            Things I've shipped.
+          <h2 style={{ fontSize: "clamp(36px, 5vw, 56px)", lineHeight: 1.1 }} className="flex flex-wrap items-baseline gap-x-3">
+            <span>Things I've</span>
+            <span className="relative inline-block overflow-hidden align-baseline" style={{ height: "1.1em", minWidth: "4.5ch" }}>
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={rotatingIndex}
+                  initial={{ y: "100%", opacity: 0 }}
+                  animate={{ y: "0%", opacity: 1 }}
+                  exit={{ y: "-100%", opacity: 0 }}
+                  transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                  className="absolute inset-0 italic"
+                  style={{ color: "var(--accent)", fontFamily: "var(--font-serif, Georgia, serif)" }}
+                >
+                  {ROTATING_WORDS[rotatingIndex]}
+                </motion.span>
+              </AnimatePresence>
+            </span>
+            
           </h2>
           <p className="mt-4 text-[16px] max-w-xl" style={{ color: "var(--text-muted)" }}>
             A handful of products and features I've helped guide from fuzzy idea to launched outcome.
