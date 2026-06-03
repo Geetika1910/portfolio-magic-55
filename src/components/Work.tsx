@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { ArrowRight } from "lucide-react";
+import { workSlotRefs } from "./FlyingCards";
 
 const PROJECTS = [
   { title: "Onboarding Overhaul", tag: "Growth · B2C", desc: "Took a leaky onboarding funnel from 20% to 68% completion by obsessing over the first 5 minutes.", pdf: "/project1.pdf", grad: "linear-gradient(135deg, #f6d365, #fda085)" },
@@ -30,7 +31,8 @@ function ProjectCard({ p }: { p: (typeof PROJECTS)[number] }) {
       }}
     >
       <div className="relative" style={{ height: 200, background: p.grad }}>
-        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+        <div
+          className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           style={{ background: "rgba(0,0,0,0.55)" }}
         >
           <span className="text-white text-[15px] flex items-center gap-2">
@@ -64,9 +66,35 @@ function ProjectCard({ p }: { p: (typeof PROJECTS)[number] }) {
   );
 }
 
+/**
+ * Placeholder slot for the first 4 grid cells. The flying cards from the
+ * hero land into these positions. We reserve their footprint with the same
+ * approximate height as a project card so layout doesn't shift, but render
+ * nothing visible. On mobile (no flying cards) we render the real card.
+ */
+function PlaceholderSlot({ index }: { index: number }) {
+  const p = PROJECTS[index];
+  return (
+    <>
+      {/* Mobile fallback — flying overlay is hidden < md */}
+      <div className="md:hidden">
+        <ProjectCard p={p} />
+      </div>
+      {/* Desktop landing slot */}
+      <div
+        ref={(el) => {
+          workSlotRefs[index].current = el;
+        }}
+        aria-hidden
+        className="hidden md:block"
+        style={{ height: 360, borderRadius: 16 }}
+      />
+    </>
+  );
+}
+
 export default function Work() {
   const [expanded, setExpanded] = useState(false);
-  const visible = PROJECTS.slice(0, 4);
   const extra = PROJECTS.slice(4);
 
   return (
@@ -91,16 +119,8 @@ export default function Work() {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {visible.map((p) => (
-            <motion.div
-              key={p.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.15 }}
-              transition={{ duration: 0.5 }}
-            >
-              <ProjectCard p={p} />
-            </motion.div>
+          {[0, 1, 2, 3].map((i) => (
+            <PlaceholderSlot key={i} index={i} />
           ))}
 
           <AnimatePresence>
