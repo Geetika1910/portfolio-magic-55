@@ -44,11 +44,11 @@ function SpotlightCard({
       ref={ref}
       onMouseMove={handleMove}
       style={{
-        background: "#1e2620",
-        color: "var(--text-on-dark)",
+        background: "var(--bg-card)",
+        color: "var(--text-primary)",
         borderRadius: 16,
         padding: 1,
-        boxShadow: "var(--shadow-float)",
+        boxShadow: "var(--shadow-card)",
       }}
     >
       {/* Spotlight glow that follows cursor */}
@@ -64,25 +64,26 @@ function SpotlightCard({
       <div
         className="relative h-full"
         style={{
-          background: "#1e2620",
+          background: "var(--bg-card)",
           borderRadius: 15,
           padding: 22,
           borderLeft: "3px solid var(--accent)",
+          border: "1px solid var(--border)",
         }}
       >
         <div className="flex items-center gap-2 mb-2">
           <span className="text-xl">{icon}</span>
           <span
             className="text-[11px] tracking-[0.18em] uppercase"
-            style={{ color: "rgba(244,242,238,0.45)" }}
+            style={{ color: "var(--text-muted)" }}
           >
             0{i + 1}
           </span>
         </div>
-        <h4 style={{ fontSize: 16, color: "var(--text-on-dark)" }}>{title}</h4>
+          <h4 style={{ fontSize: 16, color: "var(--text-primary)" }}>{title}</h4>
         <p
           className="mt-2 text-[13.5px]"
-          style={{ color: "rgba(244,242,238,0.7)", lineHeight: 1.6 }}
+          style={{ color: "var(--text-body)", lineHeight: 1.6 }}
         >
           {body}
         </p>
