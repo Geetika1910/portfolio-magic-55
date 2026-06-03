@@ -1,12 +1,161 @@
-import { useEffect, useState } from "react";
-import { Menu, X, Linkedin } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { Menu, X, Linkedin, User, Upload } from "lucide-react";
 
-const NAV = [
-  { label: "Work", id: "work" },
-  { label: "About", id: "about" },
-  { label: "Beyond", id: "beyond" },
-  { label: "Contact", id: "contact" },
+type NavItem = {
+  label: string;
+  id: string;
+  hover: "underline" | "fill" | "rotate" | "swap";
+};
+
+const NAV: NavItem[] = [
+  { label: "Work", id: "work", hover: "underline" },
+  { label: "About", id: "about", hover: "fill" },
+  { label: "Beyond", id: "beyond", hover: "rotate" },
+  { label: "Contact", id: "contact", hover: "swap" },
 ];
+
+function NavButton({ item, onClick }: { item: NavItem; onClick: () => void }) {
+  const base: React.CSSProperties = {
+    letterSpacing: "0.12em",
+    color: "var(--text-muted)",
+    fontSize: 12,
+    textTransform: "uppercase",
+    position: "relative",
+    padding: "6px 2px",
+    overflow: "hidden",
+    display: "inline-block",
+    height: 28,
+  };
+
+  if (item.hover === "underline") {
+    return (
+      <button onClick={onClick} className="group" style={base}>
+        <span className="transition-colors group-hover:text-[var(--accent-light)]" style={{ color: "var(--text-muted)" }}>
+          {item.label}
+        </span>
+        <span
+          aria-hidden
+          className="absolute left-0 bottom-1 h-[1.5px] w-full origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100"
+          style={{ background: "var(--accent-light)" }}
+        />
+      </button>
+    );
+  }
+
+  if (item.hover === "fill") {
+    return (
+      <button
+        onClick={onClick}
+        className="group rounded-full px-3 transition-colors duration-300"
+        style={{ ...base, padding: "6px 12px" }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.background = "color-mix(in oklab, var(--accent) 22%, transparent)";
+          e.currentTarget.style.color = "var(--accent-light)";
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.background = "transparent";
+          e.currentTarget.style.color = "var(--text-muted)";
+        }}
+      >
+        {item.label}
+      </button>
+    );
+  }
+
+  if (item.hover === "rotate") {
+    return (
+      <button onClick={onClick} className="group inline-flex items-center gap-1.5" style={base}>
+        <span
+          aria-hidden
+          className="inline-block transition-transform duration-500 group-hover:rotate-[360deg]"
+          style={{ color: "var(--accent-light)" }}
+        >
+          ✦
+        </span>
+        <span className="transition-colors group-hover:text-[var(--accent-light)]">{item.label}</span>
+      </button>
+    );
+  }
+
+  // swap (vertical letter slide)
+  return (
+    <button onClick={onClick} className="group" style={base}>
+      <span className="relative block leading-[16px]" style={{ height: 16 }}>
+        <span
+          className="block transition-transform duration-300 group-hover:-translate-y-full"
+          style={{ color: "var(--text-muted)" }}
+        >
+          {item.label}
+        </span>
+        <span
+          className="block transition-transform duration-300 group-hover:-translate-y-full"
+          style={{ color: "var(--accent-light)" }}
+        >
+          {item.label}
+        </span>
+      </span>
+    </button>
+  );
+}
+
+function AvatarUpload() {
+  const inputRef = useRef<HTMLInputElement>(null);
+  const [src, setSrc] = useState<string | null>(null);
+
+  useEffect(() => {
+    const stored = typeof window !== "undefined" ? localStorage.getItem("profile-avatar") : null;
+    if (stored) setSrc(stored);
+  }, []);
+
+  const onFile = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = () => {
+      const dataUrl = reader.result as string;
+      setSrc(dataUrl);
+      try {
+        localStorage.setItem("profile-avatar", dataUrl);
+      } catch {}
+    };
+    reader.readAsDataURL(file);
+  };
+
+  return (
+    <button
+      type="button"
+      onClick={() => inputRef.current?.click()}
+      className="group relative w-9 h-9 rounded-full overflow-hidden shrink-0 transition-transform hover:scale-105"
+      style={{
+        border: "1.5px solid var(--accent)",
+        background: "color-mix(in oklab, var(--accent) 18%, transparent)",
+      }}
+      aria-label="Upload profile picture"
+      title="Upload profile picture"
+    >
+      {src ? (
+        <img src={src} alt="Profile" className="w-full h-full object-cover" />
+      ) : (
+        <span className="absolute inset-0 flex items-center justify-center" style={{ color: "var(--text-on-dark)" }}>
+          <User size={16} />
+        </span>
+      )}
+      <span
+        className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+        style={{ background: "rgba(0,0,0,0.55)", color: "white" }}
+      >
+        <Upload size={13} />
+      </span>
+      <input
+        ref={inputRef}
+        type="file"
+        accept="image/*"
+        className="hidden"
+        onChange={onFile}
+      />
+    </button>
+  );
+}
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -33,31 +182,24 @@ export default function Header() {
       }}
     >
       <div className="max-w-[1400px] mx-auto px-6 md:px-12 h-[72px] flex items-center justify-between">
-        <button
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="text-[18px] font-medium tracking-tight transition-transform hover:scale-105"
-          style={{ color: "var(--text-on-dark)" }}
-        >
-          Your Name
-        </button>
+        <div className="flex items-center gap-3">
+          <AvatarUpload />
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="text-[18px] font-medium tracking-tight transition-transform hover:scale-105"
+            style={{ color: "var(--text-on-dark)" }}
+          >
+            Geetika
+          </button>
+        </div>
 
-        <nav className="hidden md:flex items-center gap-10">
+        <nav className="hidden md:flex items-center gap-8">
           {NAV.map((n) => (
-            <button
-              key={n.id}
-              onClick={() => go(n.id)}
-              className="text-[12px] uppercase transition-colors duration-200 hover:tracking-[0.18em]"
-              style={{ letterSpacing: "0.1em", color: "var(--text-muted)" }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = "var(--accent-light)")}
-              onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-muted)")}
-            >
-              {n.label}
-            </button>
+            <NavButton key={n.id} item={n} onClick={() => go(n.id)} />
           ))}
         </nav>
 
         <div className="hidden md:flex items-center gap-3">
-          {/* TODO: Replace with your LinkedIn URL */}
           <a
             href="https://linkedin.com/in/yourprofile"
             target="_blank"
@@ -70,7 +212,6 @@ export default function Header() {
           >
             <Linkedin size={15} />
           </a>
-          {/* TODO: Replace with your resume PDF path */}
           <a
             href="/resume.pdf"
             target="_blank"
