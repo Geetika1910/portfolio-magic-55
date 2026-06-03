@@ -22,7 +22,7 @@ export default function Hero() {
           variants={container}
           initial="hidden"
           animate="show"
-          className="w-full md:w-1/2"
+          className="w-full md:w-3/5"
         >
           <motion.div variants={lineVariant} className="mb-6">
             <StatusPill />
@@ -98,7 +98,7 @@ export default function Hero() {
         <div
           ref={heroAnchorRef}
           aria-hidden
-          className="w-full md:w-1/2"
+          className="w-full md:w-2/5"
           style={{ minHeight: 380 }}
         />
       </div>
