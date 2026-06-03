@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { User } from "lucide-react";
+import ApproachStack from "./ApproachStack";
 
 const COMPANIES = [
   { name: "Company A", role: "Senior Product Manager", years: "2024–Present", grad: "linear-gradient(135deg,#7A8F7B,#A5B5A3)" },
