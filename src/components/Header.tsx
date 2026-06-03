@@ -80,7 +80,7 @@ function NavButton({ item, onClick }: { item: NavItem; onClick: () => void }) {
   // swap (vertical letter slide)
   return (
     <button onClick={onClick} className="group" style={base}>
-      <span className="relative block leading-[16px]" style={{ height: 16 }}>
+      <span className="relative block leading-[16px] overflow-hidden" style={{ height: 16 }}>
         <span
           className="block transition-transform duration-300 group-hover:-translate-y-full"
           style={{ color: "var(--text-muted)" }}
