@@ -42,16 +42,19 @@ function StackCard({
         color: "var(--text-on-dark)",
         borderLeft: "3px solid var(--accent)",
         borderRadius: 12,
-        padding: 28,
+        padding: 20,
         position: "absolute",
-        inset: 0,
+        left: "50%",
+        top: 0,
+        width: "min(420px, 100%)",
+        x: "-50%",
         zIndex: 10 + i,
         boxShadow: "var(--shadow-float)",
       }}
     >
-      <div className="text-2xl mb-2">{a.icon}</div>
-      <h4 style={{ fontSize: 18, color: "var(--text-on-dark)" }}>{a.title}</h4>
-      <p className="mt-2 text-[14px]" style={{ color: "rgba(244,242,238,0.7)", lineHeight: 1.6 }}>
+      <div className="text-xl mb-1">{a.icon}</div>
+      <h4 style={{ fontSize: 16, color: "var(--text-on-dark)" }}>{a.title}</h4>
+      <p className="mt-1.5 text-[13px]" style={{ color: "rgba(244,242,238,0.7)", lineHeight: 1.55 }}>
         {a.body}
       </p>
     </motion.div>
