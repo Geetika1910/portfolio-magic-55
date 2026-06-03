@@ -23,16 +23,25 @@ function readRect(el: HTMLElement | null): Slot | null {
 }
 
 export default function FlyingCards() {
+  const [isMounted, setIsMounted] = useState(false);
   const [progress, setProgress] = useState(0);
   const [heroSlot, setHeroSlot] = useState<Slot | null>(null);
   const [workSlots, setWorkSlots] = useState<(Slot | null)[]>([null, null, null, null]);
   const [hovered, setHovered] = useState<number | null>(null);
+  const [viewportWidth, setViewportWidth] = useState(1280);
 
   useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
     let raf = 0;
     const update = () => {
       raf = 0;
       const workEl = document.getElementById("work");
+      setViewportWidth(window.innerWidth);
       if (workEl) {
         const r = workEl.getBoundingClientRect();
         const vh = window.innerHeight;
@@ -63,7 +72,7 @@ export default function FlyingCards() {
   const startFor = (i: number): Slot => {
     if (!heroSlot) {
       // fallback if anchor not measured yet
-      return { x: window.innerWidth - 320, y: 200 + i * 18, w: 260, h: 220 };
+      return { x: Math.max(24, viewportWidth - 320), y: 200 + i * 18, w: 260, h: 220 };
     }
     const cardW = Math.min(260, heroSlot.w);
     const baseX = heroSlot.x + (heroSlot.w - cardW) / 2;
@@ -78,6 +87,8 @@ export default function FlyingCards() {
 
   const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
   const ease = (t: number) => 1 - Math.pow(1 - t, 3);
+
+  if (!isMounted) return null;
 
   return (
     <div className="fixed inset-0 pointer-events-none z-40 hidden md:block">
