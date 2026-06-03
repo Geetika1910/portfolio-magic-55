@@ -17,19 +17,20 @@ function StackCard({
   i: number;
   progress: MotionValue<number>;
 }) {
-  const revealPoint = i / TOTAL;
-  const restOffset = (TOTAL - 1 - i) * 10;
-  const restScale = 1 - (TOTAL - 1 - i) * 0.04;
-  const y = useTransform(progress, (value) => {
-    if (value <= revealPoint) return 70 + restOffset;
-    const local = Math.min(1, (value - revealPoint) * TOTAL * 1.2);
-    return 70 + restOffset - local * 70;
-  });
-  const opacity = useTransform(progress, (value) => {
-    if (i === 0) return 1;
-    if (value <= revealPoint) return 0;
-    return Math.min(1, (value - revealPoint) * TOTAL * 2.2);
-  });
+  const revealStart = i / TOTAL;
+  const revealEnd = (i + 0.6) / TOTAL;
+  const restOffset = (TOTAL - 1 - i) * 12;
+  const restScale = 1 - (TOTAL - 1 - i) * 0.035;
+  const y = useTransform(
+    progress,
+    [0, revealStart, revealEnd, 1],
+    [80 + restOffset, 80 + restOffset, 0, 0],
+  );
+  const opacity = useTransform(
+    progress,
+    [0, Math.max(0, revealStart - 0.001), revealStart, revealEnd, 1],
+    i === 0 ? [1, 1, 1, 1, 1] : [0, 0, 0, 1, 1],
+  );
 
   const a = APPROACH[i];
   return (
