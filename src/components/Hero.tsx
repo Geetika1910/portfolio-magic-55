@@ -98,7 +98,7 @@ export default function Hero() {
         <div
           ref={heroAnchorRef}
           aria-hidden
-          className="w-full md:w-2/5"
+          className="w-full md:w-1/2"
           style={{ minHeight: 380 }}
         />
       </div>
