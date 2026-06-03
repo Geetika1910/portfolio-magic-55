@@ -72,16 +72,16 @@ export default function FlyingCards() {
   const startFor = (i: number): Slot => {
     if (!heroSlot) {
       // fallback if anchor not measured yet
-      return { x: Math.max(24, viewportWidth - 320), y: 200 + i * 18, w: 260, h: 220 };
+      return { x: Math.max(24, viewportWidth - 350), y: 200 + i * 18, w: 290, h: 250 };
     }
-    const cardW = Math.min(260, heroSlot.w);
+    const cardW = Math.min(290, heroSlot.w);
     const baseX = heroSlot.x + (heroSlot.w - cardW) / 2;
     const baseY = heroSlot.y + 20;
     return {
       x: baseX + (i - 1.5) * 14,
       y: baseY + i * 28,
       w: cardW,
-      h: 220,
+      h: 250,
     };
   };
 
@@ -125,7 +125,7 @@ export default function FlyingCards() {
               willChange: "transform",
             }}
           >
-            <div style={{ height: lerp(120, 180, p), background: c.grad }} />
+            <div style={{ height: lerp(140, 200, p), background: c.grad }} />
             <div className="p-4">
               <p className="text-[14px] font-medium" style={{ color: "var(--text-primary)" }}>
                 {c.title}
