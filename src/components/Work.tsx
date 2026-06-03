@@ -120,24 +120,29 @@ export default function Work() {
           <p className="text-[11px] uppercase mb-4" style={{ letterSpacing: "0.15em", color: "var(--accent)" }}>
             Professional Work
           </p>
-          <h2 style={{ fontSize: "clamp(36px, 5vw, 56px)", lineHeight: 1.1 }} className="flex flex-wrap items-baseline gap-x-3">
-            <span>Things I've</span>
-            <span className="relative inline-block overflow-hidden align-baseline" style={{ height: "1.3em", minWidth: "7ch" }}>
-              <AnimatePresence mode="wait">
-                <motion.span
-                  key={rotatingIndex}
-                  initial={{ y: "100%", opacity: 0 }}
-                  animate={{ y: "0%", opacity: 1 }}
-                  exit={{ y: "-100%", opacity: 0 }}
-                  transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                  className="absolute inset-0 italic whitespace-nowrap"
-                  style={{ color: "var(--accent)", fontFamily: "var(--font-serif, Georgia, serif)" }}
-                >
-                  {ROTATING_WORDS[rotatingIndex]}
-                </motion.span>
-              </AnimatePresence>
+          <h2 style={{ fontSize: "clamp(36px, 5vw, 56px)", lineHeight: 1.1 }}>
+            Things I've{" "}
+            <span className="relative inline-block align-baseline" style={{ minWidth: "5.5ch" }}>
+              {/* invisible sizer keeps baseline + width stable */}
+              <span className="invisible italic whitespace-nowrap" style={{ fontFamily: "var(--font-serif, Georgia, serif)" }}>
+                {ROTATING_WORDS[rotatingIndex]}
+              </span>
+              <span className="absolute left-0 top-0 w-full overflow-hidden" style={{ height: "1.2em" }}>
+                <AnimatePresence mode="wait">
+                  <motion.span
+                    key={rotatingIndex}
+                    initial={{ y: "100%", opacity: 0 }}
+                    animate={{ y: "0%", opacity: 1 }}
+                    exit={{ y: "-100%", opacity: 0 }}
+                    transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                    className="inline-block italic whitespace-nowrap"
+                    style={{ color: "var(--accent)", fontFamily: "var(--font-serif, Georgia, serif)" }}
+                  >
+                    {ROTATING_WORDS[rotatingIndex]}
+                  </motion.span>
+                </AnimatePresence>
+              </span>
             </span>
-            
           </h2>
           <p className="mt-4 text-[16px] max-w-xl" style={{ color: "var(--text-muted)" }}>
             A handful of products and features I've helped guide from fuzzy idea to launched outcome.
