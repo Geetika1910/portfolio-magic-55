@@ -17,12 +17,12 @@ export default function Hero() {
 
   return (
     <section className="relative pt-[72px]" style={{ background: "var(--bg-primary)" }}>
-      <div className="max-w-[1400px] mx-auto px-6 md:px-20 min-h-screen flex flex-col md:flex-row items-center gap-12 md:gap-16 py-16">
+      <div className="max-w-[1400px] mx-auto px-6 md:px-20 min-h-screen flex flex-col md:flex-row items-center gap-12 md:gap-24 py-16">
         <motion.div
           variants={container}
           initial="hidden"
           animate="show"
-          className="w-full md:w-3/5"
+          className="w-full md:w-1/2"
         >
           <motion.div variants={lineVariant} className="mb-6">
             <StatusPill />
@@ -32,7 +32,7 @@ export default function Hero() {
             className="font-normal"
             style={{
               fontFamily: "Playfair Display, serif",
-              fontSize: "clamp(32px, 4.6vw, 60px)",
+              fontSize: "clamp(28px, 3.6vw, 50px)",
               lineHeight: 1.08,
               color: "var(--text-primary)",
             }}
@@ -98,7 +98,7 @@ export default function Hero() {
         <div
           ref={heroAnchorRef}
           aria-hidden
-          className="w-full md:w-2/5"
+          className="w-full md:w-1/2"
           style={{ minHeight: 380 }}
         />
       </div>
