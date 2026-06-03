@@ -64,7 +64,7 @@ function SpotlightCard({
       <div
         className="relative h-full"
         style={{
-          background: "var(--bg-card)",
+          background: "#EFF2EE",
           borderRadius: 15,
           padding: 22,
           borderLeft: "3px solid var(--accent)",
