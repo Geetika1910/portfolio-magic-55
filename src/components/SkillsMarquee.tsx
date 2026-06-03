@@ -48,7 +48,7 @@ export default function SkillsMarquee() {
         aria-hidden="true"
       >
         <path
-          d="M0,40 C150,0 300,40 600,20 C900,0 1050,40 1200,10 L1200,40 L0,40 Z"
+          d="M0,20 C150,0 300,40 600,20 C900,0 1050,40 1200,20 L1200,40 L0,40 Z"
           fill="currentColor"
         />
       </svg>
@@ -65,7 +65,7 @@ export default function SkillsMarquee() {
         aria-hidden="true"
       >
         <path
-          d="M0,0 C150,40 300,0 600,20 C900,40 1050,0 1200,30 L1200,0 L0,0 Z"
+          d="M0,20 C150,40 300,0 600,20 C900,40 1050,0 1200,20 L1200,0 L0,0 Z"
           fill="currentColor"
         />
       </svg>
