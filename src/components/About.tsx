@@ -77,29 +77,12 @@ export default function About() {
               </div>
             </div>
 
-            {/* Name + featured badge */}
-            <div className="mt-6 flex items-start justify-between gap-4">
-              <div>
-                <h3 style={{ fontSize: 28, fontWeight: 600, lineHeight: 1.2 }}>Geetika</h3>
-                <p className="mt-1 text-[14px]" style={{ color: "var(--text-muted)" }}>
-                  Associate Product Manager
-                </p>
-              </div>
-              <div
-                className="px-3 py-2 text-right"
-                style={{
-                  border: "1px solid var(--border)",
-                  borderRadius: 8,
-                  background: "var(--bg-card)",
-                }}
-              >
-                <div className="text-[9px] uppercase tracking-[0.18em]" style={{ color: "var(--text-muted)" }}>
-                  Featured on
-                </div>
-                <div className="text-[11px] font-semibold mt-0.5" style={{ color: "var(--text-primary)" }}>
-                  Wall of Portfolios
-                </div>
-              </div>
+            {/* Name */}
+            <div className="mt-6">
+              <h3 style={{ fontSize: 28, fontWeight: 600, lineHeight: 1.2 }}>Geetika</h3>
+              <p className="mt-1 text-[14px]" style={{ color: "var(--text-muted)" }}>
+                Associate Product Manager
+              </p>
             </div>
 
             {/* Where I've Been */}
