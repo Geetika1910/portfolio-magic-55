@@ -44,7 +44,7 @@ function SpotlightCard({
       ref={ref}
       onMouseMove={handleMove}
       style={{
-        background: "var(--bg-card)",
+        background: "#EFF2EE",
         color: "var(--text-primary)",
         borderRadius: 16,
         padding: 1,
