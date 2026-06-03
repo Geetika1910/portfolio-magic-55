@@ -74,7 +74,7 @@ export default function ApproachStack() {
       style={{ height: `${TOTAL * 70}vh` }}
       className="relative"
     >
-      <div className="sticky top-24 h-[420px]">
+      <div className="sticky top-24 h-[280px]">
         <div className="relative w-full h-full">
           {APPROACH.map((_, i) => (
             <StackCard key={i} i={i} progress={scrollYProgress} />
