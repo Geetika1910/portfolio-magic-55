@@ -6,6 +6,7 @@ import Work from "@/components/Work";
 import About from "@/components/About";
 import Beyond from "@/components/Beyond";
 import Footer from "@/components/Footer";
+import FlyingCards from "@/components/FlyingCards";
 
 export const Route = createFileRoute("/")({
   head: () => ({
