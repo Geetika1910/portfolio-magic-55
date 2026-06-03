@@ -17,19 +17,20 @@ function StackCard({
   i: number;
   progress: MotionValue<number>;
 }) {
-  const revealPoint = i / TOTAL;
-  const restOffset = (TOTAL - 1 - i) * 10;
-  const restScale = 1 - (TOTAL - 1 - i) * 0.04;
-  const y = useTransform(progress, (value) => {
-    if (value <= revealPoint) return 70 + restOffset;
-    const local = Math.min(1, (value - revealPoint) * TOTAL * 1.2);
-    return 70 + restOffset - local * 70;
-  });
-  const opacity = useTransform(progress, (value) => {
-    if (i === 0) return 1;
-    if (value <= revealPoint) return 0;
-    return Math.min(1, (value - revealPoint) * TOTAL * 2.2);
-  });
+  const revealStart = i / TOTAL;
+  const revealEnd = (i + 0.6) / TOTAL;
+  const restOffset = (TOTAL - 1 - i) * 12;
+  const restScale = 1 - (TOTAL - 1 - i) * 0.035;
+  const y = useTransform(
+    progress,
+    [0, revealStart, revealEnd, 1],
+    [80 + restOffset, 80 + restOffset, 0, 0],
+  );
+  const opacity = useTransform(
+    progress,
+    [0, Math.max(0, revealStart - 0.001), revealStart, revealEnd, 1],
+    i === 0 ? [1, 1, 1, 1, 1] : [0, 0, 0, 1, 1],
+  );
 
   const a = APPROACH[i];
   return (
@@ -41,20 +42,20 @@ function StackCard({
         background: "var(--bg-strip)",
         color: "var(--text-on-dark)",
         borderLeft: "3px solid var(--accent)",
-        borderRadius: 12,
-        padding: 20,
+        borderRadius: 14,
+        padding: 24,
         position: "absolute",
         left: "50%",
         top: 0,
-        width: "min(420px, 100%)",
+        width: "min(480px, 100%)",
         x: "-50%",
         zIndex: 10 + i,
         boxShadow: "var(--shadow-float)",
       }}
     >
-      <div className="text-xl mb-1">{a.icon}</div>
-      <h4 style={{ fontSize: 16, color: "var(--text-on-dark)" }}>{a.title}</h4>
-      <p className="mt-1.5 text-[13px]" style={{ color: "rgba(244,242,238,0.7)", lineHeight: 1.55 }}>
+      <div className="text-2xl mb-1.5">{a.icon}</div>
+      <h4 style={{ fontSize: 17, color: "var(--text-on-dark)" }}>{a.title}</h4>
+      <p className="mt-2 text-[13.5px]" style={{ color: "rgba(244,242,238,0.7)", lineHeight: 1.6 }}>
         {a.body}
       </p>
     </motion.div>
@@ -65,16 +66,16 @@ export default function ApproachStack() {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: wrapperRef,
-    offset: ["start 80%", "end 30%"],
+    offset: ["start start", "end end"],
   });
 
   return (
     <div
       ref={wrapperRef}
-      style={{ height: `${TOTAL * 70}vh` }}
+      style={{ height: `${TOTAL * 90}vh` }}
       className="relative"
     >
-      <div className="sticky top-24 h-[280px]">
+      <div className="sticky top-24 h-[320px]">
         <div className="relative w-full h-full">
           {APPROACH.map((_, i) => (
             <StackCard key={i} i={i} progress={scrollYProgress} />
