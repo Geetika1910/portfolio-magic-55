@@ -91,7 +91,7 @@ export default function About() {
             </div>
 
             {/* Where I've Been */}
-            <div className="mt-10">
+            <div className="mt-10 mt-auto pt-10">
               <p className="text-[14px] font-semibold mb-4" style={{ color: "var(--text-primary)" }}>
                 Where I've been
               </p>
