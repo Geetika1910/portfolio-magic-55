@@ -18,12 +18,12 @@ function StackCard({
   progress: MotionValue<number>;
 }) {
   const revealPoint = i / TOTAL;
-  const restOffset = (TOTAL - 1 - i) * 14;
-  const restScale = 1 - (TOTAL - 1 - i) * 0.03;
+  const restOffset = (TOTAL - 1 - i) * 10;
+  const restScale = 1 - (TOTAL - 1 - i) * 0.04;
   const y = useTransform(progress, (value) => {
-    if (value <= revealPoint) return 88 + restOffset;
+    if (value <= revealPoint) return 70 + restOffset;
     const local = Math.min(1, (value - revealPoint) * TOTAL * 1.2);
-    return 88 + restOffset - local * 88;
+    return 70 + restOffset - local * 70;
   });
   const opacity = useTransform(progress, (value) => {
     if (i === 0) return 1;
