@@ -10,55 +10,71 @@ const APPROACH = [
 
 const TOTAL = APPROACH.length;
 
-function StackCard({
+function StickyCard({
   i,
   progress,
 }: {
   i: number;
   progress: MotionValue<number>;
 }) {
-  const revealStart = i / TOTAL;
-  const revealEnd = (i + 0.6) / TOTAL;
-  const restOffset = (TOTAL - 1 - i) * 12;
-  const restScale = 1 - (TOTAL - 1 - i) * 0.035;
-  const y = useTransform(
+  // Each card occupies an equal slice of the scroll
+  const start = i / TOTAL;
+  const end = (i + 1) / TOTAL;
+
+  // Previous cards scale down + dim as later cards arrive on top
+  const scale = useTransform(
     progress,
-    [0, revealStart, revealEnd, 1],
-    [80 + restOffset, 80 + restOffset, 0, 0],
+    [start, Math.min(1, end + 0.05)],
+    [1, i === TOTAL - 1 ? 1 : 0.92],
   );
   const opacity = useTransform(
     progress,
-    [0, Math.max(0, revealStart - 0.001), revealStart, revealEnd, 1],
-    i === 0 ? [1, 1, 1, 1, 1] : [0, 0, 0, 1, 1],
+    [start, Math.min(1, end + 0.05)],
+    [1, i === TOTAL - 1 ? 1 : 0.5],
   );
 
   const a = APPROACH[i];
   return (
-    <motion.div
+    <div
+      className="sticky"
       style={{
-        y,
-        opacity,
-        scale: restScale,
-        background: "var(--bg-strip)",
-        color: "var(--text-on-dark)",
-        borderLeft: "3px solid var(--accent)",
-        borderRadius: 14,
-        padding: 24,
-        position: "absolute",
-        left: "50%",
-        top: 0,
-        width: "min(480px, 100%)",
-        x: "-50%",
+        top: `calc(20vh + ${i * 14}px)`,
         zIndex: 10 + i,
-        boxShadow: "var(--shadow-float)",
       }}
     >
-      <div className="text-2xl mb-1.5">{a.icon}</div>
-      <h4 style={{ fontSize: 17, color: "var(--text-on-dark)" }}>{a.title}</h4>
-      <p className="mt-2 text-[13.5px]" style={{ color: "rgba(244,242,238,0.7)", lineHeight: 1.6 }}>
-        {a.body}
-      </p>
-    </motion.div>
+      <motion.div
+        style={{
+          scale,
+          opacity,
+          background: "var(--bg-strip)",
+          color: "var(--text-on-dark)",
+          borderLeft: "3px solid var(--accent)",
+          borderRadius: 14,
+          padding: 26,
+          width: "min(480px, 100%)",
+          marginInline: "auto",
+          boxShadow: "var(--shadow-float)",
+          transformOrigin: "top center",
+        }}
+      >
+        <div className="flex items-center gap-3 mb-2">
+          <span className="text-2xl">{a.icon}</span>
+          <span
+            className="text-[12px] tracking-wider uppercase"
+            style={{ color: "rgba(244,242,238,0.45)" }}
+          >
+            0{i + 1} / 0{TOTAL}
+          </span>
+        </div>
+        <h4 style={{ fontSize: 18, color: "var(--text-on-dark)" }}>{a.title}</h4>
+        <p
+          className="mt-2 text-[14px]"
+          style={{ color: "rgba(244,242,238,0.7)", lineHeight: 1.6 }}
+        >
+          {a.body}
+        </p>
+      </motion.div>
+    </div>
   );
 }
 
@@ -70,17 +86,11 @@ export default function ApproachStack() {
   });
 
   return (
-    <div
-      ref={wrapperRef}
-      style={{ height: `${TOTAL * 90}vh` }}
-      className="relative"
-    >
-      <div className="sticky top-24 h-[320px]">
-        <div className="relative w-full h-full">
-          {APPROACH.map((_, i) => (
-            <StackCard key={i} i={i} progress={scrollYProgress} />
-          ))}
-        </div>
+    <div ref={wrapperRef} className="relative">
+      <div className="flex flex-col gap-[40vh] pb-[30vh]">
+        {APPROACH.map((_, i) => (
+          <StickyCard key={i} i={i} progress={scrollYProgress} />
+        ))}
       </div>
     </div>
   );
