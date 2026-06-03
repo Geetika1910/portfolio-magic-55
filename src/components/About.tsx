@@ -51,15 +51,16 @@ export default function About() {
           <div>
             {/* Portrait — replace inner <User/> with <img src="..." className="absolute inset-0 w-full h-full object-cover" /> */}
             <div
-              className="relative w-full overflow-hidden flex items-end justify-center"
+              className="relative w-full overflow-hidden flex items-end justify-center mx-auto"
               style={{
-                aspectRatio: "4/5",
+                aspectRatio: "1/1",
+                maxWidth: 320,
                 borderRadius: 20,
                 background: "linear-gradient(180deg, #2a2a2a 0%, #0f0f0f 100%)",
                 color: "rgba(255,255,255,0.4)",
               }}
             >
-              <User size={160} strokeWidth={0.6} className="mb-6" />
+              <User size={120} strokeWidth={0.6} className="mb-6" />
 
               <div className="absolute bottom-4 right-4 flex gap-2">
                 <a
@@ -202,19 +203,13 @@ export default function About() {
               <strong>I care a lot about the small things</strong>, the wording on an empty state, the weight of a button press, the rhythm of a flow. Not because polish is the point, but because those details are where trust gets built. I want the people I work with, teammates and users, to feel like someone actually thought about them. That's the part I'm still trying to get right, every project.
             </p>
 
-            <div className="mt-10">
-                <span
-                  className="italic"
-                  style={{
-                    fontFamily: "'Playfair Display', serif",
-                    fontSize: 42,
-                    color: "var(--text-primary)",
-                    lineHeight: 1,
-                  }}
-                >
-                  Geetika
-                </span>
-            </div>
+            <p className="mt-6">
+              <strong>Outside of work</strong>, I read a lot, mostly about behavioral economics, design history, and the occasional novel that reminds me people are more interesting than frameworks. I sketch when I'm thinking, walk when I'm stuck, and keep a running list of questions I don't yet know how to answer. Curiosity, more than anything, is the through-line.
+            </p>
+
+            <p className="mt-6">
+              <strong>What I'm looking for next</strong> is a team that takes craft seriously, treats users like collaborators, and isn't afraid to throw away good work to make room for better. If that sounds like you, I'd love to talk.
+            </p>
           </div>
         </div>
 
