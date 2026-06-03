@@ -17,10 +17,10 @@ const TOOLS = [
   { name: "Mixpanel", url: "https://cdn.simpleicons.org/mixpanel" },
   { name: "Google Analytics", url: "https://cdn.simpleicons.org/googleanalytics" },
   { name: "Claude", url: "https://cdn.simpleicons.org/claude" },
-  { name: "ChatGPT", url: "https://cdn.simpleicons.org/openai" },
+  { name: "ChatGPT", url: "https://www.google.com/s2/favicons?domain=chatgpt.com&sz=64" },
   { name: "Perplexity", url: "https://cdn.simpleicons.org/perplexity" },
-  { name: "Lovable", url: "https://cdn.simpleicons.org/lovable" },
-  { name: "Emergent", url: "https://cdn.simpleicons.org/emergent" },
+  { name: "Lovable", url: "https://www.google.com/s2/favicons?domain=lovable.dev&sz=64" },
+  { name: "Emergent", url: "https://www.google.com/s2/favicons?domain=emergent.sh&sz=64" },
   { name: "Notion", url: "https://cdn.simpleicons.org/notion" },
   { name: "n8n", url: "https://cdn.simpleicons.org/n8n" },
 ];
