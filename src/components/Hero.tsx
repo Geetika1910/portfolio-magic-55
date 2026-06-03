@@ -32,23 +32,24 @@ export default function Hero() {
             className="font-normal"
             style={{
               fontFamily: "Playfair Display, serif",
-              fontSize: "clamp(44px, 7vw, 80px)",
-              lineHeight: 1.05,
+              fontSize: "clamp(32px, 4.6vw, 60px)",
+              lineHeight: 1.08,
               color: "var(--text-primary)",
             }}
           >
             <motion.span
               variants={lineVariant}
-              className="block"
+              className="block whitespace-nowrap"
               style={{ color: "var(--text-muted)" }}
             >
               Hi <span style={{ color: "var(--accent)" }}>✦</span> I'm Geetika.
             </motion.span>
-            <motion.span variants={lineVariant} className="block" style={{ fontWeight: 600 }}>
-              Associate
-            </motion.span>
-            <motion.span variants={lineVariant} className="block" style={{ fontWeight: 600 }}>
-              <em style={{ color: "var(--accent)" }}>Product</em> Manager
+            <motion.span
+              variants={lineVariant}
+              className="block whitespace-nowrap"
+              style={{ fontWeight: 600 }}
+            >
+              Associate <em style={{ color: "var(--accent)" }}>Product</em> Manager
             </motion.span>
           </h1>
 
