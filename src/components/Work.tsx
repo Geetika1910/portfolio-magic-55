@@ -122,7 +122,7 @@ export default function Work() {
           </p>
           <h2 style={{ fontSize: "clamp(36px, 5vw, 56px)", lineHeight: 1.1 }} className="flex flex-wrap items-baseline gap-x-3">
             <span>Things I've</span>
-            <span className="relative inline-block overflow-hidden align-baseline" style={{ height: "1.1em", minWidth: "4.5ch" }}>
+            <span className="relative inline-block overflow-hidden align-baseline" style={{ height: "1.3em", minWidth: "7ch" }}>
               <AnimatePresence mode="wait">
                 <motion.span
                   key={rotatingIndex}
@@ -130,7 +130,7 @@ export default function Work() {
                   animate={{ y: "0%", opacity: 1 }}
                   exit={{ y: "-100%", opacity: 0 }}
                   transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                  className="absolute inset-0 italic"
+                  className="absolute inset-0 italic whitespace-nowrap"
                   style={{ color: "var(--accent)", fontFamily: "var(--font-serif, Georgia, serif)" }}
                 >
                   {ROTATING_WORDS[rotatingIndex]}
