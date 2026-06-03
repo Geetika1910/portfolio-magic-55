@@ -137,7 +137,7 @@ export default function Work() {
                 </motion.span>
               </AnimatePresence>
             </span>
-            <span>.</span>
+            
           </h2>
           <p className="mt-4 text-[16px] max-w-xl" style={{ color: "var(--text-muted)" }}>
             A handful of products and features I've helped guide from fuzzy idea to launched outcome.
