@@ -48,19 +48,19 @@ export default function About() {
 
         <div className="grid grid-cols-1 md:grid-cols-[5fr_6fr] gap-12 md:gap-16">
           {/* LEFT — Portrait + Identity + Where I've Been */}
-          <div>
+          <div className="flex flex-col h-full">
             {/* Portrait — replace inner <User/> with <img src="..." className="absolute inset-0 w-full h-full object-cover" /> */}
             <div
-              className="relative w-full overflow-hidden flex items-end justify-center mx-auto"
+              className="relative w-full overflow-hidden flex items-end justify-center"
               style={{
-                aspectRatio: "1/1",
-                maxWidth: 320,
+                aspectRatio: "4/5",
+                maxWidth: 380,
                 borderRadius: 20,
                 background: "linear-gradient(180deg, #2a2a2a 0%, #0f0f0f 100%)",
                 color: "rgba(255,255,255,0.4)",
               }}
             >
-              <User size={120} strokeWidth={0.6} className="mb-6" />
+              <User size={140} strokeWidth={0.6} className="mb-6" />
 
               <div className="absolute bottom-4 right-4 flex gap-2">
                 <a
@@ -91,7 +91,7 @@ export default function About() {
             </div>
 
             {/* Where I've Been */}
-            <div className="mt-10">
+            <div className="mt-10 mt-auto pt-10">
               <p className="text-[14px] font-semibold mb-4" style={{ color: "var(--text-primary)" }}>
                 Where I've been
               </p>
