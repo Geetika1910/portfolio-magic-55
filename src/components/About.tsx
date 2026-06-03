@@ -92,25 +92,50 @@ export default function About() {
               </p>
 
               {!showAll ? (
-                <div
-                  className="p-4 flex items-center gap-3"
-                  style={{
-                    background: "var(--bg-card)",
-                    borderRadius: 14,
-                    border: "1px solid var(--border)",
-                    boxShadow: "var(--shadow-card)",
-                  }}
-                >
-                  <div className="w-9 h-9 rounded-full shrink-0" style={{ background: COMPANIES[0].grad }} />
-                  <div className="flex-1 min-w-0 flex items-center justify-between gap-3">
-                    <div>
-                      <div className="text-[15px] font-semibold">{COMPANIES[0].name}</div>
-                      <div className="text-[12px]" style={{ color: "var(--text-muted)" }}>
-                        {COMPANIES[0].role}
+                <div className="relative pb-6">
+                  {/* Stacked cards behind */}
+                  <div
+                    aria-hidden
+                    className="absolute left-4 right-4 top-4 h-full"
+                    style={{
+                      background: "var(--bg-card)",
+                      borderRadius: 14,
+                      border: "1px solid var(--border)",
+                      boxShadow: "var(--shadow-card)",
+                      opacity: 0.5,
+                    }}
+                  />
+                  <div
+                    aria-hidden
+                    className="absolute left-2 right-2 top-2 h-full"
+                    style={{
+                      background: "var(--bg-card)",
+                      borderRadius: 14,
+                      border: "1px solid var(--border)",
+                      boxShadow: "var(--shadow-card)",
+                      opacity: 0.75,
+                    }}
+                  />
+                  <div
+                    className="relative p-4 flex items-center gap-3"
+                    style={{
+                      background: "var(--bg-card)",
+                      borderRadius: 14,
+                      border: "1px solid var(--border)",
+                      boxShadow: "var(--shadow-card)",
+                    }}
+                  >
+                    <div className="w-9 h-9 rounded-full shrink-0" style={{ background: COMPANIES[0].grad }} />
+                    <div className="flex-1 min-w-0 flex items-center justify-between gap-3">
+                      <div>
+                        <div className="text-[15px] font-semibold">{COMPANIES[0].name}</div>
+                        <div className="text-[12px]" style={{ color: "var(--text-muted)" }}>
+                          {COMPANIES[0].role}
+                        </div>
                       </div>
-                    </div>
-                    <div className="text-[12px]" style={{ color: "var(--text-muted)" }}>
-                      {COMPANIES[0].years}
+                      <div className="text-[12px]" style={{ color: "var(--text-muted)" }}>
+                        {COMPANIES[0].years}
+                      </div>
                     </div>
                   </div>
                 </div>
