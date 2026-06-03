@@ -20,8 +20,49 @@ const FEATURES = [
 
 export default function Beyond() {
   const ref = useRef<HTMLDivElement>(null);
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
   const [dragging, setDragging] = useState(false);
   const drag = useRef({ startX: 0, scrollLeft: 0 });
+
+  // Curved/coverflow effect: transform each card based on its distance from viewport center
+  useEffect(() => {
+    const container = ref.current;
+    if (!container) return;
+
+    let raf = 0;
+    const update = () => {
+      const cRect = container.getBoundingClientRect();
+      const center = cRect.left + cRect.width / 2;
+      const maxDist = cRect.width / 2 + 200;
+
+      cardRefs.current.forEach((el) => {
+        if (!el) return;
+        const r = el.getBoundingClientRect();
+        const cardCenter = r.left + r.width / 2;
+        const dist = (cardCenter - center) / maxDist; // -1..1
+        const clamped = Math.max(-1.2, Math.min(1.2, dist));
+        const rotateY = clamped * -28; // degrees
+        const translateZ = -Math.abs(clamped) * 120; // px (push sides back)
+        const translateY = Math.abs(clamped) * 18; // arc downward at edges? use negative for upward
+        el.style.transform = `perspective(1200px) translateY(${translateY}px) translateZ(${translateZ}px) rotateY(${rotateY}deg)`;
+        el.style.opacity = String(1 - Math.abs(clamped) * 0.25);
+      });
+    };
+
+    const onScroll = () => {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(update);
+    };
+
+    update();
+    container.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      container.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+      cancelAnimationFrame(raf);
+    };
+  }, []);
 
   const onDown = (e: React.MouseEvent) => {
     if (!ref.current) return;
