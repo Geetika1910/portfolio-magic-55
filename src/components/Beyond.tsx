@@ -125,14 +125,18 @@ export default function Beyond() {
           onMouseUp={stop}
           onMouseLeave={stop}
           className="hide-scrollbar flex gap-6 overflow-x-auto px-6 md:px-20 select-none"
-          style={{ cursor: dragging ? "grabbing" : "grab" }}
+          style={{
+            cursor: dragging ? "grabbing" : "grab",
+            perspective: "1200px",
+            paddingTop: 40,
+            paddingBottom: 40,
+          }}
         >
           {PHOTOS.map((g, i) => (
             // TODO: Replace with <img src=".." />
-            <motion.div
+            <div
               key={i}
-              whileHover={{ y: -6, rotate: i % 2 ? 1 : -1 }}
-              transition={{ type: "spring", stiffness: 200, damping: 18 }}
+              ref={(el) => (cardRefs.current[i] = el)}
               className="shrink-0"
               style={{
                 width: 280,
@@ -140,6 +144,9 @@ export default function Beyond() {
                 borderRadius: 20,
                 background: g,
                 boxShadow: "var(--shadow-card)",
+                transformStyle: "preserve-3d",
+                transition: "transform 0.15s ease-out, opacity 0.2s ease-out",
+                willChange: "transform",
               }}
             />
           ))}
