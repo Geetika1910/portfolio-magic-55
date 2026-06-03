@@ -44,7 +44,7 @@ function SpotlightCard({
       ref={ref}
       onMouseMove={handleMove}
       style={{
-        background: "var(--bg-card)",
+        background: "#EFF2EE",
         color: "var(--text-primary)",
         borderRadius: 16,
         padding: 1,
@@ -64,7 +64,7 @@ function SpotlightCard({
       <div
         className="relative h-full"
         style={{
-          background: "var(--bg-card)",
+          background: "#EFF2EE",
           borderRadius: 15,
           padding: 22,
           borderLeft: "3px solid var(--accent)",
