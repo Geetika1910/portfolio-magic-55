@@ -38,6 +38,7 @@ function Index() {
       <About />
       <Beyond />
       <Footer />
+      <FlyingCards />
     </main>
   );
 }
