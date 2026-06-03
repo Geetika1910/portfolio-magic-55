@@ -17,18 +17,19 @@ function StackCard({
   i: number;
   progress: MotionValue<number>;
 }) {
-  // Each card reveals over its own slice of scroll progress.
-  const slice = 1 / TOTAL;
-  // For i=0, range starts before 0 so the first card is already visible at scroll start.
-  const start = (i - 1) * slice;
-  const end = i * slice;
-
-  // Resting position offsets so stacked cards peek beneath the top card.
+  const revealPoint = i / TOTAL;
   const restOffset = (TOTAL - 1 - i) * 14;
   const restScale = 1 - (TOTAL - 1 - i) * 0.03;
-
-  const y = useTransform(progress, [start, end], [80 + restOffset, restOffset]);
-  const opacity = useTransform(progress, [start, end], [0, 1]);
+  const y = useTransform(progress, (value) => {
+    if (value <= revealPoint) return 88 + restOffset;
+    const local = Math.min(1, (value - revealPoint) * TOTAL * 1.2);
+    return 88 + restOffset - local * 88;
+  });
+  const opacity = useTransform(progress, (value) => {
+    if (i === 0) return 1;
+    if (value <= revealPoint) return 0;
+    return Math.min(1, (value - revealPoint) * TOTAL * 2.2);
+  });
 
   const a = APPROACH[i];
   return (
@@ -40,7 +41,7 @@ function StackCard({
         background: "var(--bg-strip)",
         color: "var(--text-on-dark)",
         borderLeft: "3px solid var(--accent)",
-        borderRadius: 16,
+        borderRadius: 12,
         padding: 28,
         position: "absolute",
         inset: 0,
@@ -61,7 +62,7 @@ export default function ApproachStack() {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: wrapperRef,
-    offset: ["start start", "end end"],
+    offset: ["start 80%", "end 30%"],
   });
 
   return (
