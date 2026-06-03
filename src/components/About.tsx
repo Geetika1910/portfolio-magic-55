@@ -189,7 +189,7 @@ export default function About() {
           </div>
 
           {/* RIGHT — Bio */}
-          <div className="text-[18px] md:text-[20px]" style={{ color: "var(--text-primary)", lineHeight: 1.55 }}>
+          <div className="text-[18px]" style={{ color: "var(--text-primary)", lineHeight: 1.55 }}>
             <p>
               <strong>Mostly listening.</strong> I started in consulting at 21, moved into product through self-teaching, and now work as an associate product manager building things people actually use. Different industries, same lesson: the work gets better when you slow down enough to actually understand the people using it.
             </p>
@@ -203,16 +203,17 @@ export default function About() {
             </p>
 
             <div className="mt-10">
-              <span
-                style={{
-                  fontFamily: "'Caveat', 'Brush Script MT', cursive",
-                  fontSize: 42,
-                  color: "var(--text-primary)",
-                  lineHeight: 1,
-                }}
-              >
-                Geetika
-              </span>
+                <span
+                  className="italic"
+                  style={{
+                    fontFamily: "'Playfair Display', serif",
+                    fontSize: 42,
+                    color: "var(--text-primary)",
+                    lineHeight: 1,
+                  }}
+                >
+                  Geetika
+                </span>
             </div>
           </div>
         </div>
