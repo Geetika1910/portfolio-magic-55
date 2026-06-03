@@ -16,6 +16,8 @@ const TOOLS = [
   { name: "Miro", url: "https://cdn.simpleicons.org/miro" },
   { name: "Mixpanel", url: "https://cdn.simpleicons.org/mixpanel" },
   { name: "Google Analytics", url: "https://cdn.simpleicons.org/googleanalytics" },
+  { name: "PostHog", url: "https://cdn.simpleicons.org/posthog" },
+  { name: "Statsig", url: "https://cdn.simpleicons.org/statsig" },
   { name: "Claude", url: "https://cdn.simpleicons.org/claude" },
   { name: "ChatGPT", url: "https://www.google.com/s2/favicons?domain=chatgpt.com&sz=64" },
   { name: "Perplexity", url: "https://cdn.simpleicons.org/perplexity" },
