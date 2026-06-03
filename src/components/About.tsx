@@ -1,13 +1,13 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
-import { User, Linkedin } from "lucide-react";
+import { User, Linkedin, Dribbble } from "lucide-react";
 import ApproachStack from "./ApproachStack";
 
 const COMPANIES = [
-  { name: "Company A", role: "Senior Product Manager", years: "2024–Present", grad: "linear-gradient(135deg,#7A8F7B,#A5B5A3)" },
-  { name: "Company B", role: "Product Manager", years: "2021–2024", grad: "linear-gradient(135deg,#f6d365,#fda085)" },
-  { name: "Company C", role: "Associate PM", years: "2019–2021", grad: "linear-gradient(135deg,#a1c4fd,#c2e9fb)" },
-  { name: "Company D", role: "Product Analyst", years: "2018–2019", grad: "linear-gradient(135deg,#fbc2eb,#a18cd1)" },
+  { name: "VoyceMe", role: "Lead Product Designer", years: "2024–Current", grad: "linear-gradient(135deg,#7A8F7B,#A5B5A3)" },
+  { name: "Kaedim", role: "Product Designer", years: "2022–2024", grad: "linear-gradient(135deg,#f6d365,#fda085)" },
+  { name: "Freelance", role: "Consulting", years: "2020–2022", grad: "linear-gradient(135deg,#a1c4fd,#c2e9fb)" },
+  { name: "Studio X", role: "Junior Designer", years: "2019–2020", grad: "linear-gradient(135deg,#fbc2eb,#a18cd1)" },
 ];
 
 const TOOLS = [
@@ -42,86 +42,94 @@ export default function About() {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-[2fr_3fr] gap-12 md:gap-16">
-          {/* LEFT */}
+        <div className="grid grid-cols-1 md:grid-cols-[5fr_6fr] gap-12 md:gap-16">
+          {/* LEFT — Portrait + Identity + Where I've Been */}
           <div>
+            {/* Portrait — replace inner <User/> with <img src="..." className="absolute inset-0 w-full h-full object-cover" /> */}
             <div
-              className="w-full max-w-[320px] flex items-center justify-center mx-auto md:mx-0"
+              className="relative w-full overflow-hidden flex items-end justify-center"
               style={{
-                height: 380,
-                borderRadius: 24,
-                background: "linear-gradient(135deg, #EEF3ED, #d4ddd4)",
-                color: "var(--accent)",
+                aspectRatio: "4/5",
+                borderRadius: 20,
+                background: "linear-gradient(180deg, #2a2a2a 0%, #0f0f0f 100%)",
+                color: "rgba(255,255,255,0.4)",
               }}
             >
-              <User size={72} strokeWidth={1.2} />
-            </div>
+              <User size={160} strokeWidth={0.6} className="mb-6" />
 
-            <div className="mt-6">
-              <h3 style={{ fontSize: 22, fontWeight: 600 }}>Your Name</h3>
-              <div className="flex items-center gap-2 mt-1 text-[14px]" style={{ color: "var(--text-muted)" }}>
-                <span className="w-2 h-2 rounded-full" style={{ background: "var(--accent)" }} />
-                Product Manager
+              <div className="absolute bottom-4 right-4 flex gap-2">
+                <a
+                  href="#"
+                  className="w-9 h-9 rounded-full flex items-center justify-center backdrop-blur transition-transform hover:scale-110"
+                  style={{ background: "rgba(0,0,0,0.55)", color: "#fff" }}
+                  aria-label="Dribbble"
+                >
+                  <Dribbble size={16} />
+                </a>
+                <a
+                  href="#"
+                  className="w-9 h-9 rounded-full flex items-center justify-center backdrop-blur transition-transform hover:scale-110"
+                  style={{ background: "rgba(0,0,0,0.55)", color: "#fff" }}
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin size={16} />
+                </a>
               </div>
             </div>
-          </div>
 
-          {/* RIGHT */}
-          <div>
-            <p
-              className="italic"
-              style={{
-                fontFamily: "Playfair Display, serif",
-                fontSize: "clamp(22px, 2.4vw, 28px)",
-                lineHeight: 1.4,
-                color: "var(--text-primary)",
-              }}
-            >
-              "I think of myself as the translator between what users desperately need and what engineers can actually build."
-            </p>
-            <div className="mt-8 space-y-5 text-[16px]" style={{ color: "var(--text-body)", lineHeight: 1.75 }}>
-              <p>
-                I've spent the last few years working across growth, marketplace, and platform teams — usually somewhere between the messy zero-to-one and the discipline of scaling what works.
-              </p>
-              <p>
-                My favourite work sits at the intersection of customer obsession and clean execution: deep discovery, sharp PRDs, and a team that wants to ship something they're proud of.
-              </p>
-              <p>
-                Outside of product I read more than I should, cook badly but happily, and chase good light wherever I can find it.
-              </p>
+            {/* Name + featured badge */}
+            <div className="mt-6 flex items-start justify-between gap-4">
+              <div>
+                <h3 style={{ fontSize: 28, fontWeight: 600, lineHeight: 1.2 }}>Geetika</h3>
+                <p className="mt-1 text-[14px]" style={{ color: "var(--text-muted)" }}>
+                  Associate Product Manager
+                </p>
+              </div>
+              <div
+                className="px-3 py-2 text-right"
+                style={{
+                  border: "1px solid var(--border)",
+                  borderRadius: 8,
+                  background: "var(--bg-card)",
+                }}
+              >
+                <div className="text-[9px] uppercase tracking-[0.18em]" style={{ color: "var(--text-muted)" }}>
+                  Featured on
+                </div>
+                <div className="text-[11px] font-semibold mt-0.5" style={{ color: "var(--text-primary)" }}>
+                  Wall of Portfolios
+                </div>
+              </div>
             </div>
 
-            {/* Where I've Been — moved to right column to align with text */}
+            {/* Where I've Been */}
             <div className="mt-10">
-              <p className="text-[11px] uppercase mb-4" style={{ letterSpacing: "0.15em", color: "var(--accent)" }}>
-                Where I've Been
+              <p className="text-[14px] font-semibold mb-4" style={{ color: "var(--text-primary)" }}>
+                Where I've been
               </p>
 
               {!showAll ? (
-                <div className="relative" style={{ height: 110 }}>
-                  {COMPANIES.slice(0, 3).map((c, i) => (
-                    <div
-                      key={c.name}
-                      className="absolute left-0 right-0 p-4 flex items-center gap-3"
-                      style={{
-                        top: i * 6,
-                        transform: `scale(${1 - i * 0.03})`,
-                        background: "var(--bg-card)",
-                        borderRadius: 12,
-                        boxShadow: "var(--shadow-card)",
-                        border: "1px solid var(--border)",
-                        zIndex: 10 - i,
-                      }}
-                    >
-                      <div className="w-8 h-8 rounded-full shrink-0" style={{ background: c.grad }} />
-                      <div className="flex-1 min-w-0">
-                        <div className="text-[14px] font-semibold truncate">{c.name}</div>
-                        <div className="text-[12px]" style={{ color: "var(--text-muted)" }}>
-                          {c.role} · {c.years}
-                        </div>
+                <div
+                  className="p-4 flex items-center gap-3"
+                  style={{
+                    background: "var(--bg-card)",
+                    borderRadius: 14,
+                    border: "1px solid var(--border)",
+                    boxShadow: "var(--shadow-card)",
+                  }}
+                >
+                  <div className="w-9 h-9 rounded-full shrink-0" style={{ background: COMPANIES[0].grad }} />
+                  <div className="flex-1 min-w-0 flex items-center justify-between gap-3">
+                    <div>
+                      <div className="text-[15px] font-semibold">{COMPANIES[0].name}</div>
+                      <div className="text-[12px]" style={{ color: "var(--text-muted)" }}>
+                        {COMPANIES[0].role}
                       </div>
                     </div>
-                  ))}
+                    <div className="text-[12px]" style={{ color: "var(--text-muted)" }}>
+                      {COMPANIES[0].years}
+                    </div>
+                  </div>
                 </div>
               ) : (
                 <div className="space-y-3">
@@ -137,16 +145,21 @@ export default function About() {
                         className="p-4 flex items-center gap-3"
                         style={{
                           background: "var(--bg-card)",
-                          borderRadius: 12,
-                          boxShadow: "var(--shadow-card)",
+                          borderRadius: 14,
                           border: "1px solid var(--border)",
+                          boxShadow: "var(--shadow-card)",
                         }}
                       >
-                        <div className="w-8 h-8 rounded-full shrink-0" style={{ background: c.grad }} />
-                        <div>
-                          <div className="text-[14px] font-semibold">{c.name}</div>
+                        <div className="w-9 h-9 rounded-full shrink-0" style={{ background: c.grad }} />
+                        <div className="flex-1 min-w-0 flex items-center justify-between gap-3">
+                          <div>
+                            <div className="text-[15px] font-semibold">{c.name}</div>
+                            <div className="text-[12px]" style={{ color: "var(--text-muted)" }}>
+                              {c.role}
+                            </div>
+                          </div>
                           <div className="text-[12px]" style={{ color: "var(--text-muted)" }}>
-                            {c.role} · {c.years}
+                            {c.years}
                           </div>
                         </div>
                       </motion.div>
@@ -160,13 +173,41 @@ export default function About() {
                 className="mt-4 text-[13px] underline underline-offset-4"
                 style={{ color: "var(--accent)" }}
               >
-                {showAll ? "Hide" : "Show All"}
+                {showAll ? "Hide" : "Show all"}
               </button>
+            </div>
+          </div>
+
+          {/* RIGHT — Bio */}
+          <div className="text-[18px] md:text-[20px]" style={{ color: "var(--text-primary)", lineHeight: 1.55 }}>
+            <p>
+              <strong>Mostly listening.</strong> I started in consulting at 21, moved into product through self-teaching, and now work as an associate product manager building things people actually use. Different industries, same lesson: the work gets better when you slow down enough to actually understand the people using it.
+            </p>
+
+            <p className="mt-6">
+              <strong>Right now I'm deep in product strategy</strong>, designing how teams build, measure, and iterate on the things that actually matter. It's messy, fast, and genuinely new, which means I'm wrong a lot and learning constantly. I like it that way. The moment I think I've got something figured out is usually the moment I've stopped paying attention.
+            </p>
+
+            <p className="mt-6">
+              <strong>I care a lot about the small things</strong>, the wording on an empty state, the weight of a button press, the rhythm of a flow. Not because polish is the point, but because those details are where trust gets built. I want the people I work with, teammates and users, to feel like someone actually thought about them. That's the part I'm still trying to get right, every project.
+            </p>
+
+            <div className="mt-10">
+              <span
+                style={{
+                  fontFamily: "'Caveat', 'Brush Script MT', cursive",
+                  fontSize: 42,
+                  color: "var(--text-primary)",
+                  lineHeight: 1,
+                }}
+              >
+                Geetika
+              </span>
             </div>
           </div>
         </div>
 
-        {/* Tools strip — sits between About and Approach as a divider */}
+        {/* Tools strip — divider between About and Approach */}
         <div className="mt-24 md:mt-28">
           <div className="flex items-center gap-6 mb-8">
             <div className="flex-1 h-px" style={{ background: "var(--border)" }} />
@@ -176,7 +217,7 @@ export default function About() {
             <div className="flex-1 h-px" style={{ background: "var(--border)" }} />
           </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10">
+          <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10 pb-8">
             {TOOLS.map((t) => (
               <div key={t.name} className="group relative flex flex-col items-center">
                 <motion.img
@@ -189,7 +230,7 @@ export default function About() {
                   onMouseLeave={(e) => (e.currentTarget.style.filter = "grayscale(1) opacity(0.7)")}
                 />
                 <span
-                  className="absolute -bottom-7 text-[11px] opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap"
+                  className="absolute -bottom-6 text-[11px] opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap"
                   style={{ color: "var(--text-muted)" }}
                 >
                   {t.name}
@@ -199,8 +240,8 @@ export default function About() {
           </div>
         </div>
 
-        {/* Divider strip before How I Approach */}
-        <div className="mt-24 md:mt-28 mb-12">
+        {/* Divider before How I Approach */}
+        <div className="mt-16 md:mt-20 mb-12">
           <div className="h-px w-full" style={{ background: "var(--border)" }} />
         </div>
 
@@ -223,10 +264,8 @@ export default function About() {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-            {/* Approach cards on the LEFT */}
             <ApproachStack />
 
-            {/* LinkedIn CTA card on the RIGHT — sticky */}
             <div className="md:sticky md:top-24">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
