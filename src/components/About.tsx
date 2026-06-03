@@ -92,28 +92,26 @@ export default function About() {
               </p>
 
               {!showAll ? (
-                <div className="relative pb-6">
-                  {/* Stacked cards behind */}
+                <div className="relative">
+                  {/* Stacked cards peeking below */}
                   <div
                     aria-hidden
-                    className="absolute left-4 right-4 top-4 h-full"
+                    className="absolute left-4 right-4 -bottom-2 h-4"
                     style={{
                       background: "var(--bg-card)",
                       borderRadius: 14,
                       border: "1px solid var(--border)",
                       boxShadow: "var(--shadow-card)",
-                      opacity: 0.5,
                     }}
                   />
                   <div
                     aria-hidden
-                    className="absolute left-2 right-2 top-2 h-full"
+                    className="absolute left-2 right-2 -bottom-1 h-4"
                     style={{
                       background: "var(--bg-card)",
                       borderRadius: 14,
                       border: "1px solid var(--border)",
                       boxShadow: "var(--shadow-card)",
-                      opacity: 0.75,
                     }}
                   />
                   <div
