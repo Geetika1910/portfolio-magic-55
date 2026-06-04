@@ -3,19 +3,23 @@ import { motion } from "framer-motion";
 const APPROACH = [
   {
     title: "Start with the problem",
-    body: "Before any solution, I get obsessive about the problem — talking to users, watching sessions, reading tickets until the pain is clear.",
+    body: "Before any solution, I get obsessive about the problem. Talking to users, watching sessions, digging into the data, sitting with the frustration until the real pain becomes clear. A well-defined problem is already half the solution.",
   },
   {
-    title: "Ruthless prioritisation",
-    body: "Not everything ships. I'd rather do three things well than ten things badly. RICE, MoSCoW, gut — whichever helps the team agree.",
+    title: "Prioritise what actually matters",
+    body: "Real decisions are messier than any framework. I look at impact, business reality, user pain, and what the team can actually ship. Not everything is worth solving. Figuring out what is, is the real work.",
   },
   {
     title: "Ship with the team, not at them",
-    body: "Engineers and designers aren't order-takers. The best ideas come from the people closest to the craft.",
+    body: "Engineers and designers are not order-takers. The best ideas come from the people closest to the craft. I would rather slow down to align than speed up and ship the wrong thing.",
   },
   {
     title: "Iterate before you optimise",
-    body: "Launch the boring version first. Learn. Then make it sharp. Premature polish is the most expensive kind.",
+    body: "Launch the version that works. Learn from real users. Then make it sharp. Premature polish is the most expensive kind.",
+  },
+  {
+    title: "Stay close to the data, closer to the person",
+    body: "Numbers tell you what happened. Users tell you why. I try not to let one replace the other. The best decisions usually live somewhere between the two.",
   },
 ];
 
