@@ -10,6 +10,16 @@ import work7Thumb from "@/assets/work-7-thumb.png.asset.json";
 import work8Thumb from "@/assets/work-8-thumb.png.asset.json";
 import work9Thumb from "@/assets/work-9-thumb.png.asset.json";
 import work10Thumb from "@/assets/work-10-thumb.png.asset.json";
+import project1Pdf from "@/assets/project1.pdf.asset.json";
+import project2Pdf from "@/assets/project2.pdf.asset.json";
+import project3Pdf from "@/assets/project3.pdf.asset.json";
+import project4Pdf from "@/assets/project4.pdf.asset.json";
+import project5Pdf from "@/assets/project5.pdf.asset.json";
+import project6Pdf from "@/assets/project6.pdf.asset.json";
+import project7Pdf from "@/assets/project7.pdf.asset.json";
+import project8Pdf from "@/assets/project8.pdf.asset.json";
+import project9Pdf from "@/assets/project9.pdf.asset.json";
+import project10Pdf from "@/assets/project10.pdf.asset.json";
 
 const ROTATING_WORDS = ["ideated.", "shipped."];
 import { ArrowRight } from "lucide-react";
