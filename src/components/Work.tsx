@@ -111,7 +111,8 @@ function PlaceholderSlot({ index }: { index: number }) {
   return (
     <>
       {/* Mobile fallback — flying overlay is hidden < md */}
-      <div className="md:hidden">
+      <div className="lg:hidden">
+
         <ProjectCard p={p} />
       </div>
       {/* Desktop landing slot */}
@@ -120,7 +121,7 @@ function PlaceholderSlot({ index }: { index: number }) {
           workSlotRefs[index].current = el;
         }}
         aria-hidden
-        className="hidden md:block"
+        className="hidden lg:block"
         style={{ height: 360, borderRadius: 16 }}
       />
     </>

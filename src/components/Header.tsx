@@ -196,13 +196,13 @@ export default function Header() {
           </button>
         </div>
 
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden lg:flex items-center gap-8">
           {NAV.map((n) => (
             <NavButton key={n.id} item={n} onClick={() => go(n.id)} />
           ))}
         </nav>
 
-        <div className="hidden md:flex items-center gap-3">
+        <div className="hidden lg:flex items-center gap-3">
           <a
             href="https://www.linkedin.com/in/geetika-aggarwal19"
             target="_blank"
@@ -232,7 +232,7 @@ export default function Header() {
         </div>
 
         <button
-          className="md:hidden w-10 h-10 flex items-center justify-center"
+          className="lg:hidden w-10 h-10 flex items-center justify-center"
           onClick={() => setOpen(true)}
           aria-label="Open menu"
           style={{ color: "var(--text-on-dark)" }}
@@ -247,7 +247,7 @@ export default function Header() {
           backdrop-filter creates a containing block that would scope
           position:fixed children to the header bar only. */}
       <div
-        className={`md:hidden fixed inset-0 z-[200] transition-opacity duration-300 ${
+        className={`lg:hidden fixed inset-0 z-[200] transition-opacity duration-300 ${
           open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         }`}
         onClick={() => setOpen(false)}

@@ -101,7 +101,7 @@ export default function FlyingCards() {
   if (!isMounted) return null;
 
   return (
-    <div className="fixed inset-0 pointer-events-none z-40 hidden md:block">
+    <div className="fixed inset-0 pointer-events-none z-40 hidden lg:block">
       {CARDS.map((c, i) => {
         const start = startFor(i);
         const end = workSlots[i] || start;
