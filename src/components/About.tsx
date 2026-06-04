@@ -4,11 +4,16 @@ import { User, Linkedin } from "lucide-react";
 import ApproachStack from "./ApproachStack";
 import portraitAsset from "@/assets/portrait-v2.jpeg.asset.json";
 
+import f22Logo from "@/assets/f22.svg.asset.json";
+import cars24Logo from "@/assets/cars24.png.asset.json";
+import nextleapLogo from "@/assets/nextleap.jpg.asset.json";
+import shabariLogo from "@/assets/shabari.jpeg.asset.json";
+
 const COMPANIES = [
-  { name: "VoyceMe", role: "Lead Product Designer", years: "2024–Current", grad: "linear-gradient(135deg,#7A8F7B,#A5B5A3)" },
-  { name: "Kaedim", role: "Product Designer", years: "2022–2024", grad: "linear-gradient(135deg,#f6d365,#fda085)" },
-  { name: "Freelance", role: "Consulting", years: "2020–2022", grad: "linear-gradient(135deg,#a1c4fd,#c2e9fb)" },
-  { name: "Studio X", role: "Junior Designer", years: "2019–2020", grad: "linear-gradient(135deg,#fbc2eb,#a18cd1)" },
+  { name: "F22", role: "Lead Product Designer", years: "2024–Current", grad: "linear-gradient(135deg,#7A8F7B,#A5B5A3)", logo: f22Logo.url },
+  { name: "Cars24", role: "Product Designer", years: "2022–2024", grad: "#4F46E5", logo: cars24Logo.url },
+  { name: "NextLeap", role: "Consulting", years: "2020–2022", grad: "#000000", logo: nextleapLogo.url },
+  { name: "Shabari.AI", role: "Junior Designer", years: "2019–2020", grad: "#ffffff", logo: shabariLogo.url },
 ];
 
 const TOOLS = [
@@ -124,7 +129,9 @@ export default function About() {
                       boxShadow: "var(--shadow-card)",
                     }}
                   >
-                    <div className="w-9 h-9 rounded-full shrink-0" style={{ background: COMPANIES[0].grad }} />
+                    <div className="w-9 h-9 rounded-full shrink-0 overflow-hidden flex items-center justify-center" style={{ background: COMPANIES[0].grad }}>
+                      <img src={COMPANIES[0].logo} alt={COMPANIES[0].name} className="w-full h-full object-cover" />
+                    </div>
                     <div className="flex-1 min-w-0 flex items-center justify-between gap-3">
                       <div>
                         <div className="text-[15px] font-semibold">{COMPANIES[0].name}</div>
@@ -157,7 +164,9 @@ export default function About() {
                           boxShadow: "var(--shadow-card)",
                         }}
                       >
-                        <div className="w-9 h-9 rounded-full shrink-0" style={{ background: c.grad }} />
+                        <div className="w-9 h-9 rounded-full shrink-0 overflow-hidden flex items-center justify-center" style={{ background: c.grad }}>
+                          <img src={c.logo} alt={c.name} className="w-full h-full object-cover" />
+                        </div>
                         <div className="flex-1 min-w-0 flex items-center justify-between gap-3">
                           <div>
                             <div className="text-[15px] font-semibold">{c.name}</div>
