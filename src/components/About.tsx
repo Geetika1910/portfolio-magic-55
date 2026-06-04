@@ -10,13 +10,27 @@ import profileImg from "@/assets/geetika-profile.jpeg.asset.json";
 import f22Logo from "@/assets/f22.svg.asset.json";
 import cars24Logo from "@/assets/cars24.png.asset.json";
 import nextleapLogo from "@/assets/nextleap.jpg.asset.json";
-import shabariLogo from "@/assets/shabari.png.asset.json";
+
+function CompanyLogo({ name, logo }: { name: string; logo?: string }) {
+  if (logo) {
+    return <img src={logo} alt={name} className="w-9 h-9 shrink-0 object-contain" />;
+  }
+  const initials = name.slice(0, 2).toUpperCase();
+  return (
+    <div
+      className="w-9 h-9 shrink-0 rounded-lg flex items-center justify-center text-[11px] font-bold"
+      style={{ background: "var(--bg-secondary)", color: "var(--text-primary)", border: "1px solid var(--border)" }}
+    >
+      {initials}
+    </div>
+  );
+}
 
 const COMPANIES = [
-  { name: "F22", role: "Lead Product Designer", years: "2024–Current", grad: "linear-gradient(135deg,#7A8F7B,#A5B5A3)", logo: f22Logo.url },
-  { name: "Cars24", role: "Product Designer", years: "2022–2024", grad: "#4F46E5", logo: cars24Logo.url },
-  { name: "NextLeap", role: "Consulting", years: "2020–2022", grad: "#000000", logo: nextleapLogo.url },
-  { name: "Shabari.AI", role: "Junior Designer", years: "2019–2020", grad: "#ffffff", logo: shabariLogo.url },
+  { name: "F22 Labs", role: "Associate Product Manager", years: "2025–Current", grad: "linear-gradient(135deg,#7A8F7B,#A5B5A3)", logo: f22Logo.url },
+  { name: "Cars24", role: "Product Management Intern", years: "2024–2025", grad: "#4F46E5", logo: cars24Logo.url },
+  { name: "NextLeap", role: "PM Fellowship", years: "2024", grad: "#000000", logo: nextleapLogo.url },
+  { name: "GoPlow", role: "Senior Executive", years: "2023–2024", grad: "#c9a84c" },
 ];
 
 const TOOLS = [
@@ -160,7 +174,7 @@ export default function About() {
                       boxShadow: "var(--shadow-card)",
                     }}
                   >
-                    <img src={COMPANIES[0].logo} alt={COMPANIES[0].name} className="w-9 h-9 shrink-0 object-contain" />
+                    <CompanyLogo name={COMPANIES[0].name} logo={COMPANIES[0].logo} />
                     <div className="flex-1 min-w-0 flex items-center justify-between gap-3">
                       <div>
                         <div className="text-[15px] font-semibold">{COMPANIES[0].name}</div>
@@ -193,7 +207,7 @@ export default function About() {
                           boxShadow: "var(--shadow-card)",
                         }}
                       >
-                        <img src={c.logo} alt={c.name} className="w-9 h-9 shrink-0 object-contain" />
+                        <CompanyLogo name={c.name} logo={c.logo} />
                         <div className="flex-1 min-w-0 flex items-center justify-between gap-3">
                           <div>
                             <div className="text-[15px] font-semibold">{c.name}</div>
