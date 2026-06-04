@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
 import { heroAnchorRef } from "./FlyingCards";
 import StatusPill from "./StatusPill";
+import work1Thumb from "@/assets/work-1-thumb.png.asset.json";
+import work2Thumb from "@/assets/work-2-thumb.png.asset.json";
+import work3Thumb from "@/assets/work-3-thumb.png.asset.json";
 
 const container = {
   hidden: {},
@@ -10,6 +13,12 @@ const lineVariant = {
   hidden: { opacity: 0, y: 40 },
   show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] as const } },
 };
+
+const MOBILE_STACK = [
+  { title: "Date Planner for Bumble", tag: "Growth", img: work1Thumb.url },
+  { title: "Hindi News DAU Growth", tag: "RCA & Growth", img: work2Thumb.url },
+  { title: "Mixpanel Automation", tag: "AI Automation", img: work3Thumb.url },
+];
 
 export default function Hero() {
   const go = (id: string) =>
@@ -39,14 +48,14 @@ export default function Hero() {
           >
             <motion.span
               variants={lineVariant}
-              className="block whitespace-nowrap"
+              className="block md:whitespace-nowrap"
               style={{ color: "var(--text-muted)" }}
             >
               Hi <span style={{ color: "var(--accent)" }}>✦</span> I'm Geetika.
             </motion.span>
             <motion.span
               variants={lineVariant}
-              className="block whitespace-nowrap"
+              className="block md:whitespace-nowrap"
               style={{ fontWeight: 600 }}
             >
               Associate <em style={{ color: "var(--accent)" }}>Product</em> Manager
@@ -91,15 +100,59 @@ export default function Hero() {
           </motion.div>
         </motion.div>
 
-        {/* Anchor area for the flying card deck — the cards themselves are
-            rendered as a fixed overlay (FlyingCards) so they can travel
-            into the Work section as the user scrolls. */}
+        {/* Desktop: anchor for the flying card deck (rendered as fixed overlay) */}
         <div
           ref={heroAnchorRef}
           aria-hidden
-          className="w-full md:w-2/5"
+          className="hidden md:block w-full md:w-2/5"
           style={{ minHeight: 380 }}
         />
+
+        {/* Mobile: visible mini-stack preview of recent work */}
+        <motion.button
+          type="button"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+          className="md:hidden w-full mt-4 cursor-pointer text-left bg-transparent p-0"
+          onClick={() => go("work")}
+          aria-label="Jump to work"
+        >
+          <div className="relative mx-auto" style={{ maxWidth: 320, height: 280 }}>
+            {MOBILE_STACK.map((c, i) => {
+              const offset = (i - 1) * 14;
+              const rot = (i - 1) * 3;
+              return (
+                <div
+                  key={c.title}
+                  className="absolute left-1/2 top-0 overflow-hidden"
+                  style={{
+                    width: 280,
+                    transform: `translateX(calc(-50% + ${offset}px)) rotate(${rot}deg)`,
+                    background: "var(--bg-card)",
+                    border: "1px solid var(--border)",
+                    borderRadius: 16,
+                    boxShadow: "var(--shadow-card)",
+                    zIndex: 10 - i,
+                  }}
+                >
+                  <div style={{ height: 150, background: `url(${c.img}) center/cover no-repeat` }} />
+                  <div className="p-4">
+                    <span
+                      className="inline-block px-2.5 py-1 rounded-full text-[11px]"
+                      style={{ background: "var(--accent-pale)", color: "var(--accent)" }}
+                    >
+                      {c.tag}
+                    </span>
+                    <h3 className="mt-2" style={{ fontSize: 16, color: "var(--text-primary)", lineHeight: 1.3 }}>
+                      {c.title}
+                    </h3>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </motion.button>
       </div>
     </section>
   );
