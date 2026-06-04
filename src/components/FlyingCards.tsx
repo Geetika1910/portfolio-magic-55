@@ -115,8 +115,8 @@ export default function FlyingCards() {
           <a
             key={i}
             href={c.pdf}
-            target="_blank"
-            rel="noreferrer"
+            target="_top"
+            rel="noopener noreferrer"
             onMouseEnter={() => setHovered(i)}
             onMouseLeave={() => setHovered(null)}
             className="absolute pointer-events-auto cursor-pointer overflow-hidden"
