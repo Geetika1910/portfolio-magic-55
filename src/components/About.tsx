@@ -162,9 +162,7 @@ export default function About() {
                           boxShadow: "var(--shadow-card)",
                         }}
                       >
-                        <div className="w-9 h-9 rounded-full shrink-0 overflow-hidden flex items-center justify-center" style={{ background: c.grad }}>
-                          <img src={c.logo} alt={c.name} className="w-full h-full object-cover" />
-                        </div>
+                        <img src={c.logo} alt={c.name} className="w-9 h-9 shrink-0 object-contain" />
                         <div className="flex-1 min-w-0 flex items-center justify-between gap-3">
                           <div>
                             <div className="text-[15px] font-semibold">{c.name}</div>
