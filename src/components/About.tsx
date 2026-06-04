@@ -3,6 +3,7 @@ import { useState } from "react";
 import { User, Linkedin } from "lucide-react";
 import ApproachStack from "./ApproachStack";
 import portraitAsset from "@/assets/portrait-v2.jpeg.asset.json";
+import profileImg from "@/assets/geetika-profile.jpeg.asset.json";
 
 import f22Logo from "@/assets/f22.svg.asset.json";
 import cars24Logo from "@/assets/cars24.png.asset.json";
