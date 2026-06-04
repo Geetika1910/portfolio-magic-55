@@ -29,10 +29,10 @@ import { openPdf } from "./PdfViewer";
 type Project = { title: string; tag: string; desc: string; pdf: string; grad: string; img?: string };
 
 const PROJECTS: Project[] = [
-  { title: "Date Planner for Bumble", tag: "Growth", desc: "Took a leaky onboarding funnel from 20% to 68% completion by obsessing over the first 5 minutes.", pdf: project1Pdf.url, grad: "linear-gradient(135deg, #f6d365, #fda085)", img: work1Thumb.url },
-  { title: "Increasing DAU of leading Hindi News Platform", tag: "RCA and Growth", desc: "Surfaced churn signals 30 days early — reduced customer churn by 35% in two quarters.", pdf: project2Pdf.url, grad: "linear-gradient(135deg, #5ee7df, #b490ca)", img: work2Thumb.url },
-  { title: "Mixpanel Event Writing Automation", tag: "AI Automation", desc: "Built a two-sided marketplace from scratch. 10K transactions in the first 90 days.", pdf: project3Pdf.url, grad: "linear-gradient(135deg, #fbc2eb, #a18cd1)", img: work3Thumb.url },
-  { title: "Increasing Zomato Reviews", tag: "Growth", desc: "Shipped an AI rec engine that increased session time by 40% without feeling creepy.", pdf: project4Pdf.url, grad: "linear-gradient(135deg, #84fab0, #8fd3f4)", img: work4Thumb.url },
+  { title: "Date Planner for Bumble", tag: "Growth", desc: "", pdf: project1Pdf.url, grad: "linear-gradient(135deg, #f6d365, #fda085)", img: work1Thumb.url },
+  { title: "Increasing DAU of leading Hindi News Platform", tag: "RCA and Growth", desc: "", pdf: project2Pdf.url, grad: "linear-gradient(135deg, #5ee7df, #b490ca)", img: work2Thumb.url },
+  { title: "Mixpanel Event Writing Automation", tag: "AI Automation", desc: "", pdf: project3Pdf.url, grad: "linear-gradient(135deg, #fbc2eb, #a18cd1)", img: work3Thumb.url },
+  { title: "Increasing Zomato Reviews", tag: "Growth", desc: "", pdf: project4Pdf.url, grad: "linear-gradient(135deg, #84fab0, #8fd3f4)", img: work4Thumb.url },
   { title: "Paytm Expense Tracker", tag: "New Feature", desc: "", pdf: project5Pdf.url, grad: "linear-gradient(135deg, #ffd194, #d1913c)", img: work5Thumb.url },
   { title: "Market Analysis for Gig Workers", tag: "Market Analysis", desc: "", pdf: project6Pdf.url, grad: "linear-gradient(135deg, #c471f5, #fa71cd)", img: work6Thumb.url },
   { title: "UI/UX Heuristics Teardown of Google Keep", tag: "UI/UX", desc: "", pdf: project7Pdf.url, grad: "linear-gradient(135deg, #a1c4fd, #c2e9fb)", img: work7Thumb.url },
