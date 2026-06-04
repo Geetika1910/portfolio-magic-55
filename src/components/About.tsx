@@ -1,5 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+const ABOUT_ROTATING_WORDS = ["roadmap.", "spec.", "checklist.", "deadline."];
 import { User, Linkedin } from "lucide-react";
 import ApproachStack from "./ApproachStack";
 import portraitAsset from "@/assets/portrait-v2.jpeg.asset.json";
@@ -36,6 +38,14 @@ const TOOLS = [
 
 export default function About() {
   const [showAll, setShowAll] = useState(false);
+  const [rotatingIndex, setRotatingIndex] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setRotatingIndex((i) => (i + 1) % ABOUT_ROTATING_WORDS.length);
+    }, 2200);
+    return () => clearInterval(id);
+  }, []);
 
   return (
     <section id="about" className="py-24 md:py-32" style={{ background: "var(--bg-secondary)" }}>
@@ -47,26 +57,32 @@ export default function About() {
           transition={{ duration: 0.6 }}
           className="mb-14"
         >
-          <div className="overflow-hidden mb-4">
-            <p
-              className="text-[11px] uppercase whitespace-nowrap inline-block animate-[marquee_18s_linear_infinite]"
-              style={{ letterSpacing: "0.15em", color: "var(--accent)" }}
-            >
-              {Array.from({ length: 8 }).map((_, i) => (
-                <span key={i} className="mr-12">About Me</span>
-              ))}
-            </p>
-          </div>
-          <div className="overflow-hidden">
-            <h2
-              className="whitespace-nowrap inline-block animate-[marquee_28s_linear_infinite]"
-              style={{ fontSize: "clamp(36px, 5vw, 56px)", lineHeight: 1.1 }}
-            >
-              {Array.from({ length: 4 }).map((_, i) => (
-                <span key={i} className="mr-16">More than a roadmap.</span>
-              ))}
-            </h2>
-          </div>
+          <p className="text-[11px] uppercase mb-4" style={{ letterSpacing: "0.15em", color: "var(--accent)" }}>
+            About Me
+          </p>
+          <h2 style={{ fontSize: "clamp(36px, 5vw, 56px)", lineHeight: 1.1 }}>
+            More than a{" "}
+            <span className="relative inline-block align-baseline" style={{ minWidth: "7ch" }}>
+              <span className="invisible italic whitespace-nowrap" style={{ fontFamily: "var(--font-serif, Georgia, serif)" }}>
+                {ABOUT_ROTATING_WORDS[rotatingIndex]}
+              </span>
+              <span className="absolute left-0 top-0 w-full overflow-hidden" style={{ height: "1.2em" }}>
+                <AnimatePresence mode="wait">
+                  <motion.span
+                    key={rotatingIndex}
+                    initial={{ y: "100%", opacity: 0 }}
+                    animate={{ y: "0%", opacity: 1 }}
+                    exit={{ y: "-100%", opacity: 0 }}
+                    transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                    className="inline-block italic whitespace-nowrap"
+                    style={{ color: "var(--accent)", fontFamily: "var(--font-serif, Georgia, serif)" }}
+                  >
+                    {ABOUT_ROTATING_WORDS[rotatingIndex]}
+                  </motion.span>
+                </AnimatePresence>
+              </span>
+            </span>
+          </h2>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-[5fr_6fr] gap-12 md:gap-16">
