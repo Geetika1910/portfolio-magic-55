@@ -1,11 +1,12 @@
 import { Linkedin, Mail, Phone, FileText } from "lucide-react";
 import { motion } from "framer-motion";
+import resumePdf from "@/assets/resume.pdf.asset.json";
 
 const LINKS = [
   { icon: Linkedin, label: "linkedin.com/in/yourprofile", href: "https://linkedin.com/in/yourprofile" },
   { icon: Mail, label: "yourname@gmail.com", href: "mailto:yourname@gmail.com" },
   { icon: Phone, label: "+91 99999 99999", href: "tel:+919999999999" },
-  { icon: FileText, label: "Download Resume", href: "/resume.pdf" },
+  { icon: FileText, label: "Download Resume", href: resumePdf.url },
 ];
 
 export default function Footer() {
