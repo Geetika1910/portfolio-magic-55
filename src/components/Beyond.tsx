@@ -277,7 +277,7 @@ export default function Beyond() {
                   <span className="w-2.5 h-2.5 rounded-full" style={{ background: "#febc2e" }} />
                   <span className="w-2.5 h-2.5 rounded-full" style={{ background: "#28c840" }} />
                 </div>
-                <img src={whatsCooking.url} alt="What's Cooking app" style={{ display: "block", width: "100%", aspectRatio: "690 / 410", objectFit: "cover" }} />
+                <img src={whatsCooking.url} alt="What's Cooking app" style={{ display: "block", width: "100%", aspectRatio: "16 / 9", objectFit: "cover" }} />
               </div>
             </motion.div>
           </div>
