@@ -1,5 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+const ABOUT_ROTATING_WORDS = ["roadmap.", "spec.", "checklist.", "deadline."];
 import { User, Linkedin } from "lucide-react";
 import ApproachStack from "./ApproachStack";
 import portraitAsset from "@/assets/portrait-v2.jpeg.asset.json";
