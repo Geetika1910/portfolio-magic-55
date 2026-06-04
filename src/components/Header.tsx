@@ -241,7 +241,11 @@ export default function Header() {
         </button>
       </div>
 
-      {/* Mobile side drawer */}
+    </header>
+
+      {/* Mobile side drawer — rendered OUTSIDE <header> because the header's
+          backdrop-filter creates a containing block that would scope
+          position:fixed children to the header bar only. */}
       <div
         className={`md:hidden fixed inset-0 z-[200] transition-opacity duration-300 ${
           open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
@@ -317,6 +321,6 @@ export default function Header() {
           </div>
         </aside>
       </div>
-    </header>
+    </>
   );
 }
