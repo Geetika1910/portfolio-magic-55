@@ -24,6 +24,7 @@ import project10Pdf from "@/assets/project10.pdf.asset.json";
 const ROTATING_WORDS = ["ideated.", "shipped."];
 import { ArrowRight } from "lucide-react";
 import { workSlotRefs } from "./FlyingCards";
+import { openPdf } from "./PdfViewer";
 
 type Project = { title: string; tag: string; desc: string; pdf: string; grad: string; img?: string };
 
