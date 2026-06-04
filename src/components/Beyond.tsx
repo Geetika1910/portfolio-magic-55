@@ -37,10 +37,10 @@ const PHOTOS: Photo[] = [
 ];
 
 const FEATURES = [
-  "Discover new recipes from across regions",
-  "Quick filters for time, diet, and pantry",
-  "Save and remix your favourites",
-  "Built for the way I actually cook",
+  "Tell it your ingredients, mood, and time — get a recipe that fits",
+  "Quick filters for meal type, diet, and how many you're feeding",
+  "Save the ones you love, tweak the ones you almost love",
+  "No endless scrolling, just answers based on your kitchen",
 ];
 
 const BEYOND_ROTATING_WORDS = ["unplug.", "reset."];
@@ -274,7 +274,7 @@ export default function Beyond() {
                 What's Cooking?
               </h3>
               <p className="mt-4 text-[15px]" style={{ color: "rgba(244,242,238,0.75)", lineHeight: 1.7 }}>
-                A side project I tinker with on weekends — a small, friendly recipe app for people who actually cook at home.
+                A side project born out of one too many "what do I make with these ingredients" moments. An AI-powered recipe app built for people who actually cook at home, not just browse recipes they never try.
               </p>
               <ul className="mt-5 space-y-2.5">
                 {FEATURES.map((f) => (
