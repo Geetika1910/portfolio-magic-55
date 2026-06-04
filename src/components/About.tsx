@@ -38,6 +38,14 @@ const TOOLS = [
 
 export default function About() {
   const [showAll, setShowAll] = useState(false);
+  const [rotatingIndex, setRotatingIndex] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setRotatingIndex((i) => (i + 1) % ABOUT_ROTATING_WORDS.length);
+    }, 2200);
+    return () => clearInterval(id);
+  }, []);
 
   return (
     <section id="about" className="py-24 md:py-32" style={{ background: "var(--bg-secondary)" }}>
