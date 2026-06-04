@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import work1Thumb from "@/assets/work-1-thumb.png.asset.json";
+import work2Thumb from "@/assets/work-2-thumb.png.asset.json";
 import work3Thumb from "@/assets/work-3-thumb.png.asset.json";
 import work4Thumb from "@/assets/work-4-thumb.png.asset.json";
 import work5Thumb from "@/assets/work-5-thumb.png.asset.json";
