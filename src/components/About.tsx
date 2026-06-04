@@ -64,7 +64,7 @@ export default function About() {
               }}
             >
               <img src={portraitAsset.url} alt="Geetika portrait" className="absolute inset-0 w-full h-full object-cover" />
-              <User size={140} strokeWidth={0.6} className="mb-6" />
+              
 
               <div className="absolute bottom-4 right-4 flex gap-2">
                 <a
