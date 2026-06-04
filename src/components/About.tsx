@@ -2,6 +2,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 const ABOUT_ROTATING_WORDS = ["roadmap.", "title."];
+const APPROACH_ROTATING_WORDS = ["Problems", "Products"];
 import { User, Linkedin } from "lucide-react";
 import ApproachStack from "./ApproachStack";
 import portraitAsset from "@/assets/portrait-v2.jpeg.asset.json";
@@ -54,10 +55,18 @@ const TOOLS = [
 export default function About() {
   const [showAll, setShowAll] = useState(false);
   const [rotatingIndex, setRotatingIndex] = useState(0);
+  const [approachIndex, setApproachIndex] = useState(0);
 
   useEffect(() => {
     const id = setInterval(() => {
       setRotatingIndex((i) => (i + 1) % ABOUT_ROTATING_WORDS.length);
+    }, 2200);
+    return () => clearInterval(id);
+  }, []);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setApproachIndex((i) => (i + 1) % APPROACH_ROTATING_WORDS.length);
     }, 2200);
     return () => clearInterval(id);
   }, []);
@@ -314,7 +323,29 @@ export default function About() {
             <p className="text-[11px] uppercase mb-4" style={{ letterSpacing: "0.15em", color: "var(--accent)" }}>
               Approach
             </p>
-            <h3 style={{ fontSize: "clamp(28px, 4vw, 40px)", lineHeight: 1.2 }}>How I Approach Problems</h3>
+            <h3 style={{ fontSize: "clamp(28px, 4vw, 40px)", lineHeight: 1.2 }}>
+              How I Approach{" "}
+              <span className="relative inline-block align-baseline" style={{ minWidth: "5ch" }}>
+                <span className="invisible italic whitespace-nowrap" style={{ fontFamily: "var(--font-serif, Georgia, serif)" }}>
+                  {APPROACH_ROTATING_WORDS[approachIndex]}
+                </span>
+                <span className="absolute left-0 top-0 w-full overflow-hidden" style={{ height: "1.2em" }}>
+                  <AnimatePresence mode="wait">
+                    <motion.span
+                      key={approachIndex}
+                      initial={{ y: "100%", opacity: 0 }}
+                      animate={{ y: "0%", opacity: 1 }}
+                      exit={{ y: "-100%", opacity: 0 }}
+                      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                      className="inline-block italic whitespace-nowrap"
+                      style={{ color: "var(--accent)", fontFamily: "var(--font-serif, Georgia, serif)" }}
+                    >
+                      {APPROACH_ROTATING_WORDS[approachIndex]}
+                    </motion.span>
+                  </AnimatePresence>
+                </span>
+              </span>
+            </h3>
             <p className="mt-3 text-[16px]" style={{ color: "var(--text-muted)" }}>
               A few principles I keep coming back to.
             </p>
