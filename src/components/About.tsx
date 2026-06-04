@@ -10,6 +10,7 @@ import profileImg from "@/assets/geetika-profile.jpeg.asset.json";
 import f22Logo from "@/assets/f22.svg.asset.json";
 import cars24Logo from "@/assets/cars24.png.asset.json";
 import nextleapLogo from "@/assets/nextleap.jpg.asset.json";
+import goplowLogo from "@/assets/goplow.jpg.asset.json";
 
 function CompanyLogo({ name, logo }: { name: string; logo?: string }) {
   if (logo) {
@@ -30,7 +31,7 @@ const COMPANIES = [
   { name: "F22 Labs", role: "Associate Product Manager", years: "2025–Current", grad: "linear-gradient(135deg,#7A8F7B,#A5B5A3)", logo: f22Logo.url },
   { name: "Cars24", role: "Product Management Intern", years: "2024–2025", grad: "#4F46E5", logo: cars24Logo.url },
   { name: "NextLeap", role: "PM Fellowship", years: "2024", grad: "#000000", logo: nextleapLogo.url },
-  { name: "GoPlow", role: "Senior Executive", years: "2023–2024", grad: "#c9a84c" },
+  { name: "GoPlow", role: "Senior Executive", years: "2023–2024", grad: "#c9a84c", logo: goplowLogo.url },
 ];
 
 const TOOLS = [
