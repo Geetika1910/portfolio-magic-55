@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import beyond1 from "@/assets/beyond-1.jpeg.asset.json";
 import beyond2 from "@/assets/beyond-2.jpeg.asset.json";
 import beyond3 from "@/assets/beyond-3.jpeg.asset.json";
@@ -43,11 +43,21 @@ const FEATURES = [
   "Built for the way I actually cook",
 ];
 
+const BEYOND_ROTATING_WORDS = ["unplug", "reset"];
+
 export default function Beyond() {
   const ref = useRef<HTMLDivElement>(null);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
   const [dragging, setDragging] = useState(false);
   const drag = useRef({ startX: 0, scrollLeft: 0 });
+  const [beyondIndex, setBeyondIndex] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setBeyondIndex((i) => (i + 1) % BEYOND_ROTATING_WORDS.length);
+    }, 2200);
+    return () => clearInterval(id);
+  }, []);
 
   // Curved/coverflow effect: transform each card based on its distance from viewport center
   useEffect(() => {
@@ -116,7 +126,27 @@ export default function Beyond() {
             Beyond Work
           </p>
           <h2 style={{ fontSize: "clamp(36px, 5vw, 56px)", lineHeight: 1.1 }}>
-            Where I unplug & get inspired.
+            Where I{" "}
+            <span className="relative inline-block align-baseline" style={{ minWidth: "5ch" }}>
+              <span className="invisible italic whitespace-nowrap" style={{ fontFamily: "var(--font-serif, Georgia, serif)" }}>
+                {BEYOND_ROTATING_WORDS[beyondIndex]}
+              </span>
+              <span className="absolute left-0 top-0 w-full overflow-hidden" style={{ height: "1.2em" }}>
+                <AnimatePresence mode="wait">
+                  <motion.span
+                    key={beyondIndex}
+                    initial={{ y: "100%", opacity: 0 }}
+                    animate={{ y: "0%", opacity: 1 }}
+                    exit={{ y: "-100%", opacity: 0 }}
+                    transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                    className="inline-block italic whitespace-nowrap"
+                    style={{ color: "var(--accent)", fontFamily: "var(--font-serif, Georgia, serif)" }}
+                  >
+                    {BEYOND_ROTATING_WORDS[beyondIndex]}
+                  </motion.span>
+                </AnimatePresence>
+              </span>
+            </span>
           </h2>
           <p className="mt-4 text-[16px] max-w-xl" style={{ color: "var(--text-muted)" }}>
             Open skies, unfamiliar cities, food worth finding, and recipes worth experimenting with. This is where I breathe.
