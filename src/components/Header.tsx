@@ -208,7 +208,7 @@ export default function Header() {
             target="_blank"
             rel="noreferrer"
             aria-label="LinkedIn"
-            className="w-9 h-9 rounded-full flex items-center justify-center transition-all hover:scale-110"
+            className="w-9 h-9 rounded-full flex items-center justify-center transition-all lg:hover:scale-110"
             style={{ border: "1px solid rgba(255,255,255,0.15)", color: "var(--text-on-dark)" }}
             onMouseEnter={(e) => (e.currentTarget.style.background = "var(--accent)")}
             onMouseLeave={(e) => (e.currentTarget.style.background = "transparent")}
@@ -219,7 +219,7 @@ export default function Header() {
             href={resumePdf.url}
             target="_blank"
             rel="noreferrer"
-            className="px-5 py-2 rounded-full text-[13px] font-medium transition-all duration-300 hover:-translate-y-0.5"
+            className="px-5 py-2 rounded-full text-[13px] font-medium transition-all duration-300 lg:hover:-translate-y-0.5"
             style={{
               border: "1px solid var(--accent)",
               color: "var(--text-on-dark)",
