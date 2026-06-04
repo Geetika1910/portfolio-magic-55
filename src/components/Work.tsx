@@ -43,13 +43,12 @@ const PROJECTS: Project[] = [
 
 function ProjectCard({ p }: { p: (typeof PROJECTS)[number] }) {
   return (
-    <motion.a
-      href={p.pdf}
-      target="_top"
-      rel="noopener noreferrer"
+    <motion.button
+      type="button"
+      onClick={() => openPdf({ url: p.pdf, title: p.title })}
       whileHover={{ y: -8, boxShadow: "var(--shadow-hover)", borderColor: "var(--accent)" }}
       transition={{ duration: 0.3 }}
-      className="block overflow-hidden cursor-pointer group"
+      className="block w-full text-left overflow-hidden cursor-pointer group"
       style={{
         background: "var(--bg-card)",
         border: "1px solid var(--border)",
