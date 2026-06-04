@@ -31,13 +31,13 @@ function NavButton({ item, onClick }: { item: NavItem; onClick: () => void }) {
 
   if (item.hover === "underline") {
     return (
-      <button onClick={onClick} className="group" style={base}>
-        <span className="transition-colors group-hover:text-[var(--accent-light)]" style={{ color: "var(--text-muted)" }}>
+    <button onClick={onClick} className="group" style={base}>
+        <span className="transition-colors lg:group-hover:text-[var(--accent-light)]" style={{ color: "var(--text-muted)" }}>
           {item.label}
         </span>
         <span
           aria-hidden
-          className="absolute left-0 bottom-1 h-[1.5px] w-full origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100"
+          className="absolute left-0 bottom-1 h-[1.5px] w-full origin-left scale-x-0 transition-transform duration-300 lg:group-hover:scale-x-100"
           style={{ background: "var(--accent-light)" }}
         />
       </button>
@@ -69,12 +69,12 @@ function NavButton({ item, onClick }: { item: NavItem; onClick: () => void }) {
       <button onClick={onClick} className="group inline-flex items-center gap-1.5" style={base}>
         <span
           aria-hidden
-          className="inline-block transition-transform duration-500 group-hover:rotate-[360deg]"
+          className="inline-block transition-transform duration-500 lg:group-hover:rotate-[360deg]"
           style={{ color: "var(--accent-light)" }}
         >
           ✦
         </span>
-        <span className="transition-colors group-hover:text-[var(--accent-light)]">{item.label}</span>
+        <span className="transition-colors lg:group-hover:text-[var(--accent-light)]">{item.label}</span>
       </button>
     );
   }
@@ -84,13 +84,13 @@ function NavButton({ item, onClick }: { item: NavItem; onClick: () => void }) {
     <button onClick={onClick} className="group" style={base}>
       <span className="relative block leading-[16px] overflow-hidden" style={{ height: 16 }}>
         <span
-          className="block transition-transform duration-300 group-hover:-translate-y-full"
+          className="block transition-transform duration-300 lg:group-hover:-translate-y-full"
           style={{ color: "var(--text-muted)" }}
         >
           {item.label}
         </span>
         <span
-          className="block transition-transform duration-300 group-hover:-translate-y-full"
+          className="block transition-transform duration-300 lg:group-hover:-translate-y-full"
           style={{ color: "var(--accent-light)" }}
         >
           {item.label}
@@ -127,7 +127,7 @@ function AvatarUpload() {
     <button
       type="button"
       onClick={() => inputRef.current?.click()}
-      className="group relative w-9 h-9 rounded-full overflow-hidden shrink-0 transition-transform hover:scale-105"
+      className="group relative w-9 h-9 rounded-full overflow-hidden shrink-0 transition-transform lg:hover:scale-105"
       style={{
         border: "1.5px solid var(--accent)",
         background: "color-mix(in oklab, var(--accent) 18%, transparent)",
@@ -143,7 +143,7 @@ function AvatarUpload() {
         </span>
       )}
       <span
-        className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+        className="absolute inset-0 flex items-center justify-center opacity-0 lg:group-hover:opacity-100 transition-opacity"
         style={{ background: "rgba(0,0,0,0.55)", color: "white" }}
       >
         <Upload size={13} />
@@ -189,7 +189,7 @@ export default function Header() {
           <AvatarUpload />
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="text-[18px] font-medium tracking-tight transition-transform hover:scale-105"
+            className="text-[18px] font-medium tracking-tight transition-transform lg:hover:scale-105"
             style={{ color: "var(--text-on-dark)" }}
           >
             Geetika
@@ -208,7 +208,7 @@ export default function Header() {
             target="_blank"
             rel="noreferrer"
             aria-label="LinkedIn"
-            className="w-9 h-9 rounded-full flex items-center justify-center transition-all hover:scale-110"
+            className="w-9 h-9 rounded-full flex items-center justify-center transition-all lg:hover:scale-110"
             style={{ border: "1px solid rgba(255,255,255,0.15)", color: "var(--text-on-dark)" }}
             onMouseEnter={(e) => (e.currentTarget.style.background = "var(--accent)")}
             onMouseLeave={(e) => (e.currentTarget.style.background = "transparent")}
@@ -219,7 +219,7 @@ export default function Header() {
             href={resumePdf.url}
             target="_blank"
             rel="noreferrer"
-            className="px-5 py-2 rounded-full text-[13px] font-medium transition-all duration-300 hover:-translate-y-0.5"
+            className="px-5 py-2 rounded-full text-[13px] font-medium transition-all duration-300 lg:hover:-translate-y-0.5"
             style={{
               border: "1px solid var(--accent)",
               color: "var(--text-on-dark)",
@@ -286,7 +286,7 @@ export default function Header() {
               <button
                 key={n.id}
                 onClick={() => go(n.id)}
-                className="text-left py-3 text-xl transition-colors hover:text-[var(--accent-light)]"
+                className="text-left py-3 text-xl transition-colors lg:hover:text-[var(--accent-light)]"
                 style={{
                   color: "var(--text-on-dark)",
                   fontFamily: "Playfair Display, serif",
