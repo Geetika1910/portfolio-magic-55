@@ -26,12 +26,12 @@ export default function Hero() {
 
   return (
     <section className="relative pt-[72px]" style={{ background: "var(--bg-primary)" }}>
-      <div className="max-w-[1400px] mx-auto px-6 md:px-20 min-h-screen flex flex-col md:flex-row items-center gap-12 md:gap-24 py-16">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-20 min-h-screen flex flex-col lg:flex-row items-center gap-12 lg:gap-24 py-16">
         <motion.div
           variants={container}
           initial="hidden"
           animate="show"
-          className="w-full md:w-3/5"
+          className="w-full lg:w-3/5"
         >
           <motion.div variants={lineVariant} className="mb-6">
             <StatusPill />
@@ -48,14 +48,14 @@ export default function Hero() {
           >
             <motion.span
               variants={lineVariant}
-              className="block md:whitespace-nowrap"
+              className="block lg:whitespace-nowrap"
               style={{ color: "var(--text-muted)" }}
             >
               Hi <span style={{ color: "var(--accent)" }}>✦</span> I'm Geetika.
             </motion.span>
             <motion.span
               variants={lineVariant}
-              className="block md:whitespace-nowrap"
+              className="block lg:whitespace-nowrap"
               style={{ fontWeight: 600 }}
             >
               Associate <em style={{ color: "var(--accent)" }}>Product</em> Manager
@@ -104,7 +104,7 @@ export default function Hero() {
         <div
           ref={heroAnchorRef}
           aria-hidden
-          className="hidden md:block w-full md:w-2/5"
+          className="hidden lg:block w-full lg:w-2/5"
           style={{ minHeight: 380 }}
         />
 
@@ -114,7 +114,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-          className="md:hidden w-full mt-4 cursor-pointer text-left bg-transparent p-0"
+          className="lg:hidden w-full mt-4 cursor-pointer text-left bg-transparent p-0"
           onClick={() => go("work")}
           aria-label="Jump to work"
         >
