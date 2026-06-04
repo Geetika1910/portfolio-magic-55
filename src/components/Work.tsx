@@ -80,9 +80,11 @@ function ProjectCard({ p }: { p: (typeof PROJECTS)[number] }) {
             <ArrowRight size={14} />
           </div>
         </div>
-        <p className="mt-3 text-[14px]" style={{ color: "var(--text-muted)", lineHeight: 1.55 }}>
-          {p.desc}
-        </p>
+        {p.desc && (
+          <p className="mt-3 text-[14px]" style={{ color: "var(--text-muted)", lineHeight: 1.55 }}>
+            {p.desc}
+          </p>
+        )}
       </div>
     </motion.a>
   );
