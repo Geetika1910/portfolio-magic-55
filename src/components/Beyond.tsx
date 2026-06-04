@@ -126,7 +126,27 @@ export default function Beyond() {
             Beyond Work
           </p>
           <h2 style={{ fontSize: "clamp(36px, 5vw, 56px)", lineHeight: 1.1 }}>
-            Where I unplug & get inspired.
+            Where I{" "}
+            <span className="relative inline-block align-baseline" style={{ minWidth: "5ch" }}>
+              <span className="invisible italic whitespace-nowrap" style={{ fontFamily: "var(--font-serif, Georgia, serif)" }}>
+                {BEYOND_ROTATING_WORDS[beyondIndex]}
+              </span>
+              <span className="absolute left-0 top-0 w-full overflow-hidden" style={{ height: "1.2em" }}>
+                <AnimatePresence mode="wait">
+                  <motion.span
+                    key={beyondIndex}
+                    initial={{ y: "100%", opacity: 0 }}
+                    animate={{ y: "0%", opacity: 1 }}
+                    exit={{ y: "-100%", opacity: 0 }}
+                    transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                    className="inline-block italic whitespace-nowrap"
+                    style={{ color: "var(--accent)", fontFamily: "var(--font-serif, Georgia, serif)" }}
+                  >
+                    {BEYOND_ROTATING_WORDS[beyondIndex]}
+                  </motion.span>
+                </AnimatePresence>
+              </span>
+            </span>
           </h2>
           <p className="mt-4 text-[16px] max-w-xl" style={{ color: "var(--text-muted)" }}>
             Open skies, unfamiliar cities, food worth finding, and recipes worth experimenting with. This is where I breathe.
