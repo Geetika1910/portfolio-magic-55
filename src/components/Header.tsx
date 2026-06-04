@@ -84,13 +84,13 @@ function NavButton({ item, onClick }: { item: NavItem; onClick: () => void }) {
     <button onClick={onClick} className="group" style={base}>
       <span className="relative block leading-[16px] overflow-hidden" style={{ height: 16 }}>
         <span
-          className="block transition-transform duration-300 group-hover:-translate-y-full"
+          className="block transition-transform duration-300 lg:group-hover:-translate-y-full"
           style={{ color: "var(--text-muted)" }}
         >
           {item.label}
         </span>
         <span
-          className="block transition-transform duration-300 group-hover:-translate-y-full"
+          className="block transition-transform duration-300 lg:group-hover:-translate-y-full"
           style={{ color: "var(--accent-light)" }}
         >
           {item.label}
