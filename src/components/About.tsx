@@ -3,6 +3,7 @@ import { useState } from "react";
 import { User, Linkedin } from "lucide-react";
 import ApproachStack from "./ApproachStack";
 import portraitAsset from "@/assets/portrait-v2.jpeg.asset.json";
+import profileImg from "@/assets/geetika-profile.jpeg.asset.json";
 
 import f22Logo from "@/assets/f22.svg.asset.json";
 import cars24Logo from "@/assets/cars24.png.asset.json";
@@ -285,14 +286,14 @@ export default function About() {
                 }}
               >
                 <div
-                  className="w-12 h-12 rounded-full flex items-center justify-center mb-4"
+                  className="w-14 h-14 rounded-full overflow-hidden mb-4"
                   style={{
-                    background: "linear-gradient(135deg, #EEF3ED, #d4ddd4)",
-                    color: "var(--accent)",
+                    border: "2px solid var(--accent)",
                   }}
                 >
-                  <User size={22} strokeWidth={1.5} />
+                  <img src={profileImg.url} alt="Geetika" className="w-full h-full object-cover" />
                 </div>
+
 
                 <h4
                   style={{
