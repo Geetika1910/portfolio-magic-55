@@ -11,6 +11,10 @@ import beyond7 from "@/assets/beyond-7.jpeg.asset.json";
 import beyond8 from "@/assets/beyond-8.jpeg.asset.json";
 import beyond9 from "@/assets/beyond-9.jpeg.asset.json";
 import beyond10 from "@/assets/beyond-10.jpeg.asset.json";
+import beyond11 from "@/assets/beyond-11.jpeg.asset.json";
+import beyond12 from "@/assets/beyond-12.jpeg.asset.json";
+import beyond13 from "@/assets/beyond-13.jpeg.asset.json";
+import beyond14 from "@/assets/beyond-14.jpeg.asset.json";
 
 type Photo = { image?: string; gradient?: string };
 
@@ -25,10 +29,10 @@ const PHOTOS: Photo[] = [
   { image: beyond8.url },
   { image: beyond9.url },
   { image: beyond10.url },
-  { gradient: "linear-gradient(135deg,#bfa078,#6e5a3c)" },
-  { gradient: "linear-gradient(135deg,#7d9a8a,#3f5c4a)" },
-  { gradient: "linear-gradient(135deg,#c8a890,#7a5848)" },
-  { gradient: "linear-gradient(135deg,#9ab0c0,#5a7080)" },
+  { image: beyond11.url },
+  { image: beyond12.url },
+  { image: beyond13.url },
+  { image: beyond14.url },
 ];
 
 const FEATURES = [
