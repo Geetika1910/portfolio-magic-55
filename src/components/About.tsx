@@ -15,7 +15,7 @@ const COMPANIES = [
   { name: "F22 Labs", role: "Associate Product Manager", years: "2025–Current", grad: "linear-gradient(135deg,#7A8F7B,#A5B5A3)", logo: f22Logo.url },
   { name: "Cars24", role: "Product Management Intern", years: "2024–2025", grad: "#4F46E5", logo: cars24Logo.url },
   { name: "NextLeap", role: "PM Fellowship", years: "2024", grad: "#000000", logo: nextleapLogo.url },
-  { name: "GoPlow", role: "Senior Executive", years: "2023–2024", grad: "#c9a84c", logo: null },
+  { name: "GoPlow", role: "Senior Executive", years: "2023–2024", grad: "#c9a84c", logo: undefined as string | undefined },
 ];
 
 const TOOLS = [
