@@ -102,7 +102,7 @@ function NavButton({ item, onClick }: { item: NavItem; onClick: () => void }) {
 
 function AvatarUpload() {
   const inputRef = useRef<HTMLInputElement>(null);
-  const [src, setSrc] = useState<string | null>(null);
+  const [src, setSrc] = useState<string | null>(profileImg.url);
 
   useEffect(() => {
     const stored = typeof window !== "undefined" ? localStorage.getItem("profile-avatar") : null;
