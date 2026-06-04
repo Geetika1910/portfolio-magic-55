@@ -134,7 +134,16 @@ export default function FlyingCards() {
               willChange: "transform",
             }}
           >
-            <div style={{ height: lerp(140, 200, p), background: c.img ? `url(${c.img}) center/cover no-repeat` : c.grad }} />
+            <div className="relative" style={{ height: lerp(140, 200, p), background: c.img ? `url(${c.img}) center/cover no-repeat` : c.grad }}>
+              <div
+                className="absolute inset-0 flex items-center justify-center transition-opacity duration-300"
+                style={{ background: "rgba(0,0,0,0.55)", opacity: isHover ? 1 : 0 }}
+              >
+                <span className="text-white text-[15px] flex items-center gap-2">
+                  View Project <ArrowRight size={16} />
+                </span>
+              </div>
+            </div>
             <div className="p-6">
               <span
                 className="inline-block px-2.5 py-1 rounded-full text-[11px]"
