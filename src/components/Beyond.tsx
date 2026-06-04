@@ -15,6 +15,7 @@ import beyond11 from "@/assets/beyond-11.jpeg.asset.json";
 import beyond12 from "@/assets/beyond-12.jpeg.asset.json";
 import beyond13 from "@/assets/beyond-13.jpeg.asset.json";
 import beyond14 from "@/assets/beyond-14.jpeg.asset.json";
+import whatsCooking from "@/assets/whats-cooking.svg.asset.json";
 
 type Photo = { image?: string; gradient?: string };
 
@@ -276,8 +277,7 @@ export default function Beyond() {
                   <span className="w-2.5 h-2.5 rounded-full" style={{ background: "#febc2e" }} />
                   <span className="w-2.5 h-2.5 rounded-full" style={{ background: "#28c840" }} />
                 </div>
-                {/* TODO: Replace with <img src="screenshot.png" /> */}
-                <div style={{ height: 280, background: "linear-gradient(135deg, #6b8e6b, #3a5c3a)" }} />
+                <img src={whatsCooking.url} alt="What's Cooking app" style={{ display: "block", width: "100%", height: 280, objectFit: "cover" }} />
               </div>
             </motion.div>
           </div>
