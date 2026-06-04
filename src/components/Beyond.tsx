@@ -9,6 +9,14 @@ const PHOTOS = [
   "linear-gradient(135deg,#7a8f7b,#a5b5a3)",
   "linear-gradient(135deg,#c9b99a,#8b7355)",
   "linear-gradient(135deg,#4a6741,#87a878)",
+  "linear-gradient(135deg,#b8c5d8,#4a5a72)",
+  "linear-gradient(135deg,#e0b88a,#a5754a)",
+  "linear-gradient(135deg,#8aa890,#4f6b55)",
+  "linear-gradient(135deg,#d8b8a0,#8b6a52)",
+  "linear-gradient(135deg,#9ab0c0,#5a7080)",
+  "linear-gradient(135deg,#bfa078,#6e5a3c)",
+  "linear-gradient(135deg,#7d9a8a,#3f5c4a)",
+  "linear-gradient(135deg,#c8a890,#7a5848)",
 ];
 
 const FEATURES = [
