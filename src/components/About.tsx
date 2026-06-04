@@ -236,7 +236,7 @@ export default function About() {
             </p>
 
             <p className="mt-6">
-              Now at F22 Labs I decide what gets built and why. Launched a directory from zero. Replaced Zendesk entirely. Built an automation pipeline eliminating every manual event log across 45 pages. Work that changes how a team operates, not just what it ships.
+              Now at F22 Labs I decide what gets built and why. Launched a directory from zero. Replaced a third-party support system entirely. Built automation that changed how the team operates, not just what it ships.
             </p>
 
             <p className="mt-6">
