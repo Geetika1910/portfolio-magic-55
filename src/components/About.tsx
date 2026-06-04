@@ -2,6 +2,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { User, Linkedin, Dribbble } from "lucide-react";
 import ApproachStack from "./ApproachStack";
+import portraitAsset from "@/assets/portrait.jpeg.asset.json";
 
 const COMPANIES = [
   { name: "VoyceMe", role: "Lead Product Designer", years: "2024–Current", grad: "linear-gradient(135deg,#7A8F7B,#A5B5A3)" },
@@ -62,6 +63,7 @@ export default function About() {
                 color: "rgba(255,255,255,0.4)",
               }}
             >
+              <img src={portraitAsset.url} alt="Geetika portrait" className="absolute inset-0 w-full h-full object-cover" />
               <User size={140} strokeWidth={0.6} className="mb-6" />
 
               <div className="absolute bottom-4 right-4 flex gap-2">
