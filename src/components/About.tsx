@@ -244,7 +244,7 @@ export default function About() {
             </p>
 
             <p className="mt-6">
-              Still asking the right questions.
+              <strong>Still asking the right questions.</strong>
             </p>
           </div>
         </div>
