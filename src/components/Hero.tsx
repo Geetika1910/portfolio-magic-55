@@ -59,7 +59,7 @@ export default function Hero() {
             style={{ color: "var(--text-body)", lineHeight: 1.55 }}
           >
             <strong style={{ color: "var(--text-primary)" }}>
-              Welcome to my little corner of the internet.
+              Glad you found your way here.
             </strong>
             <br />
             I make sense of the noise to turn messy problems into clean, shippable products.
