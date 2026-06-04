@@ -96,7 +96,7 @@ function ProjectCard({ p }: { p: (typeof PROJECTS)[number] }) {
           </p>
         )}
       </div>
-    </motion.a>
+    </motion.button>
   );
 }
 
