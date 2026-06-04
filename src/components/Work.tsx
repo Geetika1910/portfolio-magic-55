@@ -44,8 +44,8 @@ function ProjectCard({ p }: { p: (typeof PROJECTS)[number] }) {
   return (
     <motion.a
       href={p.pdf}
-      target="_blank"
-      rel="noreferrer"
+      target="_top"
+      rel="noopener noreferrer"
       whileHover={{ y: -8, boxShadow: "var(--shadow-hover)", borderColor: "var(--accent)" }}
       transition={{ duration: 0.3 }}
       className="block overflow-hidden cursor-pointer group"
