@@ -232,11 +232,11 @@ export default function About() {
             </p>
 
             <p className="mt-6">
-              I taught myself the craft through teardowns, fellowships, and unsolicited opinions about apps I used daily. Then came Cars24, where I shipped a GenAI voicebot automating 40% of appointment confirmations, redesigned a sell journey untouched for six years, and cut cancellations by 12%. Not bad for an intern.
+              I taught myself the craft through teardowns, fellowships, and unsolicited opinions about apps I used daily. Then came Cars24, where I worked on conversion flows, redesigned a sell journey untouched for six years, and ran experiments that actually moved things. Not bad for an intern.
             </p>
 
             <p className="mt-6">
-              Now at F22 Labs I decide what gets built and why. Launched a directory from zero. Replaced Zendesk entirely. Built an automation pipeline eliminating every manual event log across 45 pages. Work that changes how a team operates, not just what it ships.
+              Now at F22 Labs I decide what gets built and why. Launched a directory from zero. Replaced a third-party support system entirely. Built automation that changed how the team operates, not just what it ships.
             </p>
 
             <p className="mt-6">
