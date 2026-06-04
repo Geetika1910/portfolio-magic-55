@@ -15,7 +15,7 @@ import beyond11 from "@/assets/beyond-11.jpeg.asset.json";
 import beyond12 from "@/assets/beyond-12.jpeg.asset.json";
 import beyond13 from "@/assets/beyond-13.jpeg.asset.json";
 import beyond14 from "@/assets/beyond-14.jpeg.asset.json";
-import whatsCooking from "@/assets/whats_cooking_true_16x9.svg.asset.json";
+import whatsCooking from "@/assets/whats_cooking_trimmed_16x9.svg.asset.json";
 
 type Photo = { image?: string; gradient?: string };
 
