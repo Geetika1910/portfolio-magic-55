@@ -409,12 +409,14 @@ export default function About() {
                   href="https://linkedin.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 mt-5 px-4 py-2.5 rounded-full text-[13px] text-white transition-all duration-300 hover:-translate-y-0.5"
-                  style={{ background: "#0a0a0a" }}
+                  className="inline-flex items-center gap-2 mt-5 px-4 py-2.5 rounded-full text-[13px] text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+                  style={{ background: "var(--accent-dark)" }}
+                  onMouseEnter={(e) => (e.currentTarget.style.background = "var(--accent)")}
+                  onMouseLeave={(e) => (e.currentTarget.style.background = "var(--accent-dark)")}
                 >
                   <span
                     className="w-5 h-5 rounded flex items-center justify-center"
-                    style={{ background: "#fff", color: "#0a0a0a" }}
+                    style={{ background: "#fff", color: "var(--accent-dark)" }}
                   >
                     <Linkedin size={12} strokeWidth={2.5} />
                   </span>

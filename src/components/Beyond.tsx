@@ -289,8 +289,10 @@ export default function Beyond() {
                 href="#"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-block mt-7 px-6 py-3 rounded-full text-[14px] text-white transition-all hover:-translate-y-0.5"
-                style={{ background: "var(--accent)" }}
+                className="inline-block mt-7 px-6 py-3 rounded-full text-[14px] text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+                style={{ background: "var(--accent-dark)" }}
+                onMouseEnter={(e) => (e.currentTarget.style.background = "var(--accent)")}
+                onMouseLeave={(e) => (e.currentTarget.style.background = "var(--accent-dark)")}
               >
                 Try it live →
               </a>
