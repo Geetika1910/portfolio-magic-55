@@ -1,12 +1,15 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import work1Thumb from "@/assets/work-1-thumb.png.asset.json";
 
 const ROTATING_WORDS = ["ideated.", "shipped."];
 import { ArrowRight } from "lucide-react";
 import { workSlotRefs } from "./FlyingCards";
 
-const PROJECTS = [
-  { title: "Onboarding Overhaul", tag: "Growth · B2C", desc: "Took a leaky onboarding funnel from 20% to 68% completion by obsessing over the first 5 minutes.", pdf: "/project1.pdf", grad: "linear-gradient(135deg, #f6d365, #fda085)" },
+type Project = { title: string; tag: string; desc: string; pdf: string; grad: string; img?: string };
+
+const PROJECTS: Project[] = [
+  { title: "Onboarding Overhaul", tag: "Growth · B2C", desc: "Took a leaky onboarding funnel from 20% to 68% completion by obsessing over the first 5 minutes.", pdf: "/project1.pdf", grad: "linear-gradient(135deg, #f6d365, #fda085)", img: work1Thumb.url },
   { title: "Churn Prediction Dashboard", tag: "Analytics · B2B", desc: "Surfaced churn signals 30 days early — reduced customer churn by 35% in two quarters.", pdf: "/project2.pdf", grad: "linear-gradient(135deg, #5ee7df, #b490ca)" },
   { title: "Marketplace Zero-to-One", tag: "Launch", desc: "Built a two-sided marketplace from scratch. 10K transactions in the first 90 days.", pdf: "/project3.pdf", grad: "linear-gradient(135deg, #fbc2eb, #a18cd1)" },
   { title: "AI Recommendations Engine", tag: "Personalisation", desc: "Shipped an AI rec engine that increased session time by 40% without feeling creepy.", pdf: "/project4.pdf", grad: "linear-gradient(135deg, #84fab0, #8fd3f4)" },
@@ -34,7 +37,13 @@ function ProjectCard({ p }: { p: (typeof PROJECTS)[number] }) {
         boxShadow: "var(--shadow-card)",
       }}
     >
-      <div className="relative" style={{ height: 200, background: p.grad }}>
+      <div
+        className="relative"
+        style={{
+          height: 200,
+          background: p.img ? `url(${p.img}) center/cover no-repeat` : p.grad,
+        }}
+      >
         <div
           className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           style={{ background: "rgba(0,0,0,0.55)" }}
