@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import work1Thumb from "@/assets/work-1-thumb.png.asset.json";
 
 export type Slot = { x: number; y: number; w: number; h: number };
 
@@ -9,8 +10,8 @@ export const workSlotRefs: { current: HTMLDivElement | null }[] = [
   { current: null }, { current: null }, { current: null }, { current: null },
 ];
 
-const CARDS = [
-  { title: "Onboarding Overhaul", tag: "Growth", grad: "linear-gradient(135deg,#f6d365,#fda085)", pdf: "/project1.pdf" },
+const CARDS: { title: string; tag: string; grad: string; pdf: string; img?: string }[] = [
+  { title: "Onboarding Overhaul", tag: "Growth", grad: "linear-gradient(135deg,#f6d365,#fda085)", pdf: "/project1.pdf", img: work1Thumb.url },
   { title: "Churn Dashboard",      tag: "Analytics", grad: "linear-gradient(135deg,#5ee7df,#b490ca)", pdf: "/project2.pdf" },
   { title: "Marketplace 0→1",      tag: "Launch",    grad: "linear-gradient(135deg,#fbc2eb,#a18cd1)", pdf: "/project3.pdf" },
   { title: "AI Recommendations",   tag: "AI",        grad: "linear-gradient(135deg,#84fab0,#8fd3f4)", pdf: "/project4.pdf" },
@@ -125,7 +126,7 @@ export default function FlyingCards() {
               willChange: "transform",
             }}
           >
-            <div style={{ height: lerp(140, 200, p), background: c.grad }} />
+            <div style={{ height: lerp(140, 200, p), background: c.img ? `url(${c.img}) center/cover no-repeat` : c.grad }} />
             <div className="p-4">
               <p className="text-[14px] font-medium" style={{ color: "var(--text-primary)" }}>
                 {c.title}
