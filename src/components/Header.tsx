@@ -214,7 +214,7 @@ export default function Header() {
             <Linkedin size={15} />
           </a>
           <a
-            href="/resume.pdf"
+            href={resumePdf.url}
             target="_blank"
             rel="noreferrer"
             className="px-5 py-2 rounded-full text-[13px] font-medium transition-all duration-300 hover:-translate-y-0.5"
@@ -263,7 +263,7 @@ export default function Header() {
             </button>
           ))}
           <a
-            href="/resume.pdf"
+            href={resumePdf.url}
             target="_blank"
             rel="noreferrer"
             className="mt-4 px-6 py-2.5 rounded-full text-sm"
