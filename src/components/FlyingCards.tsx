@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import { openPdf } from "./PdfViewer";
 import { useEffect, useState } from "react";
 import work1Thumb from "@/assets/work-1-thumb.png.asset.json";
 import work2Thumb from "@/assets/work-2-thumb.png.asset.json";
@@ -112,14 +113,13 @@ export default function FlyingCards() {
         const rot = startRot * (1 - p);
         const isHover = hovered === i;
         return (
-          <a
+          <button
             key={i}
-            href={c.pdf}
-            target="_top"
-            rel="noopener noreferrer"
+            type="button"
+            onClick={() => openPdf({ url: c.pdf, title: c.title })}
             onMouseEnter={() => setHovered(i)}
             onMouseLeave={() => setHovered(null)}
-            className="absolute pointer-events-auto cursor-pointer overflow-hidden"
+            className="absolute pointer-events-auto cursor-pointer overflow-hidden text-left p-0"
             style={{
               left: 0,
               top: 0,
@@ -159,7 +159,7 @@ export default function FlyingCards() {
                 </div>
               </div>
             </div>
-          </a>
+          </button>
         );
       })}
     </div>
