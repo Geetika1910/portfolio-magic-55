@@ -47,12 +47,26 @@ export default function About() {
           transition={{ duration: 0.6 }}
           className="mb-14"
         >
-          <p className="text-[11px] uppercase mb-4" style={{ letterSpacing: "0.15em", color: "var(--accent)" }}>
-            About
-          </p>
-          <h2 style={{ fontSize: "clamp(36px, 5vw, 56px)", lineHeight: 1.1 }}>
-            More than a roadmap.
-          </h2>
+          <div className="overflow-hidden mb-4">
+            <p
+              className="text-[11px] uppercase whitespace-nowrap inline-block animate-[marquee_18s_linear_infinite]"
+              style={{ letterSpacing: "0.15em", color: "var(--accent)" }}
+            >
+              {Array.from({ length: 8 }).map((_, i) => (
+                <span key={i} className="mr-12">About Me</span>
+              ))}
+            </p>
+          </div>
+          <div className="overflow-hidden">
+            <h2
+              className="whitespace-nowrap inline-block animate-[marquee_28s_linear_infinite]"
+              style={{ fontSize: "clamp(36px, 5vw, 56px)", lineHeight: 1.1 }}
+            >
+              {Array.from({ length: 4 }).map((_, i) => (
+                <span key={i} className="mr-16">More than a roadmap.</span>
+              ))}
+            </h2>
+          </div>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-[5fr_6fr] gap-12 md:gap-16">
