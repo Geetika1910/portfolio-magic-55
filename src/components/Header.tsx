@@ -12,7 +12,7 @@ type NavItem = {
 const NAV: NavItem[] = [
   { label: "Work", id: "work", hover: "underline" },
   { label: "About Me", id: "about", hover: "fill" },
-  { label: "Beyond", id: "beyond", hover: "rotate" },
+  { label: "Beyond Work", id: "beyond", hover: "rotate" },
   { label: "Contact", id: "contact", hover: "swap" },
 ];
 
