@@ -45,7 +45,7 @@ export default function ApproachStack() {
               fontFamily: "var(--font-serif, Georgia, serif)",
               fontSize: "clamp(34px, 4vw, 48px)",
               color: "var(--text-muted)",
-              fontWeight: 400,
+              fontWeight: 700,
             }}
           >
             {String(i + 1).padStart(2, "0")}
@@ -55,7 +55,7 @@ export default function ApproachStack() {
               style={{
                 fontSize: "clamp(18px, 1.6vw, 20px)",
                 color: "var(--text-primary)",
-                fontWeight: 500,
+                fontWeight: 700,
                 letterSpacing: "-0.01em",
               }}
             >
