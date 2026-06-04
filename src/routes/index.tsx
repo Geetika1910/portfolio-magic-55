@@ -42,6 +42,7 @@ function Index() {
       <Footer />
       <FlyingCards />
       <CustomCursor />
+      <PdfViewer />
     </main>
   );
 }
