@@ -224,20 +224,31 @@ export default function About() {
           {/* RIGHT — Bio */}
           <div className="text-[18px]" style={{ color: "var(--text-primary)", lineHeight: 1.55 }}>
             <p>
-              <strong>Mostly listening.</strong> I started in consulting at 21, moved into product through self-teaching, and now work as an associate product manager building things people actually use. Different industries, same lesson: the work gets better when you slow down enough to actually understand the people using it.
+              <strong>Studied microbiology. Ended up in product. Not a typo.</strong>
             </p>
 
             <p className="mt-6">
-              <strong>Right now I'm deep in product strategy</strong>, designing how teams build, measure, and iterate on the things that actually matter. It's messy, fast, and genuinely new, which means I'm wrong a lot and learning constantly. I like it that way. The moment I think I've got something figured out is usually the moment I've stopped paying attention.
+              The science degree taught me one thing above everything else: form a hypothesis, test it ruthlessly, and be comfortable being wrong. Turns out that is also just product management. The pivot made more sense than it looked from the outside.
             </p>
 
             <p className="mt-6">
-              <strong>I care a lot about the small things</strong>, the wording on an empty state, the weight of a button press, the rhythm of a flow. Not because polish is the point, but because those details are where trust gets built. I want the people I work with, teammates and users, to feel like someone actually thought about them. That's the part I'm still trying to get right, every project.
+              I taught myself the craft through teardowns, fellowships, and a lot of unsolicited opinions about apps I was using daily. Then came Cars24, where I shipped a GenAI voicebot automating 40% of appointment confirmations, redesigned a desktop sell journey untouched for six years, and ran experiments that cut cancellations by 12%. Not bad for an intern.
             </p>
 
+            <p className="mt-6">
+              Now at F22 Labs, I am the one deciding what gets built and why. Launched a professional directory from zero. Replaced Zendesk with an in-house support system, saving 100% of third-party costs. Built an automation pipeline that eliminated every manual event log across 45 platform pages. The kind of work where you do not just ship a feature, you change how a team operates.
+            </p>
 
             <p className="mt-6">
-              <strong>What I'm looking for next</strong> is a team that takes craft seriously, treats users like collaborators, and isn't afraid to throw away good work to make room for better. If that sounds like you, I'd love to talk.
+              The details are where I live. Not because polish is the goal, but because the label on a button and the rhythm of a confirmation screen are exactly where a user decides whether to trust you or leave. I think about that a lot.
+            </p>
+
+            <p className="mt-6">
+              Microbiology. Product fellowship. Two companies, four products, real users. Different rooms, same question: what is actually happening here, and how do we make it better for the person on the other end?
+            </p>
+
+            <p className="mt-6">
+              Still asking it.
             </p>
           </div>
         </div>
