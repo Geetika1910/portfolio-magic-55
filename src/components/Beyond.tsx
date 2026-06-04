@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import beyond1 from "@/assets/beyond-1.jpeg.asset.json";
 import beyond2 from "@/assets/beyond-2.jpeg.asset.json";
 import beyond3 from "@/assets/beyond-3.jpeg.asset.json";
