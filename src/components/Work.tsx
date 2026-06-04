@@ -150,7 +150,7 @@ export default function Work() {
           className="mb-14"
         >
           <p className="text-[11px] uppercase mb-4" style={{ letterSpacing: "0.15em", color: "var(--accent)" }}>
-            Professional Work
+            Work
           </p>
           <h2 style={{ fontSize: "clamp(36px, 5vw, 56px)", lineHeight: 1.1 }}>
             Things I've{" "}
