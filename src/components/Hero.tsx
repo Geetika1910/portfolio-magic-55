@@ -77,7 +77,7 @@ export default function Hero() {
           <motion.div variants={lineVariant} className="mt-9 flex flex-wrap gap-4">
             <button
               onClick={() => go("work")}
-              className="px-7 py-3.5 rounded-full text-[15px] text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
+              className="px-7 py-3.5 rounded-full text-[15px] text-white transition-all duration-300 lg:hover:-translate-y-0.5 lg:hover:shadow-lg"
               style={{ background: "var(--accent-dark)" }}
               onMouseEnter={(e) => (e.currentTarget.style.background = "var(--accent)")}
               onMouseLeave={(e) => (e.currentTarget.style.background = "var(--accent-dark)")}
@@ -86,7 +86,7 @@ export default function Hero() {
             </button>
             <button
               onClick={() => go("about")}
-              className="px-7 py-3.5 rounded-full text-[15px] transition-all duration-300 hover:-translate-y-0.5"
+              className="px-7 py-3.5 rounded-full text-[15px] transition-all duration-300 lg:hover:-translate-y-0.5"
               style={{
                 border: "1.5px solid var(--accent)",
                 color: "var(--accent)",
