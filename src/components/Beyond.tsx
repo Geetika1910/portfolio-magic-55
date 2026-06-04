@@ -43,11 +43,21 @@ const FEATURES = [
   "Built for the way I actually cook",
 ];
 
+const BEYOND_ROTATING_WORDS = ["unplug", "reset"];
+
 export default function Beyond() {
   const ref = useRef<HTMLDivElement>(null);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
   const [dragging, setDragging] = useState(false);
   const drag = useRef({ startX: 0, scrollLeft: 0 });
+  const [beyondIndex, setBeyondIndex] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setBeyondIndex((i) => (i + 1) % BEYOND_ROTATING_WORDS.length);
+    }, 2200);
+    return () => clearInterval(id);
+  }, []);
 
   // Curved/coverflow effect: transform each card based on its distance from viewport center
   useEffect(() => {
