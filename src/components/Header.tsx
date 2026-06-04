@@ -127,7 +127,7 @@ function AvatarUpload() {
     <button
       type="button"
       onClick={() => inputRef.current?.click()}
-      className="group relative w-9 h-9 rounded-full overflow-hidden shrink-0 transition-transform hover:scale-105"
+      className="group relative w-9 h-9 rounded-full overflow-hidden shrink-0 transition-transform lg:hover:scale-105"
       style={{
         border: "1.5px solid var(--accent)",
         background: "color-mix(in oklab, var(--accent) 18%, transparent)",
@@ -143,7 +143,7 @@ function AvatarUpload() {
         </span>
       )}
       <span
-        className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+        className="absolute inset-0 flex items-center justify-center opacity-0 lg:group-hover:opacity-100 transition-opacity"
         style={{ background: "rgba(0,0,0,0.55)", color: "white" }}
       >
         <Upload size={13} />
