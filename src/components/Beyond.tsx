@@ -119,7 +119,7 @@ export default function Beyond() {
             Where I unplug & get inspired.
           </h2>
           <p className="mt-4 text-[16px] max-w-xl" style={{ color: "var(--text-muted)" }}>
-            Mountains, mirrors, slow mornings, and side projects. The stuff that keeps the work honest.
+            Open skies, unfamiliar cities, food worth finding, and recipes worth experimenting with. This is where I breathe.
           </p>
         </motion.div>
       </div>
