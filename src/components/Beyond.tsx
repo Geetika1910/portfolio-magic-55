@@ -37,7 +37,7 @@ const PHOTOS: Photo[] = [
 ];
 
 const FEATURES = [
-  "Tell it your ingredients, mood, and time — get a recipe that fits",
+  "Tell it your ingredients, mood, and time - get a recipe that fits",
   "Quick filters for meal type, diet, and how many you're feeding",
   "Save the ones you love, tweak the ones you almost love",
   "No endless scrolling, just answers based on your kitchen",
