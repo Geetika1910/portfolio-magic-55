@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Menu, X, Linkedin, User, Upload } from "lucide-react";
 import resumePdf from "@/assets/resume.pdf.asset.json";
+import profileImg from "@/assets/geetika-profile.jpeg.asset.json";
 
 type NavItem = {
   label: string;
