@@ -228,27 +228,23 @@ export default function About() {
             </p>
 
             <p className="mt-6">
-              The science degree taught me one thing above everything else: form a hypothesis, test it ruthlessly, and be comfortable being wrong. Turns out that is also just product management. The pivot made more sense than it looked from the outside.
+              The science degree taught me one thing: form a hypothesis, test it ruthlessly, and be comfortable being wrong. Turns out that is just product management. The pivot made more sense than it looked.
             </p>
 
             <p className="mt-6">
-              I taught myself the craft through teardowns, fellowships, and a lot of unsolicited opinions about apps I was using daily. Then came Cars24, where I shipped a GenAI voicebot automating 40% of appointment confirmations, redesigned a desktop sell journey untouched for six years, and ran experiments that cut cancellations by 12%. Not bad for an intern.
+              I taught myself the craft through teardowns, fellowships, and unsolicited opinions about apps I used daily. Then came Cars24, where I shipped a GenAI voicebot automating 40% of appointment confirmations, redesigned a sell journey untouched for six years, and cut cancellations by 12%. Not bad for an intern.
             </p>
 
             <p className="mt-6">
-              Now at F22 Labs, I am the one deciding what gets built and why. Launched a professional directory from zero. Replaced Zendesk with an in-house support system, saving 100% of third-party costs. Built an automation pipeline that eliminated every manual event log across 45 platform pages. The kind of work where you do not just ship a feature, you change how a team operates.
+              Now at F22 Labs I decide what gets built and why. Launched a directory from zero. Replaced Zendesk entirely. Built an automation pipeline eliminating every manual event log across 45 pages. Work that changes how a team operates, not just what it ships.
             </p>
 
             <p className="mt-6">
-              The details are where I live. Not because polish is the goal, but because the label on a button and the rhythm of a confirmation screen are exactly where a user decides whether to trust you or leave. I think about that a lot.
+              The details are where I live. The label on a button. The rhythm of a confirmation screen. That is where trust gets built or lost.
             </p>
 
             <p className="mt-6">
-              Microbiology. Product fellowship. Two companies, four products, real users. Different rooms, same question: what is actually happening here, and how do we make it better for the person on the other end?
-            </p>
-
-            <p className="mt-6">
-              Still asking it.
+              Still asking the right questions.
             </p>
           </div>
         </div>
