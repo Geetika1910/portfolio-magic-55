@@ -10,13 +10,12 @@ import profileImg from "@/assets/geetika-profile.jpeg.asset.json";
 import f22Logo from "@/assets/f22.svg.asset.json";
 import cars24Logo from "@/assets/cars24.png.asset.json";
 import nextleapLogo from "@/assets/nextleap.jpg.asset.json";
-import shabariLogo from "@/assets/shabari.png.asset.json";
 
 const COMPANIES = [
-  { name: "F22", role: "Lead Product Designer", years: "2024–Current", grad: "linear-gradient(135deg,#7A8F7B,#A5B5A3)", logo: f22Logo.url },
-  { name: "Cars24", role: "Product Designer", years: "2022–2024", grad: "#4F46E5", logo: cars24Logo.url },
-  { name: "NextLeap", role: "Consulting", years: "2020–2022", grad: "#000000", logo: nextleapLogo.url },
-  { name: "Shabari.AI", role: "Junior Designer", years: "2019–2020", grad: "#ffffff", logo: shabariLogo.url },
+  { name: "F22 Labs", role: "Associate Product Manager", years: "2025–Current", grad: "linear-gradient(135deg,#7A8F7B,#A5B5A3)", logo: f22Logo.url },
+  { name: "Cars24", role: "Product Management Intern", years: "2024–2025", grad: "#4F46E5", logo: cars24Logo.url },
+  { name: "NextLeap", role: "PM Fellowship", years: "2024", grad: "#000000", logo: nextleapLogo.url },
+  { name: "GoPlow", role: "Senior Executive", years: "2023–2024", grad: "#c9a84c", logo: null },
 ];
 
 const TOOLS = [
