@@ -152,17 +152,16 @@ export default function Beyond() {
             paddingBottom: 40,
           }}
         >
-          {PHOTOS.map((g, i) => (
-            // TODO: Replace with <img src=".." />
+          {PHOTOS.map((p, i) => (
             <div
               key={i}
               ref={(el) => { cardRefs.current[i] = el; }}
-              className="shrink-0"
+              className="shrink-0 overflow-hidden"
               style={{
                 width: 280,
                 height: 320,
                 borderRadius: 20,
-                background: g,
+                background: p.image ? `url(${p.image}) center/cover no-repeat` : p.gradient,
                 boxShadow: "var(--shadow-card)",
                 transformStyle: "preserve-3d",
                 transition: "transform 0.15s ease-out, opacity 0.2s ease-out",
