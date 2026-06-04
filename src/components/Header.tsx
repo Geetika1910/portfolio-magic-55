@@ -189,7 +189,7 @@ export default function Header() {
           <AvatarUpload />
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            className="text-[18px] font-medium tracking-tight transition-transform hover:scale-105"
+            className="text-[18px] font-medium tracking-tight transition-transform lg:hover:scale-105"
             style={{ color: "var(--text-on-dark)" }}
           >
             Geetika
