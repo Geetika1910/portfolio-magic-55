@@ -63,7 +63,7 @@ export default function About() {
                 color: "rgba(255,255,255,0.4)",
               }}
             >
-              <img src={portraitAsset.url} alt="Geetika portrait" className="absolute inset-0 w-full h-full object-cover" />
+              <img src={portraitAsset} alt="Geetika portrait" className="absolute inset-0 w-full h-full object-cover" />
               
 
               <div className="absolute bottom-4 right-4 flex gap-2">
