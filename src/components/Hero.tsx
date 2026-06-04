@@ -62,8 +62,7 @@ export default function Hero() {
               Welcome to my little corner of the internet.
             </strong>
             <br />
-            I'm an associate product manager who finds the signal in the noise..
-            then makes it pretty.
+            I make sense of the noise to turn messy problems into clean, shippable products.
           </motion.p>
 
           <motion.div variants={lineVariant} className="mt-9 flex flex-wrap gap-4">
