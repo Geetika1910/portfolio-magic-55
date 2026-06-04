@@ -236,11 +236,11 @@ export default function About() {
             </p>
 
             <p className="mt-6">
-              Now at F22 Labs I decide what gets built and why. Launched a directory from zero. Replaced a third-party support system entirely. Built automation that changed how the team operates, not just what it ships.
+              Now at F22 Labs I decide what gets built and why. Launched a directory from zero. Replaced a third-party support system entirely. Built automation that changed how the team operates, not just what it ships. Different products, different users, same instinct: slow down enough to actually understand what is broken.
             </p>
 
             <p className="mt-6">
-              The details are where I live. The label on a button. The rhythm of a confirmation screen. That is where trust gets built or lost.
+              The details are where I live. The label on a button. The rhythm of a confirmation screen. The microcopy nobody wrote on purpose. That is where trust gets built or lost.
             </p>
 
             <p className="mt-6">
