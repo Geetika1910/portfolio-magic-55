@@ -240,30 +240,60 @@ export default function Header() {
         </button>
       </div>
 
-      {open && (
-        <div
-          className="fixed inset-0 z-[200] flex flex-col items-center justify-center gap-8"
-          style={{ background: "var(--bg-strip)" }}
+      {/* Mobile side drawer */}
+      <div
+        className={`md:hidden fixed inset-0 z-[200] transition-opacity duration-300 ${
+          open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
+        }`}
+        onClick={() => setOpen(false)}
+        aria-hidden={!open}
+      >
+        <div className="absolute inset-0" style={{ background: "rgba(0,0,0,0.5)" }} />
+        <aside
+          onClick={(e) => e.stopPropagation()}
+          className={`absolute top-0 right-0 h-full w-[82%] max-w-[340px] flex flex-col transition-transform duration-300 ease-out ${
+            open ? "translate-x-0" : "translate-x-full"
+          }`}
+          style={{
+            background: "var(--bg-strip)",
+            boxShadow: "-12px 0 40px rgba(0,0,0,0.35)",
+          }}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Navigation menu"
         >
-          <button
-            onClick={() => setOpen(false)}
-            className="absolute top-6 right-6 w-10 h-10 flex items-center justify-center"
-            style={{ color: "var(--text-on-dark)" }}
-            aria-label="Close menu"
-          >
-            <X size={24} />
-          </button>
-          {NAV.map((n) => (
+          <div className="flex items-center justify-between px-6 h-[72px]" style={{ borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
+            <span className="text-[14px] uppercase" style={{ letterSpacing: "0.18em", color: "var(--text-on-dark)" }}>
+              Menu
+            </span>
             <button
-              key={n.id}
-              onClick={() => go(n.id)}
-              className="text-2xl uppercase"
-              style={{ letterSpacing: "0.15em", color: "var(--text-on-dark)", fontFamily: "Playfair Display, serif" }}
+              onClick={() => setOpen(false)}
+              className="w-10 h-10 flex items-center justify-center"
+              style={{ color: "var(--text-on-dark)" }}
+              aria-label="Close menu"
             >
-              {n.label}
+              <X size={22} />
             </button>
-          ))}
-          <div className="mt-4 flex items-center gap-3">
+          </div>
+
+          <nav className="flex flex-col px-6 py-8 gap-2">
+            {NAV.map((n) => (
+              <button
+                key={n.id}
+                onClick={() => go(n.id)}
+                className="text-left py-3 text-xl transition-colors hover:text-[var(--accent-light)]"
+                style={{
+                  color: "var(--text-on-dark)",
+                  fontFamily: "Playfair Display, serif",
+                  borderBottom: "1px solid rgba(255,255,255,0.06)",
+                }}
+              >
+                {n.label}
+              </button>
+            ))}
+          </nav>
+
+          <div className="mt-auto px-6 pb-8 flex items-center gap-3">
             <a
               href="https://www.linkedin.com/in/geetika-aggarwal19"
               target="_blank"
@@ -278,14 +308,14 @@ export default function Header() {
               href={resumePdf.url}
               target="_blank"
               rel="noreferrer"
-              className="px-6 py-2.5 rounded-full text-sm"
+              className="flex-1 text-center px-6 py-2.5 rounded-full text-sm"
               style={{ border: "1px solid var(--accent)", color: "var(--text-on-dark)" }}
             >
               Resume
             </a>
           </div>
-        </div>
-      )}
+        </aside>
+      </div>
     </header>
   );
 }
