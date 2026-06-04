@@ -128,7 +128,9 @@ export default function About() {
 
               <div className="absolute bottom-4 right-4 flex gap-2">
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/in/geetika-aggarwal19"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-9 h-9 rounded-full flex items-center justify-center backdrop-blur transition-transform hover:scale-110"
                   style={{ background: "rgba(0,0,0,0.55)", color: "#fff" }}
                   aria-label="LinkedIn"
@@ -406,7 +408,7 @@ export default function About() {
                 </p>
 
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/geetika-aggarwal19"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 mt-5 px-4 py-2.5 rounded-full text-[13px] text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
