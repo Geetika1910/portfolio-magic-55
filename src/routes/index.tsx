@@ -8,6 +8,7 @@ import Beyond from "@/components/Beyond";
 import Footer from "@/components/Footer";
 import FlyingCards from "@/components/FlyingCards";
 import CustomCursor from "@/components/CustomCursor";
+import PdfViewer from "@/components/PdfViewer";
 
 export const Route = createFileRoute("/")({
   head: () => ({
