@@ -177,7 +177,7 @@ export default function Work() {
             </span>
           </h2>
           <p className="mt-4 text-[16px] max-w-xl" style={{ color: "var(--text-muted)" }}>
-            A handful of products and features I've helped guide from fuzzy idea to launched outcome.
+            A selection of products and features I've helped shape from fuzzy ideas to meaningful experiences.
           </p>
         </motion.div>
 
