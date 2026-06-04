@@ -131,16 +131,29 @@ export default function FlyingCards() {
             }}
           >
             <div style={{ height: lerp(140, 200, p), background: c.img ? `url(${c.img}) center/cover no-repeat` : c.grad }} />
-            <div className="p-4">
-              <p className="text-[14px] font-medium" style={{ color: "var(--text-primary)" }}>
-                {c.title}
-              </p>
+            <div className="p-6">
               <span
-                className="inline-block mt-2 px-2.5 py-1 rounded-full text-[11px]"
+                className="inline-block px-2.5 py-1 rounded-full text-[11px]"
                 style={{ background: "var(--accent-pale)", color: "var(--accent)" }}
               >
                 {c.tag}
               </span>
+              <div className="mt-3 flex items-start justify-between gap-4">
+                <h3 style={{ fontSize: 20, color: "var(--text-primary)", lineHeight: 1.3 }}>
+                  {c.title}
+                </h3>
+                <div
+                  className="shrink-0 w-8 h-8 rounded-full flex items-center justify-center"
+                  style={{
+                    border: `1px solid ${isHover ? "var(--accent)" : "var(--border-strong)"}`,
+                    background: isHover ? "var(--accent)" : "transparent",
+                    color: isHover ? "#fff" : "var(--text-body)",
+                    transition: "all 0.2s ease",
+                  }}
+                >
+                  <ArrowRight size={14} />
+                </div>
+              </div>
             </div>
           </a>
         );
