@@ -63,18 +63,10 @@ export default function About() {
                 color: "rgba(255,255,255,0.4)",
               }}
             >
-              <img src={portraitAsset} alt="Geetika portrait" className="absolute inset-0 w-full h-full object-cover" />
+              <img src={portraitAsset.url} alt="Geetika portrait" className="absolute inset-0 w-full h-full object-cover" />
               
 
               <div className="absolute bottom-4 right-4 flex gap-2">
-                <a
-                  href="#"
-                  className="w-9 h-9 rounded-full flex items-center justify-center backdrop-blur transition-transform hover:scale-110"
-                  style={{ background: "rgba(0,0,0,0.55)", color: "#fff" }}
-                  aria-label="Dribbble"
-                >
-                  <Dribbble size={16} />
-                </a>
                 <a
                   href="#"
                   className="w-9 h-9 rounded-full flex items-center justify-center backdrop-blur transition-transform hover:scale-110"
