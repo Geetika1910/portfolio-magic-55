@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import { openPdf } from "./PdfViewer";
 import { useEffect, useState } from "react";
 import work1Thumb from "@/assets/work-1-thumb.png.asset.json";
 import work2Thumb from "@/assets/work-2-thumb.png.asset.json";
