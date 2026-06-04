@@ -284,9 +284,8 @@ export default function Beyond() {
                   </li>
                 ))}
               </ul>
-              {/* TODO: Replace href with your What's Cooking URL */}
               <a
-                href="#"
+                href="https://whatscooking-nu.vercel.app/"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-block mt-7 px-6 py-3 rounded-full text-[14px] text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
