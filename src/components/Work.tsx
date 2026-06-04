@@ -1,6 +1,14 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import work1Thumb from "@/assets/work-1-thumb.png.asset.json";
+import work3Thumb from "@/assets/work-3-thumb.png.asset.json";
+import work4Thumb from "@/assets/work-4-thumb.png.asset.json";
+import work5Thumb from "@/assets/work-5-thumb.png.asset.json";
+import work6Thumb from "@/assets/work-6-thumb.png.asset.json";
+import work7Thumb from "@/assets/work-7-thumb.png.asset.json";
+import work8Thumb from "@/assets/work-8-thumb.png.asset.json";
+import work9Thumb from "@/assets/work-9-thumb.png.asset.json";
+import work10Thumb from "@/assets/work-10-thumb.png.asset.json";
 
 const ROTATING_WORDS = ["ideated.", "shipped."];
 import { ArrowRight } from "lucide-react";
@@ -9,16 +17,16 @@ import { workSlotRefs } from "./FlyingCards";
 type Project = { title: string; tag: string; desc: string; pdf: string; grad: string; img?: string };
 
 const PROJECTS: Project[] = [
-  { title: "Onboarding Overhaul", tag: "Growth · B2C", desc: "Took a leaky onboarding funnel from 20% to 68% completion by obsessing over the first 5 minutes.", pdf: "/project1.pdf", grad: "linear-gradient(135deg, #f6d365, #fda085)", img: work1Thumb.url },
-  { title: "Churn Prediction Dashboard", tag: "Analytics · B2B", desc: "Surfaced churn signals 30 days early — reduced customer churn by 35% in two quarters.", pdf: "/project2.pdf", grad: "linear-gradient(135deg, #5ee7df, #b490ca)" },
-  { title: "Marketplace Zero-to-One", tag: "Launch", desc: "Built a two-sided marketplace from scratch. 10K transactions in the first 90 days.", pdf: "/project3.pdf", grad: "linear-gradient(135deg, #fbc2eb, #a18cd1)" },
-  { title: "AI Recommendations Engine", tag: "Personalisation", desc: "Shipped an AI rec engine that increased session time by 40% without feeling creepy.", pdf: "/project4.pdf", grad: "linear-gradient(135deg, #84fab0, #8fd3f4)" },
-  { title: "Platform Performance Revamp", tag: "Scale", desc: "Reduced page load by 60% and cut infra costs by ₹2Cr annually. Boring to build, exciting to ship.", pdf: "/project5.pdf", grad: "linear-gradient(135deg, #ffd194, #d1913c)" },
-  { title: "Notification System Redesign", tag: "Engagement", desc: "Flipped a notification system driving users away — 55% fewer opt-outs, 3× CTR.", pdf: "/project6.pdf", grad: "linear-gradient(135deg, #c471f5, #fa71cd)" },
-  { title: "3-Market Expansion", tag: "GTM", desc: "Led localisation into 3 new markets, each with wildly different behaviours and regulations.", pdf: "/project7.pdf", grad: "linear-gradient(135deg, #a1c4fd, #c2e9fb)" },
-  { title: "Fraud Detection Feature", tag: "Trust & Safety", desc: "Prevented $2M in losses in 6 months with <0.1% false positive rate.", pdf: "/project8.pdf", grad: "linear-gradient(135deg, #ff9a9e, #fad0c4)" },
-  { title: "Subscription Pricing Overhaul", tag: "Monetisation", desc: "Redesigned pricing tiers and checkout flow — grew ARPU by 22% in one quarter.", pdf: "/project9.pdf", grad: "linear-gradient(135deg, #667eea, #764ba2)" },
-  { title: "Internal Tools Suite", tag: "Operations", desc: "Replaced 6 scattered workflows with one unified ops dashboard. Saved 15 hrs/week across the team.", pdf: "/project10.pdf", grad: "linear-gradient(135deg, #11998e, #38ef7d)" },
+  { title: "Date Planner for Bumble", tag: "Growth", desc: "Took a leaky onboarding funnel from 20% to 68% completion by obsessing over the first 5 minutes.", pdf: "/project1.pdf", grad: "linear-gradient(135deg, #f6d365, #fda085)", img: work1Thumb.url },
+  { title: "Increasing DAU of leading Hindi News Platform", tag: "RCA and Growth", desc: "Surfaced churn signals 30 days early — reduced customer churn by 35% in two quarters.", pdf: "/project2.pdf", grad: "linear-gradient(135deg, #5ee7df, #b490ca)", img: work1Thumb.url },
+  { title: "Mixpanel Event Writing Automation", tag: "AI Automation", desc: "Built a two-sided marketplace from scratch. 10K transactions in the first 90 days.", pdf: "/project3.pdf", grad: "linear-gradient(135deg, #fbc2eb, #a18cd1)", img: work3Thumb.url },
+  { title: "Increasing Zomato Reviews", tag: "Growth", desc: "Shipped an AI rec engine that increased session time by 40% without feeling creepy.", pdf: "/project4.pdf", grad: "linear-gradient(135deg, #84fab0, #8fd3f4)", img: work4Thumb.url },
+  { title: "Paytm Expense Tracker", tag: "New Feature", desc: "Reduced page load by 60% and cut infra costs by ₹2Cr annually. Boring to build, exciting to ship.", pdf: "/project5.pdf", grad: "linear-gradient(135deg, #ffd194, #d1913c)", img: work5Thumb.url },
+  { title: "Analysing Market for Gig Workers in Healthcare Industry", tag: "Market Analysis", desc: "Flipped a notification system driving users away — 55% fewer opt-outs, 3× CTR.", pdf: "/project6.pdf", grad: "linear-gradient(135deg, #c471f5, #fa71cd)", img: work6Thumb.url },
+  { title: "UI/UX Heuristics Teardown of Google Keep", tag: "UI/UX", desc: "Led localisation into 3 new markets, each with wildly different behaviours and regulations.", pdf: "/project7.pdf", grad: "linear-gradient(135deg, #a1c4fd, #c2e9fb)", img: work7Thumb.url },
+  { title: "Shopping Bot for GIVA", tag: "AI", desc: "Prevented $2M in losses in 6 months with <0.1% false positive rate.", pdf: "/project8.pdf", grad: "linear-gradient(135deg, #ff9a9e, #fad0c4)", img: work8Thumb.url },
+  { title: "Reviews Writing Flow Teardown of Urbanic", tag: "Product Teardown", desc: "Redesigned pricing tiers and checkout flow — grew ARPU by 22% in one quarter.", pdf: "/project9.pdf", grad: "linear-gradient(135deg, #667eea, #764ba2)", img: work9Thumb.url },
+  { title: "Onboarding Flow Teardown of Duolingo", tag: "Product Teardown", desc: "Replaced 6 scattered workflows with one unified ops dashboard. Saved 15 hrs/week across the team.", pdf: "/project10.pdf", grad: "linear-gradient(135deg, #11998e, #38ef7d)", img: work10Thumb.url },
 ];
 
 function ProjectCard({ p }: { p: (typeof PROJECTS)[number] }) {
