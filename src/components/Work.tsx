@@ -14,6 +14,8 @@ const PROJECTS = [
   { title: "Notification System Redesign", tag: "Engagement", desc: "Flipped a notification system driving users away — 55% fewer opt-outs, 3× CTR.", pdf: "/project6.pdf", grad: "linear-gradient(135deg, #c471f5, #fa71cd)" },
   { title: "3-Market Expansion", tag: "GTM", desc: "Led localisation into 3 new markets, each with wildly different behaviours and regulations.", pdf: "/project7.pdf", grad: "linear-gradient(135deg, #a1c4fd, #c2e9fb)" },
   { title: "Fraud Detection Feature", tag: "Trust & Safety", desc: "Prevented $2M in losses in 6 months with <0.1% false positive rate.", pdf: "/project8.pdf", grad: "linear-gradient(135deg, #ff9a9e, #fad0c4)" },
+  { title: "Subscription Pricing Overhaul", tag: "Monetisation", desc: "Redesigned pricing tiers and checkout flow — grew ARPU by 22% in one quarter.", pdf: "/project9.pdf", grad: "linear-gradient(135deg, #667eea, #764ba2)" },
+  { title: "Internal Tools Suite", tag: "Operations", desc: "Replaced 6 scattered workflows with one unified ops dashboard. Saved 15 hrs/week across the team.", pdf: "/project10.pdf", grad: "linear-gradient(135deg, #11998e, #38ef7d)" },
 ];
 
 function ProjectCard({ p }: { p: (typeof PROJECTS)[number] }) {
