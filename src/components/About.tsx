@@ -2,7 +2,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 const ABOUT_ROTATING_WORDS = ["roadmap.", "title."];
-const APPROACH_ROTATING_WORDS = ["Problems", "Products"];
+const APPROACH_ROTATING_WORDS = ["Problems.", "Products."];
 import { User, Linkedin } from "lucide-react";
 import ApproachStack from "./ApproachStack";
 import portraitAsset from "@/assets/portrait-v2.jpeg.asset.json";

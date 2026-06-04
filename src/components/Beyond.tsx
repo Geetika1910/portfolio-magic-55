@@ -43,7 +43,7 @@ const FEATURES = [
   "Built for the way I actually cook",
 ];
 
-const BEYOND_ROTATING_WORDS = ["unplug", "reset"];
+const BEYOND_ROTATING_WORDS = ["unplug.", "reset."];
 
 export default function Beyond() {
   const ref = useRef<HTMLDivElement>(null);
