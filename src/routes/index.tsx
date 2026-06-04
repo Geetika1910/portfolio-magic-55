@@ -13,9 +13,9 @@ import PdfViewer from "@/components/PdfViewer";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Your Name — Product Manager Portfolio" },
+      { title: "Geetika — Product Manager Portfolio" },
       { name: "description", content: "Product Manager portfolio — case studies, approach, and side projects." },
-      { property: "og:title", content: "Your Name — Product Manager" },
+      { property: "og:title", content: "Geetika — Product Manager" },
       { property: "og:description", content: "I turn messy problems into clean products." },
     ],
     links: [
