@@ -69,12 +69,12 @@ function NavButton({ item, onClick }: { item: NavItem; onClick: () => void }) {
       <button onClick={onClick} className="group inline-flex items-center gap-1.5" style={base}>
         <span
           aria-hidden
-          className="inline-block transition-transform duration-500 group-hover:rotate-[360deg]"
+          className="inline-block transition-transform duration-500 lg:group-hover:rotate-[360deg]"
           style={{ color: "var(--accent-light)" }}
         >
           ✦
         </span>
-        <span className="transition-colors group-hover:text-[var(--accent-light)]">{item.label}</span>
+        <span className="transition-colors lg:group-hover:text-[var(--accent-light)]">{item.label}</span>
       </button>
     );
   }
