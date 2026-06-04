@@ -203,7 +203,7 @@ export default function Header() {
 
         <div className="hidden md:flex items-center gap-3">
           <a
-            href="https://linkedin.com/in/yourprofile"
+            href="https://www.linkedin.com/in/geetika-aggarwal19"
             target="_blank"
             rel="noreferrer"
             aria-label="LinkedIn"

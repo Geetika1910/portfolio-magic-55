@@ -3,9 +3,9 @@ import { motion } from "framer-motion";
 import resumePdf from "@/assets/resume.pdf.asset.json";
 
 const LINKS = [
-  { icon: Linkedin, label: "linkedin.com/in/yourprofile", href: "https://linkedin.com/in/yourprofile" },
-  { icon: Mail, label: "yourname@gmail.com", href: "mailto:yourname@gmail.com" },
-  { icon: Phone, label: "+91 99999 99999", href: "tel:+919999999999" },
+  { icon: Linkedin, label: "linkedin.com/in/geetika-aggarwal19", href: "https://www.linkedin.com/in/geetika-aggarwal19" },
+  { icon: Mail, label: "geetika201999@gmail.com", href: "mailto:geetika201999@gmail.com" },
+  { icon: Phone, label: "+91 9773537721", href: "tel:+919773537721" },
   { icon: FileText, label: "Download Resume", href: resumePdf.url },
 ];
 
@@ -63,8 +63,8 @@ export default function Footer() {
         <hr className="my-10" style={{ border: 0, borderTop: "1px solid rgba(255,255,255,0.08)" }} />
 
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 text-[13px]" style={{ color: "rgba(244,242,238,0.5)" }}>
-          <span>© 2025 Your Name · Built with care (and too much coffee)</span>
-          <span>Product Manager · Chennai</span>
+          <span>© 2026 Geetika · Built with care (and too much coffee)</span>
+          <span>Product Manager · Gurgaon</span>
         </div>
       </div>
 
