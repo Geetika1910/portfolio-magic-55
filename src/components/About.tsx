@@ -11,11 +11,26 @@ import f22Logo from "@/assets/f22.svg.asset.json";
 import cars24Logo from "@/assets/cars24.png.asset.json";
 import nextleapLogo from "@/assets/nextleap.jpg.asset.json";
 
+function CompanyLogo({ name, logo }: { name: string; logo?: string }) {
+  if (logo) {
+    return <img src={logo} alt={name} className="w-9 h-9 shrink-0 object-contain" />;
+  }
+  const initials = name.slice(0, 2).toUpperCase();
+  return (
+    <div
+      className="w-9 h-9 shrink-0 rounded-lg flex items-center justify-center text-[11px] font-bold"
+      style={{ background: "var(--bg-secondary)", color: "var(--text-primary)", border: "1px solid var(--border)" }}
+    >
+      {initials}
+    </div>
+  );
+}
+
 const COMPANIES = [
   { name: "F22 Labs", role: "Associate Product Manager", years: "2025–Current", grad: "linear-gradient(135deg,#7A8F7B,#A5B5A3)", logo: f22Logo.url },
   { name: "Cars24", role: "Product Management Intern", years: "2024–2025", grad: "#4F46E5", logo: cars24Logo.url },
   { name: "NextLeap", role: "PM Fellowship", years: "2024", grad: "#000000", logo: nextleapLogo.url },
-  { name: "GoPlow", role: "Senior Executive", years: "2023–2024", grad: "#c9a84c", logo: undefined as string | undefined },
+  { name: "GoPlow", role: "Senior Executive", years: "2023–2024", grad: "#c9a84c" },
 ];
 
 const TOOLS = [
