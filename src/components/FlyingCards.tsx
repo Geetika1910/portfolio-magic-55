@@ -4,6 +4,10 @@ import work1Thumb from "@/assets/work-1-thumb.png.asset.json";
 import work2Thumb from "@/assets/work-2-thumb.png.asset.json";
 import work3Thumb from "@/assets/work-3-thumb.png.asset.json";
 import work4Thumb from "@/assets/work-4-thumb.png.asset.json";
+import project1Pdf from "@/assets/project1.pdf.asset.json";
+import project2Pdf from "@/assets/project2.pdf.asset.json";
+import project3Pdf from "@/assets/project3.pdf.asset.json";
+import project4Pdf from "@/assets/project4.pdf.asset.json";
 
 export type Slot = { x: number; y: number; w: number; h: number };
 
@@ -15,10 +19,10 @@ export const workSlotRefs: { current: HTMLDivElement | null }[] = [
 ];
 
 const CARDS: { title: string; tag: string; grad: string; pdf: string; img?: string }[] = [
-  { title: "Date Planner for Bumble",                       tag: "Growth",          grad: "linear-gradient(135deg,#f6d365,#fda085)", pdf: "/project1.pdf", img: work1Thumb.url },
-  { title: "Increasing DAU of Hindi News Platform",         tag: "RCA and Growth",  grad: "linear-gradient(135deg,#5ee7df,#b490ca)", pdf: "/project2.pdf", img: work2Thumb.url },
-  { title: "Mixpanel Event Writing Automation",             tag: "AI Automation",   grad: "linear-gradient(135deg,#fbc2eb,#a18cd1)", pdf: "/project3.pdf", img: work3Thumb.url },
-  { title: "Increasing Zomato Reviews",                     tag: "Growth",          grad: "linear-gradient(135deg,#84fab0,#8fd3f4)", pdf: "/project4.pdf", img: work4Thumb.url },
+  { title: "Date Planner for Bumble",                       tag: "Growth",          grad: "linear-gradient(135deg,#f6d365,#fda085)", pdf: project1Pdf.url, img: work1Thumb.url },
+  { title: "Increasing DAU of Hindi News Platform",         tag: "RCA and Growth",  grad: "linear-gradient(135deg,#5ee7df,#b490ca)", pdf: project2Pdf.url, img: work2Thumb.url },
+  { title: "Mixpanel Event Writing Automation",             tag: "AI Automation",   grad: "linear-gradient(135deg,#fbc2eb,#a18cd1)", pdf: project3Pdf.url, img: work3Thumb.url },
+  { title: "Increasing Zomato Reviews",                     tag: "Growth",          grad: "linear-gradient(135deg,#84fab0,#8fd3f4)", pdf: project4Pdf.url, img: work4Thumb.url },
 ];
 
 function readRect(el: HTMLElement | null): Slot | null {
