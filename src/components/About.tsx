@@ -207,7 +207,7 @@ export default function About() {
                           boxShadow: "var(--shadow-card)",
                         }}
                       >
-                        <img src={c.logo} alt={c.name} className="w-9 h-9 shrink-0 object-contain" />
+                        <CompanyLogo name={c.name} logo={c.logo} />
                         <div className="flex-1 min-w-0 flex items-center justify-between gap-3">
                           <div>
                             <div className="text-[15px] font-semibold">{c.name}</div>
