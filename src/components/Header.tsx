@@ -263,15 +263,27 @@ export default function Header() {
               {n.label}
             </button>
           ))}
-          <a
-            href={resumePdf.url}
-            target="_blank"
-            rel="noreferrer"
-            className="mt-4 px-6 py-2.5 rounded-full text-sm"
-            style={{ border: "1px solid var(--accent)", color: "var(--text-on-dark)" }}
-          >
-            Resume
-          </a>
+          <div className="mt-4 flex items-center gap-3">
+            <a
+              href="https://www.linkedin.com/in/geetika-aggarwal19"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="LinkedIn"
+              className="w-11 h-11 rounded-full flex items-center justify-center"
+              style={{ border: "1px solid var(--accent)", color: "var(--text-on-dark)" }}
+            >
+              <Linkedin size={16} />
+            </a>
+            <a
+              href={resumePdf.url}
+              target="_blank"
+              rel="noreferrer"
+              className="px-6 py-2.5 rounded-full text-sm"
+              style={{ border: "1px solid var(--accent)", color: "var(--text-on-dark)" }}
+            >
+              Resume
+            </a>
+          </div>
         </div>
       )}
     </header>
