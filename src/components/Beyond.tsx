@@ -1,22 +1,34 @@
 import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
+import beyond1 from "@/assets/beyond-1.jpeg.asset.json";
+import beyond2 from "@/assets/beyond-2.jpeg.asset.json";
+import beyond3 from "@/assets/beyond-3.jpeg.asset.json";
+import beyond4 from "@/assets/beyond-4.png.asset.json";
+import beyond5 from "@/assets/beyond-5.jpeg.asset.json";
+import beyond6 from "@/assets/beyond-6.jpeg.asset.json";
+import beyond7 from "@/assets/beyond-7.jpeg.asset.json";
+import beyond8 from "@/assets/beyond-8.jpeg.asset.json";
+import beyond9 from "@/assets/beyond-9.jpeg.asset.json";
+import beyond10 from "@/assets/beyond-10.jpeg.asset.json";
 
-const PHOTOS = [
-  "linear-gradient(135deg,#6b8e6b,#3a5c3a)",
-  "linear-gradient(135deg,#a8c0d8,#5e7a92)",
-  "linear-gradient(135deg,#d4a373,#8b5a3c)",
-  "linear-gradient(135deg,#7a8f7b,#a5b5a3)",
-  "linear-gradient(135deg,#c9b99a,#8b7355)",
-  "linear-gradient(135deg,#4a6741,#87a878)",
-  "linear-gradient(135deg,#b8c5d8,#4a5a72)",
-  "linear-gradient(135deg,#e0b88a,#a5754a)",
-  "linear-gradient(135deg,#8aa890,#4f6b55)",
-  "linear-gradient(135deg,#d8b8a0,#8b6a52)",
-  "linear-gradient(135deg,#9ab0c0,#5a7080)",
-  "linear-gradient(135deg,#bfa078,#6e5a3c)",
-  "linear-gradient(135deg,#7d9a8a,#3f5c4a)",
-  "linear-gradient(135deg,#c8a890,#7a5848)",
+type Photo = { image?: string; gradient?: string };
+
+const PHOTOS: Photo[] = [
+  { image: beyond1.url },
+  { image: beyond2.url },
+  { image: beyond3.url },
+  { image: beyond4.url },
+  { image: beyond5.url },
+  { image: beyond6.url },
+  { image: beyond7.url },
+  { image: beyond8.url },
+  { image: beyond9.url },
+  { image: beyond10.url },
+  { gradient: "linear-gradient(135deg,#bfa078,#6e5a3c)" },
+  { gradient: "linear-gradient(135deg,#7d9a8a,#3f5c4a)" },
+  { gradient: "linear-gradient(135deg,#c8a890,#7a5848)" },
+  { gradient: "linear-gradient(135deg,#9ab0c0,#5a7080)" },
 ];
 
 const FEATURES = [
@@ -140,17 +152,16 @@ export default function Beyond() {
             paddingBottom: 40,
           }}
         >
-          {PHOTOS.map((g, i) => (
-            // TODO: Replace with <img src=".." />
+          {PHOTOS.map((p, i) => (
             <div
               key={i}
               ref={(el) => { cardRefs.current[i] = el; }}
-              className="shrink-0"
+              className="shrink-0 overflow-hidden"
               style={{
                 width: 280,
                 height: 320,
                 borderRadius: 20,
-                background: g,
+                background: p.image ? `url(${p.image}) center/cover no-repeat` : p.gradient,
                 boxShadow: "var(--shadow-card)",
                 transformStyle: "preserve-3d",
                 transition: "transform 0.15s ease-out, opacity 0.2s ease-out",
