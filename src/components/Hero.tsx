@@ -69,9 +69,9 @@ export default function Hero() {
             <button
               onClick={() => go("work")}
               className="px-7 py-3.5 rounded-full text-[15px] text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
-              style={{ background: "var(--accent)" }}
-              onMouseEnter={(e) => (e.currentTarget.style.background = "var(--accent-light)")}
-              onMouseLeave={(e) => (e.currentTarget.style.background = "var(--accent)")}
+              style={{ background: "var(--accent-dark)" }}
+              onMouseEnter={(e) => (e.currentTarget.style.background = "var(--accent)")}
+              onMouseLeave={(e) => (e.currentTarget.style.background = "var(--accent-dark)")}
             >
               See my work →
             </button>
