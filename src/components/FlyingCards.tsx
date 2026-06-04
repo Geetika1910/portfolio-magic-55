@@ -4,6 +4,10 @@ import work1Thumb from "@/assets/work-1-thumb.png.asset.json";
 import work2Thumb from "@/assets/work-2-thumb.png.asset.json";
 import work3Thumb from "@/assets/work-3-thumb.png.asset.json";
 import work4Thumb from "@/assets/work-4-thumb.png.asset.json";
+import project1Pdf from "@/assets/project1.pdf.asset.json";
+import project2Pdf from "@/assets/project2.pdf.asset.json";
+import project3Pdf from "@/assets/project3.pdf.asset.json";
+import project4Pdf from "@/assets/project4.pdf.asset.json";
 
 export type Slot = { x: number; y: number; w: number; h: number };
 
