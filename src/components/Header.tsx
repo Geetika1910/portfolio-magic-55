@@ -286,7 +286,7 @@ export default function Header() {
               <button
                 key={n.id}
                 onClick={() => go(n.id)}
-                className="text-left py-3 text-xl transition-colors hover:text-[var(--accent-light)]"
+                className="text-left py-3 text-xl transition-colors lg:hover:text-[var(--accent-light)]"
                 style={{
                   color: "var(--text-on-dark)",
                   fontFamily: "Playfair Display, serif",
