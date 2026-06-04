@@ -121,7 +121,7 @@ function PlaceholderSlot({ index }: { index: number }) {
           workSlotRefs[index].current = el;
         }}
         aria-hidden
-        className="hidden md:block"
+        className="hidden lg:block"
         style={{ height: 360, borderRadius: 16 }}
       />
     </>
