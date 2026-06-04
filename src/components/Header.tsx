@@ -31,13 +31,13 @@ function NavButton({ item, onClick }: { item: NavItem; onClick: () => void }) {
 
   if (item.hover === "underline") {
     return (
-      <button onClick={onClick} className="group" style={base}>
-        <span className="transition-colors group-hover:text-[var(--accent-light)]" style={{ color: "var(--text-muted)" }}>
+    <button onClick={onClick} className="group" style={base}>
+        <span className="transition-colors lg:group-hover:text-[var(--accent-light)]" style={{ color: "var(--text-muted)" }}>
           {item.label}
         </span>
         <span
           aria-hidden
-          className="absolute left-0 bottom-1 h-[1.5px] w-full origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100"
+          className="absolute left-0 bottom-1 h-[1.5px] w-full origin-left scale-x-0 transition-transform duration-300 lg:group-hover:scale-x-100"
           style={{ background: "var(--accent-light)" }}
         />
       </button>
