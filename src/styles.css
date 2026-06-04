@@ -3,6 +3,9 @@
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
+@custom-variant hover (@media (hover: hover) and (pointer: fine) { &:hover });
+@custom-variant group-hover (@media (hover: hover) and (pointer: fine) { &:is(:where(.group):hover *) });
+@custom-variant peer-hover (@media (hover: hover) and (pointer: fine) { &:is(:where(.peer):hover ~ &) });
 
 @theme inline {
   --color-bg-primary: var(--bg-primary);
