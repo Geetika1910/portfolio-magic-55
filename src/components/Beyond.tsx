@@ -274,7 +274,7 @@ export default function Beyond() {
                 What's Cooking?
               </h3>
               <p className="mt-4 text-[15px]" style={{ color: "rgba(244,242,238,0.75)", lineHeight: 1.7 }}>
-                A side project born out of one too many "what do I make with these ingredients" moments. An AI-powered recipe app built for people who actually cook at home, not just browse recipes they never try.
+                An AI-powered recipe app that takes what's already in your kitchen and spins up meal ideas in seconds - built on too many "what do i make" moments.
               </p>
               <ul className="mt-5 space-y-2.5">
                 {FEATURES.map((f) => (
