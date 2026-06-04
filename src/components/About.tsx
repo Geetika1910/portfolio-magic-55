@@ -7,7 +7,7 @@ import portraitAsset from "@/assets/portrait-v2.jpeg.asset.json";
 import f22Logo from "@/assets/f22.svg.asset.json";
 import cars24Logo from "@/assets/cars24.png.asset.json";
 import nextleapLogo from "@/assets/nextleap.jpg.asset.json";
-import shabariLogo from "@/assets/shabari.jpeg.asset.json";
+import shabariLogo from "@/assets/shabari.png.asset.json";
 
 const COMPANIES = [
   { name: "F22", role: "Lead Product Designer", years: "2024–Current", grad: "linear-gradient(135deg,#7A8F7B,#A5B5A3)", logo: f22Logo.url },
