@@ -5,13 +5,13 @@ const ABOUT_ROTATING_WORDS = ["roadmap.", "title."];
 const APPROACH_ROTATING_WORDS = ["Problems.", "Products."];
 import { User, Linkedin } from "lucide-react";
 import ApproachStack from "./ApproachStack";
-import portraitAsset from "@/assets/portrait-v2.jpeg.asset.json";
-import profileImg from "@/assets/geetika-profile.jpeg.asset.json";
+const portraitAsset = "/assets/portrait-v2.jpeg";
+const profileImg = "/assets/geetika-profile.jpeg";
 
-import f22Logo from "@/assets/f22.svg.asset.json";
-import cars24Logo from "@/assets/cars24.png.asset.json";
-import nextleapLogo from "@/assets/nextleap.jpg.asset.json";
-import goplowLogo from "@/assets/goplow.jpg.asset.json";
+const f22Logo = "/assets/f22.svg";
+const cars24Logo = "/assets/cars24.png";
+const nextleapLogo = "/assets/nextleap.jpg";
+const goplowLogo = "/assets/goplow.jpg";
 
 function CompanyLogo({ name, logo }: { name: string; logo?: string }) {
   if (logo) {
@@ -29,10 +29,10 @@ function CompanyLogo({ name, logo }: { name: string; logo?: string }) {
 }
 
 const COMPANIES = [
-  { name: "F22 Labs", role: "Associate Product Manager", years: "2025–Current", grad: "linear-gradient(135deg,#7A8F7B,#A5B5A3)", logo: f22Logo.url },
-  { name: "Cars24", role: "Product Management Intern", years: "2024–2025", grad: "#4F46E5", logo: cars24Logo.url },
-  { name: "NextLeap", role: "PM Fellowship", years: "2024", grad: "#000000", logo: nextleapLogo.url },
-  { name: "GoPlow", role: "Senior Executive", years: "2023–2024", grad: "#c9a84c", logo: goplowLogo.url },
+  { name: "F22 Labs", role: "Associate Product Manager", years: "2025–Current", grad: "linear-gradient(135deg,#7A8F7B,#A5B5A3)", logo: f22Logo },
+  { name: "Cars24", role: "Product Management Intern", years: "2024–2025", grad: "#4F46E5", logo: cars24Logo },
+  { name: "NextLeap", role: "PM Fellowship", years: "2024", grad: "#000000", logo: nextleapLogo },
+  { name: "GoPlow", role: "Senior Executive", years: "2023–2024", grad: "#c9a84c", logo: goplowLogo },
 ];
 
 const TOOLS = [
@@ -123,7 +123,7 @@ export default function About() {
                 color: "rgba(255,255,255,0.4)",
               }}
             >
-              <img src={portraitAsset.url} alt="Geetika portrait" className="absolute inset-0 w-full h-full object-cover" />
+              <img src={portraitAsset} alt="Geetika portrait" className="absolute inset-0 w-full h-full object-cover" />
               
 
               <div className="absolute bottom-4 right-4 flex gap-2">
@@ -376,7 +376,7 @@ export default function About() {
                     border: "2px solid var(--accent)",
                   }}
                 >
-                  <img src={profileImg.url} alt="Geetika" className="w-full h-full object-cover" />
+                  <img src={profileImg} alt="Geetika" className="w-full h-full object-cover" />
                 </div>
 
 

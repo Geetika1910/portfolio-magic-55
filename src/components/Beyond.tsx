@@ -1,39 +1,40 @@
 import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import beyond1 from "@/assets/beyond-1.jpeg.asset.json";
-import beyond2 from "@/assets/beyond-2.jpeg.asset.json";
-import beyond3 from "@/assets/beyond-3.jpeg.asset.json";
-import beyond4 from "@/assets/beyond-4.png.asset.json";
-import beyond5 from "@/assets/beyond-5.jpeg.asset.json";
-import beyond6 from "@/assets/beyond-6.jpeg.asset.json";
-import beyond7 from "@/assets/beyond-7.jpeg.asset.json";
-import beyond8 from "@/assets/beyond-8.jpeg.asset.json";
-import beyond9 from "@/assets/beyond-9.jpeg.asset.json";
-import beyond10 from "@/assets/beyond-10.jpeg.asset.json";
-import beyond11 from "@/assets/beyond-11.jpeg.asset.json";
-import beyond12 from "@/assets/beyond-12.jpeg.asset.json";
-import beyond13 from "@/assets/beyond-13.jpeg.asset.json";
-import beyond14 from "@/assets/beyond-14.jpeg.asset.json";
-import whatsCooking from "@/assets/whats_cooking_trimmed_16x9.svg.asset.json";
+
+const beyond1 = "/assets/beyond-1.jpeg";
+const beyond2 = "/assets/beyond-2.jpeg";
+const beyond3 = "/assets/beyond-3.jpeg";
+const beyond4 = "/assets/beyond-4.png";
+const beyond5 = "/assets/beyond-5.jpeg";
+const beyond6 = "/assets/beyond-6.jpeg";
+const beyond7 = "/assets/beyond-7.jpeg";
+const beyond8 = "/assets/beyond-8.jpeg";
+const beyond9 = "/assets/beyond-9.jpeg";
+const beyond10 = "/assets/beyond-10.jpeg";
+const beyond11 = "/assets/beyond-11.jpeg";
+const beyond12 = "/assets/beyond-12.jpeg";
+const beyond13 = "/assets/beyond-13.jpeg";
+const beyond14 = "/assets/beyond-14.jpeg";
+const whatsCooking = "/assets/whats_cooking_trimmed_16x9.svg";
 
 type Photo = { image?: string; gradient?: string };
 
 const PHOTOS: Photo[] = [
-  { image: beyond1.url },
-  { image: beyond2.url },
-  { image: beyond3.url },
-  { image: beyond4.url },
-  { image: beyond5.url },
-  { image: beyond6.url },
-  { image: beyond7.url },
-  { image: beyond8.url },
-  { image: beyond9.url },
-  { image: beyond10.url },
-  { image: beyond11.url },
-  { image: beyond12.url },
-  { image: beyond13.url },
-  { image: beyond14.url },
+  { image: beyond1 },
+  { image: beyond2 },
+  { image: beyond3 },
+  { image: beyond4 },
+  { image: beyond5 },
+  { image: beyond6 },
+  { image: beyond7 },
+  { image: beyond8 },
+  { image: beyond9 },
+  { image: beyond10 },
+  { image: beyond11 },
+  { image: beyond12 },
+  { image: beyond13 },
+  { image: beyond14 },
 ];
 
 const FEATURES = [
@@ -308,7 +309,7 @@ export default function Beyond() {
                   <span className="w-2.5 h-2.5 rounded-full" style={{ background: "#febc2e" }} />
                   <span className="w-2.5 h-2.5 rounded-full" style={{ background: "#28c840" }} />
                 </div>
-                <img src={whatsCooking.url} alt="What's Cooking app" style={{ display: "block", width: "100%", aspectRatio: "16 / 9", objectFit: "cover" }} />
+                <img src={whatsCooking} alt="What's Cooking app" style={{ display: "block", width: "100%", aspectRatio: "16 / 9", objectFit: "cover" }} />
               </div>
             </motion.div>
           </div>

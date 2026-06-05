@@ -1,25 +1,26 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import work1Thumb from "@/assets/work-1-thumb.png.asset.json";
-import work2Thumb from "@/assets/work-2-thumb.png.asset.json";
-import work3Thumb from "@/assets/work-3-thumb.png.asset.json";
-import work4Thumb from "@/assets/work-4-thumb.png.asset.json";
-import work5Thumb from "@/assets/work-5-thumb.png.asset.json";
-import work6Thumb from "@/assets/work-6-thumb.png.asset.json";
-import work7Thumb from "@/assets/work-7-thumb.png.asset.json";
-import work8Thumb from "@/assets/work-8-thumb.png.asset.json";
-import work9Thumb from "@/assets/work-9-thumb.png.asset.json";
-import work10Thumb from "@/assets/work-10-thumb.png.asset.json";
-import project1Pdf from "@/assets/project1.pdf.asset.json";
-import project2Pdf from "@/assets/project2.pdf.asset.json";
-import project3Pdf from "@/assets/project3.pdf.asset.json";
-import project4Pdf from "@/assets/project4.pdf.asset.json";
-import project5Pdf from "@/assets/project5.pdf.asset.json";
-import project6Pdf from "@/assets/project6.pdf.asset.json";
-import project7Pdf from "@/assets/project7.pdf.asset.json";
-import project8Pdf from "@/assets/project8.pdf.asset.json";
-import project9Pdf from "@/assets/project9.pdf.asset.json";
-import project10Pdf from "@/assets/project10.pdf.asset.json";
+
+const work1Thumb = "/assets/work-1-thumb.png";
+const work2Thumb = "/assets/work-2-thumb.png";
+const work3Thumb = "/assets/work-3-thumb.png";
+const work4Thumb = "/assets/work-4-thumb.png";
+const work5Thumb = "/assets/work-5-thumb.png";
+const work6Thumb = "/assets/work-6-thumb.png";
+const work7Thumb = "/assets/work-7-thumb.png";
+const work8Thumb = "/assets/work-8-thumb.png";
+const work9Thumb = "/assets/work-9-thumb.png";
+const work10Thumb = "/assets/work-10-thumb.png";
+const project1Pdf = "/assets/project1.pdf";
+const project2Pdf = "/assets/project2.pdf";
+const project3Pdf = "/assets/project3.pdf";
+const project4Pdf = "/assets/project4.pdf";
+const project5Pdf = "/assets/project5.pdf";
+const project6Pdf = "/assets/project6.pdf";
+const project7Pdf = "/assets/project7.pdf";
+const project8Pdf = "/assets/project8.pdf";
+const project9Pdf = "/assets/project9.pdf";
+const project10Pdf = "/assets/project10.pdf";
 
 const ROTATING_WORDS = ["ideated.", "shipped."];
 import { ArrowRight } from "lucide-react";
@@ -29,16 +30,16 @@ import { openPdf } from "./PdfViewer";
 type Project = { title: string; tag: string; desc: string; pdf: string; grad: string; img?: string };
 
 const PROJECTS: Project[] = [
-  { title: "Date Planner for Bumble", tag: "Growth", desc: "", pdf: project1Pdf.url, grad: "linear-gradient(135deg, #f6d365, #fda085)", img: work1Thumb.url },
-  { title: "Increasing DAU of leading Hindi News Platform", tag: "RCA and Growth", desc: "", pdf: project2Pdf.url, grad: "linear-gradient(135deg, #5ee7df, #b490ca)", img: work2Thumb.url },
-  { title: "Mixpanel Event Writing Automation", tag: "AI Automation", desc: "", pdf: project3Pdf.url, grad: "linear-gradient(135deg, #fbc2eb, #a18cd1)", img: work3Thumb.url },
-  { title: "Increasing Zomato Reviews", tag: "Growth", desc: "", pdf: project4Pdf.url, grad: "linear-gradient(135deg, #84fab0, #8fd3f4)", img: work4Thumb.url },
-  { title: "Paytm Expense Tracker", tag: "New Feature", desc: "", pdf: project5Pdf.url, grad: "linear-gradient(135deg, #ffd194, #d1913c)", img: work5Thumb.url },
-  { title: "Market Analysis for Gig Workers", tag: "Market Analysis", desc: "", pdf: project6Pdf.url, grad: "linear-gradient(135deg, #c471f5, #fa71cd)", img: work6Thumb.url },
-  { title: "UI/UX Heuristics Teardown of Google Keep", tag: "UI/UX", desc: "", pdf: project7Pdf.url, grad: "linear-gradient(135deg, #a1c4fd, #c2e9fb)", img: work7Thumb.url },
-  { title: "Shopping Bot for GIVA", tag: "AI", desc: "", pdf: project8Pdf.url, grad: "linear-gradient(135deg, #ff9a9e, #fad0c4)", img: work8Thumb.url },
-  { title: "Reviews Writing Flow Teardown of Urbanic", tag: "Product Teardown", desc: "", pdf: project9Pdf.url, grad: "linear-gradient(135deg, #667eea, #764ba2)", img: work9Thumb.url },
-  { title: "Onboarding Flow Teardown of Duolingo", tag: "Product Teardown", desc: "", pdf: project10Pdf.url, grad: "linear-gradient(135deg, #11998e, #38ef7d)", img: work10Thumb.url },
+  { title: "Date Planner for Bumble", tag: "Growth", desc: "", pdf: project1Pdf, grad: "linear-gradient(135deg, #f6d365, #fda085)", img: work1Thumb },
+  { title: "Increasing DAU of leading Hindi News Platform", tag: "RCA and Growth", desc: "", pdf: project2Pdf, grad: "linear-gradient(135deg, #5ee7df, #b490ca)", img: work2Thumb },
+  { title: "Mixpanel Event Writing Automation", tag: "AI Automation", desc: "", pdf: project3Pdf, grad: "linear-gradient(135deg, #fbc2eb, #a18cd1)", img: work3Thumb },
+  { title: "Increasing Zomato Reviews", tag: "Growth", desc: "", pdf: project4Pdf, grad: "linear-gradient(135deg, #84fab0, #8fd3f4)", img: work4Thumb },
+  { title: "Paytm Expense Tracker", tag: "New Feature", desc: "", pdf: project5Pdf, grad: "linear-gradient(135deg, #ffd194, #d1913c)", img: work5Thumb },
+  { title: "Market Analysis for Gig Workers", tag: "Market Analysis", desc: "", pdf: project6Pdf, grad: "linear-gradient(135deg, #c471f5, #fa71cd)", img: work6Thumb },
+  { title: "UI/UX Heuristics Teardown of Google Keep", tag: "UI/UX", desc: "", pdf: project7Pdf, grad: "linear-gradient(135deg, #a1c4fd, #c2e9fb)", img: work7Thumb },
+  { title: "Shopping Bot for GIVA", tag: "AI", desc: "", pdf: project8Pdf, grad: "linear-gradient(135deg, #ff9a9e, #fad0c4)", img: work8Thumb },
+  { title: "Reviews Writing Flow Teardown of Urbanic", tag: "Product Teardown", desc: "", pdf: project9Pdf, grad: "linear-gradient(135deg, #667eea, #764ba2)", img: work9Thumb },
+  { title: "Onboarding Flow Teardown of Duolingo", tag: "Product Teardown", desc: "", pdf: project10Pdf, grad: "linear-gradient(135deg, #11998e, #38ef7d)", img: work10Thumb },
 ];
 
 function ProjectCard({ p }: { p: (typeof PROJECTS)[number] }) {

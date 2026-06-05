@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { Menu, X, Linkedin, User, Upload } from "lucide-react";
-import resumePdf from "@/assets/resume.pdf.asset.json";
-import profileImg from "@/assets/geetika-profile.jpeg.asset.json";
+
+const profileImg = "/assets/geetika-profile.jpeg";
+const resumePdf = "/assets/resume.pdf";
 
 type NavItem = {
   label: string;
@@ -102,7 +103,7 @@ function NavButton({ item, onClick }: { item: NavItem; onClick: () => void }) {
 
 function AvatarUpload() {
   const inputRef = useRef<HTMLInputElement>(null);
-  const [src, setSrc] = useState<string | null>(profileImg.url);
+  const [src, setSrc] = useState<string | null>(profileImg);
 
   useEffect(() => {
     const stored = typeof window !== "undefined" ? localStorage.getItem("profile-avatar") : null;
@@ -216,7 +217,7 @@ export default function Header() {
             <Linkedin size={15} />
           </a>
           <a
-            href={resumePdf.url}
+            href={resumePdf}
             target="_blank"
             rel="noreferrer"
             className="px-5 py-2 rounded-full text-[13px] font-medium transition-all duration-300 hover:-translate-y-0.5"
@@ -310,7 +311,7 @@ export default function Header() {
               <Linkedin size={16} />
             </a>
             <a
-              href={resumePdf.url}
+              href={resumePdf}
               target="_blank"
               rel="noreferrer"
               className="flex-1 text-center px-6 py-2.5 rounded-full text-sm"
