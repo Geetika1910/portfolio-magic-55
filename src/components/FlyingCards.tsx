@@ -5,10 +5,10 @@ const work1Thumb = "/assets/work-1-thumb.png";
 const work2Thumb = "/assets/work-2-thumb.png";
 const work3Thumb = "/assets/work-3-thumb.png";
 const work4Thumb = "/assets/work-4-thumb.png";
-const project1Pdf = "/assets/NLBumble-19ce9882-0883-4616-ac00-21dd55a3fd68 (1).pdf";
-const project2Pdf = "/assets/IncreaseDAU-HindiNewsapp-61eaca27-feb3-48b3-a384-2d2e06f8a925.pdf";
-const project3Pdf = "/assets/GOOGLEKEEP-39b0fd04-941f-4287-a639-bd07f3afafc6.pdf";
-const project4Pdf = "/assets/Objective_-BuildinganexpensetrackerforPaytmapp-9d92b0c3-5143-4a08-acca-efb5818791df (1).pdf";
+const project1Pdf = "/assets/project1.pdf";
+const project2Pdf = "/assets/project2.pdf";
+const project3Pdf = "/assets/project3.pdf";
+const project4Pdf = "/assets/project4.pdf";
 
 export type Slot = { x: number; y: number; w: number; h: number };
 
