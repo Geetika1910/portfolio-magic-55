@@ -61,12 +61,18 @@ export default function PdfViewer() {
           </button>
         </div>
       </div>
-      <iframe
-        src={`https://docs.google.com/gview?embedded=true&url=${encodeURIComponent(new URL(pdf.url, window.location.origin).href)}`}
-        title={pdf.title || "Project PDF"}
+      <div
         className="flex-1 w-full bg-white"
+        style={{ overflow: "auto", WebkitOverflowScrolling: "touch" }}
         onClick={(e) => e.stopPropagation()}
-      />
+      >
+        <embed
+          src={new URL(pdf.url, window.location.origin).href}
+          type="application/pdf"
+          width="100%"
+          height="100%"
+        />
+      </div>
     </div>
   );
 }

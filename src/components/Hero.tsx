@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import { heroAnchorRef } from "./FlyingCards";
 import StatusPill from "./StatusPill";
-import work1Thumb from "@/assets/work-1-thumb.png.asset.json";
-import work2Thumb from "@/assets/work-2-thumb.png.asset.json";
-import work3Thumb from "@/assets/work-3-thumb.png.asset.json";
+const work1Thumb = "/assets/work-1-thumb.png";
+const work2Thumb = "/assets/work-2-thumb.png";
+const work3Thumb = "/assets/work-3-thumb.png";
 
 const container = {
   hidden: {},
@@ -15,9 +15,9 @@ const lineVariant = {
 };
 
 const MOBILE_STACK = [
-  { title: "Date Planner for Bumble", tag: "Growth", img: work1Thumb.url },
-  { title: "Hindi News DAU Growth", tag: "RCA & Growth", img: work2Thumb.url },
-  { title: "Mixpanel Automation", tag: "AI Automation", img: work3Thumb.url },
+  { title: "Date Planner for Bumble", tag: "Growth", img: work1Thumb },
+  { title: "Hindi News DAU Growth", tag: "RCA & Growth", img: work2Thumb },
+  { title: "Mixpanel Automation", tag: "AI Automation", img: work3Thumb },
 ];
 
 export default function Hero() {
