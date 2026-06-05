@@ -22,8 +22,8 @@ export const workSlotRefs: { current: HTMLDivElement | null }[] = [
 const CARDS: { title: string; tag: string; grad: string; pdf: string; img?: string }[] = [
   { title: "Date Planner for Bumble",                       tag: "Growth",          grad: "linear-gradient(135deg,#f6d365,#fda085)", pdf: project1Pdf, img: work1Thumb },
   { title: "Increasing DAU of Hindi News Platform",         tag: "RCA and Growth",  grad: "linear-gradient(135deg,#5ee7df,#b490ca)", pdf: project2Pdf, img: work2Thumb },
-  { title: "Mixpanel Event Writing Automation",             tag: "AI Automation",   grad: "linear-gradient(135deg,#fbc2eb,#a18cd1)", pdf: project3Pdf, img: work3Thumb },
-  { title: "Increasing Zomato Reviews",                     tag: "Growth",          grad: "linear-gradient(135deg,#84fab0,#8fd3f4)", pdf: project4Pdf, img: work4Thumb },
+  { title: "Mixpanel Event Writing Automation",             tag: "AI Automation",   grad: "linear-gradient(135deg,#fbc2eb,#a18cd1)", pdf: project4Pdf, img: work3Thumb },
+  { title: "Increasing Zomato Reviews",                     tag: "Growth",          grad: "linear-gradient(135deg,#84fab0,#8fd3f4)", pdf: project3Pdf, img: work4Thumb },
 ];
 
 function readRect(el: HTMLElement | null): Slot | null {

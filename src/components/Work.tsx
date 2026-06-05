@@ -32,8 +32,8 @@ type Project = { title: string; tag: string; desc: string; pdf: string; grad: st
 const PROJECTS: Project[] = [
   { title: "Date Planner for Bumble", tag: "Growth", desc: "", pdf: project1Pdf, grad: "linear-gradient(135deg, #f6d365, #fda085)", img: work1Thumb },
   { title: "Increasing DAU of leading Hindi News Platform", tag: "RCA and Growth", desc: "", pdf: project2Pdf, grad: "linear-gradient(135deg, #5ee7df, #b490ca)", img: work2Thumb },
-  { title: "Mixpanel Event Writing Automation", tag: "AI Automation", desc: "", pdf: project3Pdf, grad: "linear-gradient(135deg, #fbc2eb, #a18cd1)", img: work3Thumb },
-  { title: "Increasing Zomato Reviews", tag: "Growth", desc: "", pdf: project4Pdf, grad: "linear-gradient(135deg, #84fab0, #8fd3f4)", img: work4Thumb },
+  { title: "Mixpanel Event Writing Automation", tag: "AI Automation", desc: "", pdf: project4Pdf, grad: "linear-gradient(135deg, #fbc2eb, #a18cd1)", img: work3Thumb },
+  { title: "Increasing Zomato Reviews", tag: "Growth", desc: "", pdf: project3Pdf, grad: "linear-gradient(135deg, #84fab0, #8fd3f4)", img: work4Thumb },
   { title: "Paytm Expense Tracker", tag: "New Feature", desc: "", pdf: project5Pdf, grad: "linear-gradient(135deg, #ffd194, #d1913c)", img: work5Thumb },
   { title: "Market Analysis for Gig Workers", tag: "Market Analysis", desc: "", pdf: project6Pdf, grad: "linear-gradient(135deg, #c471f5, #fa71cd)", img: work6Thumb },
   { title: "UI/UX Heuristics Teardown of Google Keep", tag: "UI/UX", desc: "", pdf: project7Pdf, grad: "linear-gradient(135deg, #a1c4fd, #c2e9fb)", img: work7Thumb },
