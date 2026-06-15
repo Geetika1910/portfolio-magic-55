@@ -1,13 +1,13 @@
 import { Linkedin, Mail, Phone, FileText } from "lucide-react";
 import { motion } from "framer-motion";
-import resumePdf from "@/assets/resume.pdf.asset.json";
 
 const LINKS = [
   { icon: Linkedin, label: "linkedin.com/in/geetika-aggarwal19", href: "https://www.linkedin.com/in/geetika-aggarwal19" },
   { icon: Mail, label: "geetika201999@gmail.com", href: "mailto:geetika201999@gmail.com" },
   { icon: Phone, label: "+91 9773537721", href: "tel:+919773537721" },
-  { icon: FileText, label: "Download Resume", href: resumePdf.url },
+  { icon: FileText, label: "Download Resume", href: "/resume.pdf" },
 ];
+
 
 export default function Footer() {
   return (

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Menu, X, Linkedin, User, Upload } from "lucide-react";
-import resumePdf from "@/assets/resume.pdf.asset.json";
 import profileImg from "@/assets/geetika-profile.jpeg.asset.json";
+
 
 type NavItem = {
   label: string;
@@ -216,9 +216,10 @@ export default function Header() {
             <Linkedin size={15} />
           </a>
           <a
-            href={resumePdf.url}
+            href="/resume.pdf"
             target="_blank"
             rel="noreferrer"
+
             className="px-5 py-2 rounded-full text-[13px] font-medium transition-all duration-300 hover:-translate-y-0.5"
             style={{
               border: "1px solid var(--accent)",
@@ -310,9 +311,10 @@ export default function Header() {
               <Linkedin size={16} />
             </a>
             <a
-              href={resumePdf.url}
+              href="/resume.pdf"
               target="_blank"
               rel="noreferrer"
+
               className="flex-1 text-center px-6 py-2.5 rounded-full text-sm"
               style={{ border: "1px solid var(--accent)", color: "var(--text-on-dark)" }}
             >
